@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2511F15587E00556C85 /* AppDelegate.swift */; };
-		966BF2571F15587E00556C85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2551F15587E00556C85 /* Main.storyboard */; };
+		966BF2571F15587E00556C85 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2551F15587E00556C85 /* Login.storyboard */; };
 		966BF2591F15587E00556C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2581F15587E00556C85 /* Assets.xcassets */; };
 		966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966BF25A1F15587E00556C85 /* LaunchScreen.storyboard */; };
 		966BF2671F15587E00556C85 /* KidsPaintingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2661F15587E00556C85 /* KidsPaintingTests.swift */; };
@@ -42,7 +42,7 @@
 		6BC54C19E581D5790294C84B /* Pods-KidsPainting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.release.xcconfig"; sourceTree = "<group>"; };
 		966BF24E1F15587E00556C85 /* KidsPainting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsPainting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966BF2511F15587E00556C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		966BF2561F15587E00556C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		966BF2561F15587E00556C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		966BF2581F15587E00556C85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		966BF25B1F15587E00556C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		966BF25D1F15587E00556C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,15 +127,11 @@
 		966BF2501F15587E00556C85 /* KidsPainting */ = {
 			isa = PBXGroup;
 			children = (
-				966BF2511F15587E00556C85 /* AppDelegate.swift */,
-				966BF2551F15587E00556C85 /* Main.storyboard */,
-				966BF2581F15587E00556C85 /* Assets.xcassets */,
-				966BF27F1F1558CA00556C85 /* GoogleService-Info.plist */,
-				966BF25A1F15587E00556C85 /* LaunchScreen.storyboard */,
-				966BF25D1F15587E00556C85 /* Info.plist */,
-				966BF2811F16B66600556C85 /* SignUpViewController.swift */,
-				966BF2831F16D8E700556C85 /* MainPage.storyboard */,
-				966BF2851F16E2CF00556C85 /* LoginViewController.swift */,
+				966BF28C1F16E7B400556C85 /* Model */,
+				966BF2891F16E75300556C85 /* General */,
+				966BF28A1F16E78300556C85 /* supporting files */,
+				966BF2881F16E71300556C85 /* View Controllers */,
+				966BF2871F16E6F000556C85 /* XIBs */,
 			);
 			path = KidsPainting;
 			sourceTree = "<group>";
@@ -156,6 +152,50 @@
 				966BF2731F15587E00556C85 /* Info.plist */,
 			);
 			path = KidsPaintingUITests;
+			sourceTree = "<group>";
+		};
+		966BF2871F16E6F000556C85 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				966BF2551F15587E00556C85 /* Login.storyboard */,
+				966BF2831F16D8E700556C85 /* MainPage.storyboard */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
+		966BF2881F16E71300556C85 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				966BF2811F16B66600556C85 /* SignUpViewController.swift */,
+				966BF2851F16E2CF00556C85 /* LoginViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		966BF2891F16E75300556C85 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				966BF2511F15587E00556C85 /* AppDelegate.swift */,
+				966BF2581F15587E00556C85 /* Assets.xcassets */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		966BF28A1F16E78300556C85 /* supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				966BF27F1F1558CA00556C85 /* GoogleService-Info.plist */,
+				966BF25A1F15587E00556C85 /* LaunchScreen.storyboard */,
+				966BF25D1F15587E00556C85 /* Info.plist */,
+			);
+			name = "supporting files";
+			sourceTree = "<group>";
+		};
+		966BF28C1F16E7B400556C85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +314,7 @@
 				966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */,
 				966BF2591F15587E00556C85 /* Assets.xcassets in Resources */,
 				966BF2841F16D8E700556C85 /* MainPage.storyboard in Resources */,
-				966BF2571F15587E00556C85 /* Main.storyboard in Resources */,
+				966BF2571F15587E00556C85 /* Login.storyboard in Resources */,
 				966BF2801F1558CA00556C85 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,12 +426,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		966BF2551F15587E00556C85 /* Main.storyboard */ = {
+		966BF2551F15587E00556C85 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				966BF2561F15587E00556C85 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		966BF25A1F15587E00556C85 /* LaunchScreen.storyboard */ = {
