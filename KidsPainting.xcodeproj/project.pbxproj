@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2511F15587E00556C85 /* AppDelegate.swift */; };
-		966BF2541F15587E00556C85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2531F15587E00556C85 /* ViewController.swift */; };
+		966BF2541F15587E00556C85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2531F15587E00556C85 /* LoginViewController.swift */; };
 		966BF2571F15587E00556C85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2551F15587E00556C85 /* Main.storyboard */; };
 		966BF2591F15587E00556C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2581F15587E00556C85 /* Assets.xcassets */; };
 		966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966BF25A1F15587E00556C85 /* LaunchScreen.storyboard */; };
 		966BF2671F15587E00556C85 /* KidsPaintingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2661F15587E00556C85 /* KidsPaintingTests.swift */; };
 		966BF2721F15587E00556C85 /* KidsPaintingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2711F15587E00556C85 /* KidsPaintingUITests.swift */; };
 		966BF2801F1558CA00556C85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 966BF27F1F1558CA00556C85 /* GoogleService-Info.plist */; };
+		966BF2821F16B66600556C85 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2811F16B66600556C85 /* SignUpViewController.swift */; };
+		966BF2841F16D8E700556C85 /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2831F16D8E700556C85 /* MainPage.storyboard */; };
 		D37E75E6AA7E8B4978EA614C /* Pods_KidsPainting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +42,7 @@
 		6BC54C19E581D5790294C84B /* Pods-KidsPainting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.release.xcconfig"; sourceTree = "<group>"; };
 		966BF24E1F15587E00556C85 /* KidsPainting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsPainting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966BF2511F15587E00556C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		966BF2531F15587E00556C85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		966BF2531F15587E00556C85 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		966BF2561F15587E00556C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		966BF2581F15587E00556C85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		966BF25B1F15587E00556C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +54,8 @@
 		966BF2711F15587E00556C85 /* KidsPaintingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsPaintingUITests.swift; sourceTree = "<group>"; };
 		966BF2731F15587E00556C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966BF27F1F1558CA00556C85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		966BF2811F16B66600556C85 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		966BF2831F16D8E700556C85 /* MainPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
 		D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsPainting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,12 +128,14 @@
 			isa = PBXGroup;
 			children = (
 				966BF2511F15587E00556C85 /* AppDelegate.swift */,
-				966BF2531F15587E00556C85 /* ViewController.swift */,
+				966BF2531F15587E00556C85 /* LoginViewController.swift */,
 				966BF2551F15587E00556C85 /* Main.storyboard */,
 				966BF2581F15587E00556C85 /* Assets.xcassets */,
 				966BF27F1F1558CA00556C85 /* GoogleService-Info.plist */,
 				966BF25A1F15587E00556C85 /* LaunchScreen.storyboard */,
 				966BF25D1F15587E00556C85 /* Info.plist */,
+				966BF2811F16B66600556C85 /* SignUpViewController.swift */,
+				966BF2831F16D8E700556C85 /* MainPage.storyboard */,
 			);
 			path = KidsPainting;
 			sourceTree = "<group>";
@@ -267,6 +273,7 @@
 			files = (
 				966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */,
 				966BF2591F15587E00556C85 /* Assets.xcassets in Resources */,
+				966BF2841F16D8E700556C85 /* MainPage.storyboard in Resources */,
 				966BF2571F15587E00556C85 /* Main.storyboard in Resources */,
 				966BF2801F1558CA00556C85 /* GoogleService-Info.plist in Resources */,
 			);
@@ -341,7 +348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				966BF2541F15587E00556C85 /* ViewController.swift in Sources */,
+				966BF2821F16B66600556C85 /* SignUpViewController.swift in Sources */,
+				966BF2541F15587E00556C85 /* LoginViewController.swift in Sources */,
 				966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +605,7 @@
 				966BF2781F15587E00556C85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		966BF2791F15587E00556C85 /* Build configuration list for PBXNativeTarget "KidsPaintingTests" */ = {
 			isa = XCConfigurationList;
@@ -605,6 +614,7 @@
 				966BF27B1F15587E00556C85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		966BF27C1F15587E00556C85 /* Build configuration list for PBXNativeTarget "KidsPaintingUITests" */ = {
 			isa = XCConfigurationList;
@@ -613,6 +623,7 @@
 				966BF27E1F15587E00556C85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
