@@ -15,6 +15,7 @@
 		966BF2671F15587E00556C85 /* KidsPaintingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2661F15587E00556C85 /* KidsPaintingTests.swift */; };
 		966BF2721F15587E00556C85 /* KidsPaintingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2711F15587E00556C85 /* KidsPaintingUITests.swift */; };
 		966BF2801F1558CA00556C85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 966BF27F1F1558CA00556C85 /* GoogleService-Info.plist */; };
+		D37E75E6AA7E8B4978EA614C /* Pods_KidsPainting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		644285956F7D7794CB257D41 /* Pods-KidsPainting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.debug.xcconfig"; sourceTree = "<group>"; };
+		6BC54C19E581D5790294C84B /* Pods-KidsPainting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.release.xcconfig"; sourceTree = "<group>"; };
 		966BF24E1F15587E00556C85 /* KidsPainting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsPainting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966BF2511F15587E00556C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966BF2531F15587E00556C85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		966BF2711F15587E00556C85 /* KidsPaintingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsPaintingUITests.swift; sourceTree = "<group>"; };
 		966BF2731F15587E00556C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966BF27F1F1558CA00556C85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsPainting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37E75E6AA7E8B4978EA614C /* Pods_KidsPainting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BCE30FA61F9123669E20199 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				644285956F7D7794CB257D41 /* Pods-KidsPainting.debug.xcconfig */,
+				6BC54C19E581D5790294C84B /* Pods-KidsPainting.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		926B7D4E3F9813120D44FA92 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		966BF2451F15587D00556C85 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +105,8 @@
 				966BF2651F15587E00556C85 /* KidsPaintingTests */,
 				966BF2701F15587E00556C85 /* KidsPaintingUITests */,
 				966BF24F1F15587E00556C85 /* Products */,
+				2BCE30FA61F9123669E20199 /* Pods */,
+				926B7D4E3F9813120D44FA92 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 966BF2761F15587E00556C85 /* Build configuration list for PBXNativeTarget "KidsPainting" */;
 			buildPhases = (
+				389F743A85CD5923C50D3816 /* [CP] Check Pods Manifest.lock */,
 				966BF24A1F15587E00556C85 /* Sources */,
 				966BF24B1F15587E00556C85 /* Frameworks */,
 				966BF24C1F15587E00556C85 /* Resources */,
+				DED1938370EB904EB06923A0 /* [CP] Embed Pods Frameworks */,
+				B3B3519B78208E7EB9E39433 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,6 +287,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		389F743A85CD5923C50D3816 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B3B3519B78208E7EB9E39433 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DED1938370EB904EB06923A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		966BF24A1F15587E00556C85 /* Sources */ = {
@@ -419,6 +494,7 @@
 		};
 		966BF2771F15587E00556C85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 644285956F7D7794CB257D41 /* Pods-KidsPainting.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 68MJJA856T;
@@ -432,6 +508,7 @@
 		};
 		966BF2781F15587E00556C85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BC54C19E581D5790294C84B /* Pods-KidsPainting.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 68MJJA856T;
