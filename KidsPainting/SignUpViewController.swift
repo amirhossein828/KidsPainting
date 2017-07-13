@@ -96,7 +96,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                                 self.ref.child("users").child(user.uid).setValue(userInfo)
                                 
                                 // go to main page
-                                let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "mainPage")
+                                let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "navigationPage")
                                 
                                 self.present(vc, animated: true, completion: nil)
                                 
