@@ -29,9 +29,9 @@ class PhotoViewController: UIViewController , UIImagePickerControllerDelegate, U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            
             self.imageView.image = image
-//            selectBtn.isHidden = true
-//            postBtn.isHidden = false
+
         }
         
         self.dismiss(animated: true, completion: nil)
@@ -54,12 +54,12 @@ class PhotoViewController: UIViewController , UIImagePickerControllerDelegate, U
         let key = ref.child("posts").childByAutoId().key
         let imageRef = storage.child("posts").child(uid).child("\(key).jpg")
         
-        let data = UIImageJPEGRepresentation(self.imageView.image!, 0.6)
+        let data = UIImageJPEGRepresentation(self.imageView.image!, 0.1)
         
         let uploadTask = imageRef.putData(data!, metadata: nil) { (metadata, error) in
             if error != nil {
                 print(error!.localizedDescription)
-//                AppDelegate.instance().dismissActivityIndicatos()
+
                 return
             }
             
