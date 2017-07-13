@@ -35,41 +35,47 @@
                                     <barButtonItem title="Profile" id="c5d-GC-Kfq"/>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v9g-YC-Ar9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v9g-YC-Ar9">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="118" id="7gV-vE-QlU" customClass="MainTableViewCell" customModule="KidsPainting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="118"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="7gV-vE-QlU" customClass="MainTableViewCell" customModule="KidsPainting" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7gV-vE-QlU" id="L8d-eU-fzE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7gV-vE-QlU" id="L8d-eU-fzE" customClass="MainTableViewCell" customModule="KidsPainting" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONa-Ho-UU6">
-                                                    <rect key="frame" x="14" y="8" width="118" height="102"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OoF-HD-yus">
+                                                    <rect key="frame" x="17" y="3" width="60" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="6Fi-tS-m4A"/>
+                                                        <constraint firstAttribute="height" constant="36" id="FbQ-PA-mnd"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6f-1B-Rgn">
-                                                    <rect key="frame" x="203" y="48" width="114" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwb-g9-8Sz">
+                                                    <rect key="frame" x="166" y="11" width="119" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OoF-HD-yus" firstAttribute="top" secondItem="L8d-eU-fzE" secondAttribute="top" constant="3" id="Vc6-dc-oXb"/>
+                                                <constraint firstItem="OoF-HD-yus" firstAttribute="leading" secondItem="L8d-eU-fzE" secondAttribute="leading" constant="17" id="uua-j3-RjH"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="fullnameField" destination="Z6f-1B-Rgn" id="eGm-lQ-f9l"/>
-                                            <outlet property="imageView" destination="ONa-Ho-UU6" id="njN-BY-Dwq"/>
-                                            <outlet property="imageViewCell" destination="ONa-Ho-UU6" id="OUY-hZ-XPK"/>
+                                            <outlet property="fullNameField" destination="Lwb-g9-8Sz" id="RAJ-PD-Ftq"/>
+                                            <outlet property="imageViewCell" destination="OoF-HD-yus" id="xea-Jl-rHk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="otD-JR-vGu" id="2fp-2b-rtp"/>
-                                    <outlet property="delegate" destination="otD-JR-vGu" id="8ne-om-o9X"/>
+                                    <outlet property="dataSource" destination="otD-JR-vGu" id="mPq-yb-dz4"/>
+                                    <outlet property="delegate" destination="otD-JR-vGu" id="Ag4-vn-Xzl"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -82,17 +88,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Shoes" id="O6w-Hb-VMQ"/>
                     <connections>
-                        <outlet property="tableView" destination="v9g-YC-Ar9" id="6f2-qv-K6p"/>
+                        <outlet property="tableView" destination="v9g-YC-Ar9" id="tve-Zj-Oue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSd-GU-OGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="932" y="113.79310344827587"/>
         </scene>
-        <!--Photo View Controller-->
+        <!--View Controller-->
         <scene sceneID="LcE-2V-x6r">
             <objects>
-                <viewController id="M3V-a0-Vtr" customClass="PhotoViewController" customModule="KidsPainting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M3V-a0-Vtr" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ojA-cf-nQp"/>
                         <viewControllerLayoutGuide type="bottom" id="J6W-fV-qX4"/>
@@ -109,16 +115,10 @@
                                 <rect key="frame" x="143" y="348" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Image"/>
-                                <connections>
-                                    <action selector="selectImage:" destination="M3V-a0-Vtr" eventType="touchUpInside" id="g3A-OI-tLZ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="imageView" destination="yax-AI-IDh" id="fBt-pk-MPe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAi-W7-7Xm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,7 +129,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navigationPage" automaticallyAdjustsScrollViewInsets="NO" id="jZC-rB-AYz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UEf-RR-lUt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UEf-RR-lUt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

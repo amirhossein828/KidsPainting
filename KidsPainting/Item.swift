@@ -14,6 +14,7 @@ class Item: NSObject {
     var author: String!
     var likes: Int!
     var pathToImage: String!
+    var imageData: NSData!
     var userID: String!
     var postID: String!
     
