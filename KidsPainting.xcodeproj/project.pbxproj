@@ -19,8 +19,10 @@
 		966BF2861F16E2CF00556C85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2851F16E2CF00556C85 /* LoginViewController.swift */; };
 		966BF28E1F173FC800556C85 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF28D1F173FC800556C85 /* MainViewController.swift */; };
 		966BF2901F17450500556C85 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF28F1F17450500556C85 /* MainTableViewCell.swift */; };
-		966BF2921F17467600556C85 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2911F17467600556C85 /* PhotoViewController.swift */; };
 		966BF2941F174CAD00556C85 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2931F174CAD00556C85 /* Item.swift */; };
+		966BF2981F1C5B7400556C85 /* UploadItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2971F1C5B7400556C85 /* UploadItemViewController.swift */; };
+		966BF29A1F1C667200556C85 /* GalleryCollectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2991F1C667200556C85 /* GalleryCollectionCollectionViewController.swift */; };
+		966BF29C1F1C864300556C85 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF29B1F1C864300556C85 /* GalleryCollectionViewCell.swift */; };
 		D37E75E6AA7E8B4978EA614C /* Pods_KidsPainting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +64,10 @@
 		966BF2851F16E2CF00556C85 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		966BF28D1F173FC800556C85 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		966BF28F1F17450500556C85 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		966BF2911F17467600556C85 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		966BF2931F174CAD00556C85 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		966BF2971F1C5B7400556C85 /* UploadItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadItemViewController.swift; sourceTree = "<group>"; };
+		966BF2991F1C667200556C85 /* GalleryCollectionCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionCollectionViewController.swift; sourceTree = "<group>"; };
+		966BF29B1F1C864300556C85 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsPainting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -178,7 +182,9 @@
 				966BF2851F16E2CF00556C85 /* LoginViewController.swift */,
 				966BF28D1F173FC800556C85 /* MainViewController.swift */,
 				966BF28F1F17450500556C85 /* MainTableViewCell.swift */,
-				966BF2911F17467600556C85 /* PhotoViewController.swift */,
+				966BF2971F1C5B7400556C85 /* UploadItemViewController.swift */,
+				966BF2991F1C667200556C85 /* GalleryCollectionCollectionViewController.swift */,
+				966BF29B1F1C864300556C85 /* GalleryCollectionViewCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -401,12 +407,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				966BF2861F16E2CF00556C85 /* LoginViewController.swift in Sources */,
+				966BF29C1F1C864300556C85 /* GalleryCollectionViewCell.swift in Sources */,
+				966BF29A1F1C667200556C85 /* GalleryCollectionCollectionViewController.swift in Sources */,
 				966BF2821F16B66600556C85 /* SignUpViewController.swift in Sources */,
 				966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */,
 				966BF28E1F173FC800556C85 /* MainViewController.swift in Sources */,
+				966BF2981F1C5B7400556C85 /* UploadItemViewController.swift in Sources */,
 				966BF2941F174CAD00556C85 /* Item.swift in Sources */,
 				966BF2901F17450500556C85 /* MainTableViewCell.swift in Sources */,
-				966BF2921F17467600556C85 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

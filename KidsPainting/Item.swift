@@ -14,9 +14,14 @@ class Item: NSObject {
     var author: String!
     var likes: Int!
     var pathToImage: String!
-    var imageData: NSData!
+    
     var userID: String!
     var postID: String!
+    
+    var price: Double!
+    var nameOfArticle: String!
+    var numberOfAvilable: Int!
+    
     
     var peopleWhoLike: [String] = [String]()
 }

@@ -82,6 +82,11 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     override func viewDidDisappear(_ animated: Bool) {
         items.removeAll()
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 100.0;//Choose your custom row height
+    }
 
 }
 
