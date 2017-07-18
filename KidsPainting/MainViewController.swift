@@ -38,6 +38,8 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
                 item.author = answer["author"] as! String
                 
                 item.pathToImage = answer["pathToImage"] as! String
+                item.nameOfArticle = answer["nameOfArticle"] as! String
+                item.price = Double(answer["price"] as! String)
                 self.items.append(item)
                
                 
@@ -71,6 +73,8 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
        
         
         cell.fullNameField.text = self.items[indexPath.row].author
+        cell.nameOfArticleCell.text = self.items[indexPath.row].nameOfArticle
+        cell.priceCell.text = String(self.items[indexPath.row].price)
       
         cell.imageViewCell.downloadImage(from: items[indexPath.row].pathToImage)
         
