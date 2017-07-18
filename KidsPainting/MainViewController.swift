@@ -28,13 +28,16 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         ref.child("posts").observeSingleEvent(of: .value) { (dataSnap : DataSnapshot) in
             let value = dataSnap.value as? NSDictionary
             print(value)
-            let ans = value?.allValues as? [[String:Any]]
-            for a in ans! {
+            let allAnswer = value?.allValues as? [[String:Any]]
+            guard let allAnswerOfPosts = allAnswer else {
+                return
+            }
+            for answer in allAnswerOfPosts {
                 
                 let item = Item()
-                item.author = a["author"] as! String
+                item.author = answer["author"] as! String
                 
-                item.pathToImage = a["pathToImage"] as! String
+                item.pathToImage = answer["pathToImage"] as! String
                 self.items.append(item)
                
                 

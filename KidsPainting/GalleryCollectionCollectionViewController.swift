@@ -18,6 +18,7 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     var index : Int?
 
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.dataSource = self
@@ -62,6 +63,7 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
         
         self.bigImage.image = imageArray[indexPath.row]
         index = indexPath.row
+        nextButton.isEnabled = true
         
     }
     

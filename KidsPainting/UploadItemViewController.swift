@@ -9,15 +9,17 @@
 import UIKit
 import Firebase
 
-class UploadItemViewController: UIViewController {
+class UploadItemViewController: UIViewController , UITextFieldDelegate{
     
     @IBOutlet weak var uploadImageView: UIImageView!
     var newImage : UIImage?
-    
+    var name : String?
+    var p : String?
     @IBOutlet weak var nameofArticleField: UITextField!
     
     @IBOutlet weak var priceField: UITextField!
     
+    @IBOutlet weak var shareButton: UIButton!
     var activityIndicator = UIActivityIndicatorView()
     // - get it position and color
     // - define it's subview
@@ -35,11 +37,38 @@ class UploadItemViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(activityIndicator)
-
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        if textField == nameofArticleField {
+            
+                        updateShareButton(articleText: newString, priceText: self.priceField.text ?? "")
+        }
+        else {
+            updateShareButton(articleText: self.nameofArticleField.text ?? "", priceText: newString)
+        }
+        return true
+    }
+    
+    private func updateShareButton(articleText: String, priceText: String) {
+        let enabled = !articleText.isEmpty && !priceText.isEmpty
+        shareButton.isEnabled = enabled
+        
+    }
+
+
+    
+    
+    
+    @IBAction func cancelBtn(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func shareBtn(_ sender: UIButton) {
