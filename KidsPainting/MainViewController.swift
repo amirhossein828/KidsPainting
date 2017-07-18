@@ -14,13 +14,13 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     var ref: DatabaseReference!
     var items = [Item]()
+    var itemToDetail : Item? = nil
+  
     var resultData : NSData = NSData()
     fileprivate var _refHandle: DatabaseHandle!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
+        super.viewDidLoad()  
     }
     override func viewWillAppear(_ animated: Bool) {
         ref = Database.database().reference()
@@ -41,16 +41,11 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
                 item.nameOfArticle = answer["nameOfArticle"] as! String
                 item.price = Double(answer["price"] as! String)
                 self.items.append(item)
-               
-                
                 
             }
             
                 
                 self.tableView.reloadData()
-                
-            
-           
         }
         ref.removeAllObservers()
     }
@@ -68,10 +63,6 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainTableViewCell
-        
-
-       
-        
         cell.fullNameField.text = self.items[indexPath.row].author
         cell.nameOfArticleCell.text = self.items[indexPath.row].nameOfArticle
         cell.priceCell.text = String(self.items[indexPath.row].price)
@@ -79,11 +70,30 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         cell.imageViewCell.downloadImage(from: items[indexPath.row].pathToImage)
         
         
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count ?? 0
+    }
+    
+    // - make rows in table view selectable
+    // - when one row get selected , go to detail page
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         itemToDetail = items[indexPath.row]
+        
+        performSegue(withIdentifier: "goDetail", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goDetail" {
+            let detailVC = segue.destination as! DetailViewController
+            if let itemDetail = self.itemToDetail {
+            detailVC.itemFromMain = itemDetail
+        }
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -114,6 +124,7 @@ extension UIImageView {
         
             DispatchQueue.main.async {
                 self.image = UIImage(data: data!)
+                
             }
             
         }

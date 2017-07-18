@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
                 print(error.localizedDescription)
             }
             
-            // go to mai page
+            // go to main page
             if let user = user {
                 let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "navigationPage")
                 
