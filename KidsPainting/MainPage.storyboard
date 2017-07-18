@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Shoes-->
+        <!--Items-->
         <scene sceneID="gz3-xx-jnG">
             <objects>
                 <viewController storyboardIdentifier="mainPage" id="otD-JR-vGu" customClass="MainViewController" customModule="KidsPainting" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,8 +55,22 @@
                                                         <constraint firstAttribute="height" constant="65" id="FbQ-PA-mnd"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwb-g9-8Sz">
-                                                    <rect key="frame" x="166" y="11" width="119" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of Person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwb-g9-8Sz">
+                                                    <rect key="frame" x="131" y="22" width="119" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of Article" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db2-Eh-Ajs">
+                                                    <rect key="frame" x="131" y="0.0" width="119" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43g-25-Fsq">
+                                                    <rect key="frame" x="131" y="43" width="119" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -71,6 +85,8 @@
                                         <connections>
                                             <outlet property="fullNameField" destination="Lwb-g9-8Sz" id="RAJ-PD-Ftq"/>
                                             <outlet property="imageViewCell" destination="OoF-HD-yus" id="xea-Jl-rHk"/>
+                                            <outlet property="nameOfArticleCell" destination="Db2-Eh-Ajs" id="C4J-95-4pM"/>
+                                            <outlet property="priceCell" destination="43g-25-Fsq" id="Lag-79-cE8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -87,7 +103,7 @@
                             <constraint firstItem="7ZJ-s1-Nd7" firstAttribute="leading" secondItem="BXY-UG-7pT" secondAttribute="leading" constant="-5" id="a9x-jf-00a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Shoes" id="O6w-Hb-VMQ"/>
+                    <navigationItem key="navigationItem" title="Items" id="O6w-Hb-VMQ"/>
                     <connections>
                         <outlet property="tableView" destination="v9g-YC-Ar9" id="tve-Zj-Oue"/>
                     </connections>
@@ -221,7 +237,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameofArticleField" destination="daZ-Iu-ngM" id="IKl-CA-Rj0"/>
+                        <outlet property="nameofArticleField" destination="nzv-kG-3PW" id="LpA-jY-ob1"/>
                         <outlet property="priceField" destination="daZ-Iu-ngM" id="Ts1-rh-JD5"/>
                         <outlet property="shareButton" destination="lAd-F0-wF0" id="rcl-Sc-dmx"/>
                         <outlet property="uploadImageView" destination="cAj-sk-ubF" id="q7n-x2-WH3"/>
@@ -341,7 +357,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navigationPage" automaticallyAdjustsScrollViewInsets="NO" id="jZC-rB-AYz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UEf-RR-lUt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UEf-RR-lUt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -360,7 +376,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qb3-QF-DJn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="GALLERY" id="4LY-B9-dUF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiI-Mh-RQU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HiI-Mh-RQU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -379,7 +395,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x1g-Wt-nIW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="PHOTO" id="mYC-Ej-639"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z2U-Wj-QaM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z2U-Wj-QaM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
