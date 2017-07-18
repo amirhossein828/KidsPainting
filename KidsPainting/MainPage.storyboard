@@ -161,7 +161,10 @@
                                                 <rect key="frame" x="0.0" y="41" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="JUf-99-qLy" id="ZV3-Gt-Q7z"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkd-JK-F8V">
                                                 <rect key="frame" x="152" y="82" width="39" height="30"/>
@@ -173,7 +176,10 @@
                                                 <rect key="frame" x="0.0" y="123" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="JUf-99-qLy" id="1Nj-gq-PrP"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -183,7 +189,7 @@
                                             <constraint firstItem="daZ-Iu-ngM" firstAttribute="leading" secondItem="pOa-oh-Gbq" secondAttribute="leading" id="wMi-Sc-7OT"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAd-F0-wF0">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAd-F0-wF0">
                                         <rect key="frame" x="141.5" y="207" width="60" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="Share"/>
@@ -208,11 +214,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ceD-V2-ATq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="I1t-5u-eVv"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="I1t-5u-eVv">
+                            <connections>
+                                <action selector="cancelBtn:" destination="JUf-99-qLy" id="3vb-lK-J1V"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameofArticleField" destination="daZ-Iu-ngM" id="IKl-CA-Rj0"/>
                         <outlet property="priceField" destination="daZ-Iu-ngM" id="Ts1-rh-JD5"/>
+                        <outlet property="shareButton" destination="lAd-F0-wF0" id="rcl-Sc-dmx"/>
                         <outlet property="uploadImageView" destination="cAj-sk-ubF" id="q7n-x2-WH3"/>
                     </connections>
                 </viewController>
@@ -290,7 +301,7 @@
                                 <action selector="cancelBtn:" destination="lMS-j8-KOf" id="Flb-i6-I1M"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="OPT-Ly-bh5">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="OPT-Ly-bh5">
                             <connections>
                                 <action selector="nextBtn:" destination="lMS-j8-KOf" id="zu7-ww-Fi5"/>
                                 <segue destination="JUf-99-qLy" kind="show" identifier="goToNavigationBar" id="cLn-r8-wEH"/>
@@ -300,6 +311,7 @@
                     <connections>
                         <outlet property="bigImage" destination="DHc-mX-Dwg" id="bj0-fR-ccl"/>
                         <outlet property="collectionView" destination="2Kn-ty-GGd" id="EVk-G3-eFB"/>
+                        <outlet property="nextButton" destination="OPT-Ly-bh5" id="lmS-LU-pmS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbX-gG-www" userLabel="First Responder" sceneMemberID="firstResponder"/>
