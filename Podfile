@@ -9,6 +9,12 @@ pod 'Firebase/Database'
 pod 'Firebase/RemoteConfig'
 pod 'FirebaseUI'
 pod  'Firebase/Auth'
+# Pod for authentication
+pod 'Firebase/Auth'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+pod 'GoogleSignIn'
 
 pod 'SwiftyJSON'
 
