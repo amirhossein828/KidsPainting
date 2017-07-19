@@ -10,18 +10,18 @@ import Foundation
 
 class Item: NSObject {
     
-    
     var author: String!
-    var likes: Int!
     var pathToImage: String!
+    var nameOfArticle: String!
+    var price: Double!
     
+    
+    // Attributes that are not used yet
     var userID: String!
     var postID: String!
     
-    var price: Double!
-    var nameOfArticle: String!
     var numberOfAvilable: Int!
-    
-    
+    var likes: Int!
     var peopleWhoLike: [String] = [String]()
+    
 }
