@@ -17,7 +17,6 @@ pod 'FacebookShare'
 pod 'GoogleSignIn'
 
 pod 'SwiftyJSON'
-pod 'Material'
 
 target 'KidsPainting' do
 end
