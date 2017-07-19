@@ -13,29 +13,29 @@ private let reuseIdentifier = "Cell"
 
 class GalleryCollectionCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     var imageArray = [UIImage]()
+    var index : Int?
     
     @IBOutlet weak var bigImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
-    var index : Int?
-
     @IBOutlet weak var nextButton: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        grabPhotos()
         
-
+        grabPhotos()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
 
-    // MARK: UICollectionViewDataSource
+    // MARK: UICollectionViewDataSource ----------------------------------------------
 
      func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -55,32 +55,40 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
 
         return cell
     }
-
+    //--------------------------------------------------------------------------------
      
     
-      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+    // Show big presentation of selected image
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        
         print(imageArray.count)
         
         self.bigImage.image = imageArray[indexPath.row]
         index = indexPath.row
         nextButton.isEnabled = true
-        
     }
     
+    
+    // MARK: Action methods ----------------------------------------------------------
     @IBAction func cancelBtn(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     
     
+    @IBAction func nextBtn(_ sender: UIBarButtonItem) { }
+    //--------------------------------------------------------------------------------
+    
+    
+    // Preview large image -----------------------------------------------------------
     func grabPhotos() {
-        
-        
+        // PHImageManager provides methods for retrieving or generating preview thumbnails and full-size image
         let imgManager = PHImageManager.default()
         
         let requestOptions = PHImageRequestOptions()
         requestOptions.deliveryMode = .highQualityFormat
         let fetchoptions = PHFetchOptions()
         fetchoptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
         if let fetchResult : PHFetchResult = PHAsset.fetchAssets(with: .image, options:  fetchoptions){
             
             if fetchResult.count > 0 {
@@ -90,32 +98,22 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
                         self.collectionView?.reloadData()
                     })
                 }
-                
             }else{
                 print("you got no photos")
                 self.collectionView?.reloadData()
             }
-            
-            
-            
         }
-        
     }
-
-    @IBAction func nextBtn(_ sender: UIBarButtonItem) {
-        
-      
-    }
+    //--------------------------------------------------------------------------------
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "goToNavigationBar" {
 
             if let vc = segue.destination as? UploadItemViewController {
                 print(index)
                  vc.newImage = self.imageArray[index!]
             }
-            
-           
         }
     }
  
