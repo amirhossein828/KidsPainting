@@ -110,7 +110,7 @@ class UserInformationViewController: UIViewController {
 //            logInButton.isEnabled = true
 //        }
 //        if emailIsCorrect && passwordIsCorrect && !didButtonSignPressed{
-//            logInButton.isEnabled = true
+//            logInButton.isEnabled = true 
 //        }else{
 //            logInButton.isEnabled = false
 //        }
