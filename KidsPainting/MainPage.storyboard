@@ -304,7 +304,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFw-AZ-qHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="4866" y="96"/>
+=======
+            <point key="canvasLocation" x="4583" y="-215"/>
+>>>>>>> 54cadc6eaa7c2a9e2d9405f3014e029e3b80e3a9
         </scene>
         <!--Gallery Collection Collection View Controller-->
         <scene sceneID="YXz-1v-a6x">

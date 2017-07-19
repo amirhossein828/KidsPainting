@@ -43,5 +43,23 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.838121800279-qd52lg7lodjivc7lhbnk4dfpdgvhidfu</string>
+				<string>fb1936703696546244</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>1936703696546244</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
+	<key>FacebookDisplayName</key>
+	<string>KidsPainting</string>
 </dict>
 </plist>
