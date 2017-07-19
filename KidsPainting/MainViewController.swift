@@ -21,16 +21,16 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     
     //var resultData : NSData = NSData()  //NSData is not used
+    var itemToDetail : Item? = nil
+  
+    var resultData : NSData = NSData()
     fileprivate var _refHandle: DatabaseHandle!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Already set by storyboard
-        //self.tableView.delegate = self
-        //self.tableView.dataSource = self
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,18 +54,35 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainTableViewCell
-        
-       
         cell.fullNameField.text     = self.items[indexPath.row].author
+        cell.fullNameField.text = self.items[indexPath.row].author
         cell.nameOfArticleCell.text = self.items[indexPath.row].nameOfArticle
         cell.priceCell.text         = String(self.items[indexPath.row].price)
         
-        
         // downloadImage method is implemented in an extention
         cell.imageViewCell.downloadImage(from: items[indexPath.row].pathToImage)
-        
         return cell
     }
+    
+    
+    // - make rows in table view selectable
+    // - when one row get selected , go to detail page
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         itemToDetail = items[indexPath.row]
+        
+        performSegue(withIdentifier: "goDetail", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goDetail" {
+            let detailVC = segue.destination as! DetailViewController
+            if let itemDetail = self.itemToDetail {
+            detailVC.itemFromMain = itemDetail
+            }
+        }
+    }
+
     
     
     // MARK: Fix cell height to fix appearance cell problem when height
@@ -76,7 +93,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     //-----------------------------------------------------------------------------------
     
-    
+
     override func viewWillAppear(_ animated: Bool) {
         
         // Fetch list of items from firebase backend
@@ -122,7 +139,6 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         // To prevent crashing app if we leave current view controller which is under observation
         ref.removeAllObservers()
     }
-
     override func viewDidDisappear(_ animated: Bool) { items.removeAll() }
     
     
@@ -145,6 +161,7 @@ extension UIImageView {
         
             DispatchQueue.main.async {
                 self.image = UIImage(data: data!)
+                
             }
         }
         task.resume()
