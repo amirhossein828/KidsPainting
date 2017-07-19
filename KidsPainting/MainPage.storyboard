@@ -304,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFw-AZ-qHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4686" y="24"/>
+            <point key="canvasLocation" x="4866" y="96"/>
         </scene>
         <!--Gallery Collection Collection View Controller-->
         <scene sceneID="YXz-1v-a6x">
@@ -379,7 +379,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="OPT-Ly-bh5">
                             <connections>
                                 <action selector="nextBtn:" destination="lMS-j8-KOf" id="zu7-ww-Fi5"/>
-                                <segue destination="JUf-99-qLy" kind="show" identifier="goToNavigationBar" id="cLn-r8-wEH"/>
+                                <segue destination="JUf-99-qLy" kind="show" identifier="goToNavigationBar" id="PCo-Nt-9lf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
