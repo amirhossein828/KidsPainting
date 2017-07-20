@@ -29,6 +29,7 @@
 		966BF2C91F1FE6CE00556C85 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2C61F1FE6CE00556C85 /* UserInformationViewController.swift */; };
 		966BF2CB1F20535500556C85 /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CA1F20535500556C85 /* ServiceApi.swift */; };
 		966BF2CD1F20538900556C85 /* ItemsServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CC1F20538900556C85 /* ItemsServiceApi.swift */; };
+		966BF2D01F205B7D00556C85 /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CF1F205B7D00556C85 /* UIExtentions.swift */; };
 		D37E75E6AA7E8B4978EA614C /* Pods_KidsPainting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		966BF2C61F1FE6CE00556C85 /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		966BF2CA1F20535500556C85 /* ServiceApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
 		966BF2CC1F20538900556C85 /* ItemsServiceApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsServiceApi.swift; sourceTree = "<group>"; };
+		966BF2CF1F205B7D00556C85 /* UIExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtentions.swift; sourceTree = "<group>"; };
 		D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsPainting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -157,6 +159,7 @@
 				966BF2881F16E71300556C85 /* View Controllers */,
 				966BF2871F16E6F000556C85 /* XIBs */,
 				966BF2CE1F2059E100556C85 /* API */,
+				966BF2D11F205B8400556C85 /* Utils */,
 			);
 			path = KidsPainting;
 			sourceTree = "<group>";
@@ -240,6 +243,14 @@
 				966BF2CC1F20538900556C85 /* ItemsServiceApi.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		966BF2D11F205B8400556C85 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				966BF2CF1F205B7D00556C85 /* UIExtentions.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +496,7 @@
 				966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */,
 				966BF28E1F173FC800556C85 /* MainViewController.swift in Sources */,
 				966BF2981F1C5B7400556C85 /* UploadItemViewController.swift in Sources */,
+				966BF2D01F205B7D00556C85 /* UIExtentions.swift in Sources */,
 				966BF2A01F1E5C0800556C85 /* DetailViewController.swift in Sources */,
 				966BF2941F174CAD00556C85 /* Item.swift in Sources */,
 				966BF2901F17450500556C85 /* MainTableViewCell.swift in Sources */,
