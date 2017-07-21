@@ -58,3 +58,17 @@ func upload(media: UIImage, completion: @escaping (_ url: URL) -> Void) {
         }
     }
 }
+
+func downloadUserProfileBy(url: URL, completion: @escaping(_ image: Data) -> Void){
+    let storage = Storage.storage()
+    print("This is the url in the helper class \(url)")
+    let ref = storage.reference(forURL: url.path)
+    ref.getData(maxSize: 1 * 1024 * 1024) { data, error in
+        if let error = error {
+            print("Error while downloading the profile picture, this is the error \(error)")
+        }
+        if let data = data{
+            completion(data)
+        }
+    }
+}

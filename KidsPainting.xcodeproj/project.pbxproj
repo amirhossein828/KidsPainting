@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		04E763971F1FAF5600146FFD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E763961F1FAF5600146FFD /* Login.storyboard */; };
-		1F0078261F1FB805002F297B /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0078231F1FB805002F297B /* UserInformationViewController.swift */; };
-		1F0078271F1FB805002F297B /* CredentialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0078241F1FB805002F297B /* CredentialsViewController.swift */; };
-		1F0078281F1FB805002F297B /* UserCredentialCheckHelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0078251F1FB805002F297B /* UserCredentialCheckHelperClass.swift */; };
+		1F21B3BE1F1FC4F7005A98B2 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21B3BD1F1FC4F7005A98B2 /* UserInformationViewController.swift */; };
+		1F21B3C01F1FC66B005A98B2 /* CredentialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21B3BF1F1FC66B005A98B2 /* CredentialsViewController.swift */; };
+		1F21B3C21F1FC70B005A98B2 /* UserCredentialCheckHelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21B3C11F1FC70B005A98B2 /* UserCredentialCheckHelperClass.swift */; };
 		966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2511F15587E00556C85 /* AppDelegate.swift */; };
 		966BF2591F15587E00556C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2581F15587E00556C85 /* Assets.xcassets */; };
 		966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966BF25A1F15587E00556C85 /* LaunchScreen.storyboard */; };
@@ -49,9 +49,10 @@
 
 /* Begin PBXFileReference section */
 		04E763961F1FAF5600146FFD /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		1F0078231F1FB805002F297B /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInformationViewController.swift; path = ../../../../KidsPainting/KidsPainting/UserInformationViewController.swift; sourceTree = "<group>"; };
-		1F0078241F1FB805002F297B /* CredentialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CredentialsViewController.swift; path = ../../../../KidsPainting/KidsPainting/CredentialsViewController.swift; sourceTree = "<group>"; };
-		1F0078251F1FB805002F297B /* UserCredentialCheckHelperClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCredentialCheckHelperClass.swift; path = ../../../../KidsPainting/KidsPainting/UserCredentialCheckHelperClass.swift; sourceTree = "<group>"; };
+		1F1FCD881F1FFD0400393DB0 /* KidsPainting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsPainting.entitlements; sourceTree = "<group>"; };
+		1F21B3BD1F1FC4F7005A98B2 /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
+		1F21B3BF1F1FC66B005A98B2 /* CredentialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsViewController.swift; sourceTree = "<group>"; };
+		1F21B3C11F1FC70B005A98B2 /* UserCredentialCheckHelperClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCredentialCheckHelperClass.swift; sourceTree = "<group>"; };
 		644285956F7D7794CB257D41 /* Pods-KidsPainting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.debug.xcconfig"; sourceTree = "<group>"; };
 		6BC54C19E581D5790294C84B /* Pods-KidsPainting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.release.xcconfig"; sourceTree = "<group>"; };
 		966BF24E1F15587E00556C85 /* KidsPainting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsPainting.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +148,7 @@
 		966BF2501F15587E00556C85 /* KidsPainting */ = {
 			isa = PBXGroup;
 			children = (
+				1F1FCD881F1FFD0400393DB0 /* KidsPainting.entitlements */,
 				966BF28C1F16E7B400556C85 /* Model */,
 				966BF2891F16E75300556C85 /* General */,
 				966BF28A1F16E78300556C85 /* supporting files */,
@@ -186,9 +188,9 @@
 		966BF2881F16E71300556C85 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1F0078231F1FB805002F297B /* UserInformationViewController.swift */,
-				1F0078241F1FB805002F297B /* CredentialsViewController.swift */,
-				1F0078251F1FB805002F297B /* UserCredentialCheckHelperClass.swift */,
+				1F21B3BD1F1FC4F7005A98B2 /* UserInformationViewController.swift */,
+				1F21B3BF1F1FC66B005A98B2 /* CredentialsViewController.swift */,
+				1F21B3C11F1FC70B005A98B2 /* UserCredentialCheckHelperClass.swift */,
 				966BF2811F16B66600556C85 /* SignUpViewController.swift */,
 				966BF2851F16E2CF00556C85 /* LoginViewController.swift */,
 				966BF28D1F173FC800556C85 /* MainViewController.swift */,
@@ -299,8 +301,13 @@
 				TargetAttributes = {
 					966BF24D1F15587E00556C85 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 68MJJA856T;
+						DevelopmentTeam = KBP8LKVSHF;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					966BF2611F15587E00556C85 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -391,11 +398,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle",
 			);
@@ -460,16 +467,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				966BF2861F16E2CF00556C85 /* LoginViewController.swift in Sources */,
+				1F21B3C01F1FC66B005A98B2 /* CredentialsViewController.swift in Sources */,
 				966BF29C1F1C864300556C85 /* GalleryCollectionViewCell.swift in Sources */,
+				1F21B3C21F1FC70B005A98B2 /* UserCredentialCheckHelperClass.swift in Sources */,
 				966BF29A1F1C667200556C85 /* GalleryCollectionCollectionViewController.swift in Sources */,
-				1F0078281F1FB805002F297B /* UserCredentialCheckHelperClass.swift in Sources */,
 				966BF2821F16B66600556C85 /* SignUpViewController.swift in Sources */,
 				966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */,
 				966BF28E1F173FC800556C85 /* MainViewController.swift in Sources */,
 				966BF2981F1C5B7400556C85 /* UploadItemViewController.swift in Sources */,
-				1F0078271F1FB805002F297B /* CredentialsViewController.swift in Sources */,
+				1F21B3BE1F1FC4F7005A98B2 /* UserInformationViewController.swift in Sources */,
 				966BF2A01F1E5C0800556C85 /* DetailViewController.swift in Sources */,
-				1F0078261F1FB805002F297B /* UserInformationViewController.swift in Sources */,
 				966BF2941F174CAD00556C85 /* Item.swift in Sources */,
 				966BF2901F17450500556C85 /* MainTableViewCell.swift in Sources */,
 			);
@@ -618,8 +625,10 @@
 			baseConfigurationReference = 644285956F7D7794CB257D41 /* Pods-KidsPainting.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 68MJJA856T;
+				CODE_SIGN_ENTITLEMENTS = KidsPainting/KidsPainting.entitlements;
+				DEVELOPMENT_TEAM = KBP8LKVSHF;
 				INFOPLIST_FILE = KidsPainting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amir.KidsPainting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -632,8 +641,10 @@
 			baseConfigurationReference = 6BC54C19E581D5790294C84B /* Pods-KidsPainting.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 68MJJA856T;
+				CODE_SIGN_ENTITLEMENTS = KidsPainting/KidsPainting.entitlements;
+				DEVELOPMENT_TEAM = KBP8LKVSHF;
 				INFOPLIST_FILE = KidsPainting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amir.KidsPainting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
