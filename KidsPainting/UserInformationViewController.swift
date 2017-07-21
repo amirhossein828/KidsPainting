@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UserInformationViewController: UIViewController {
     
@@ -22,8 +23,10 @@ class UserInformationViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var validateButton: UIButton!
     
-    // MARK: - Variables
+    // MARK: - Variables    
+    var firebaseAuth : Auth!
     var nameIsCorrect = false
     var emailIsCorrect = false
     var passwordIsCorrect = false
@@ -33,8 +36,29 @@ class UserInformationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Instanciate the firebse Authentication
+        firebaseAuth = Auth.auth()
+        validateButton.isEnabled = false
         //emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        _ = firebaseAuth.addStateDidChangeListener { (auth, user) in
+            //If the user is sign in then we hide the sign in option
+            if let user = user {
+                self.nameTextField.text = user.displayName
+                self.emailTextField.text = user.email
+                if let photoURL = user.photoURL{
+                    print("this is the url for the user profile picture \(photoURL)")
+                    downloadUserProfileBy(url: photoURL, completion: { (image) in
+                        if let image = UIImage(data: image){
+                            self.profilePictureButton.setImage(image, for: .normal)
+                        }
+                    })
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,48 +95,34 @@ class UserInformationViewController: UIViewController {
      Depending on the tag of the textfield we check if the field pass the
      requierement. The methods checkStenght and
      */
-//    func textFieldDidChange(_ textField: UITextField) {
-//        //This value define the minimum number of caractere that will be accepted for the user name
-//        // 5 is the minimum for firebase
-//        let userNameMinimumValue = 5
-//        
-//        switch textField.tag {
-//        case 1:
-//            if let name = nameTextField.text {
-//                nameIsCorrect = name.characters.count => userNameMinimumValue
-//            }
-//        case 2:
-//            if let password = passwordTextField.text {
-//                passwordIsCorrect = checkStength(password: password)
-//                print(passwordIsCorrect)
-//            }
-//        case 3:
-//            if let userName = userNameTextField.text {
-//                userNameIsCorrect = userName.characters.count >= userNameMinimumValue
-//            }
-//        default:
-//            print("No field are edited")
-//        }
-//        //If email correct then display the password field
-//        if emailIsCorrect {
-//            passwordTextField.isHidden = false
-//        }
-//        //If the password is correct and it the user want to create an account
-//        //then we ask for the user name
-//        if passwordIsCorrect && didButtonSignPressed {
-//            profilePictureButton.isHidden = false
-//            userNameTextField.isHidden = false
-//        }
-//        
-//        if emailIsCorrect && passwordIsCorrect && userNameIsCorrect {
-//            signUpButton.isEnabled = true
-//        }else{
-//            logInButton.isEnabled = true
-//        }
-//        if emailIsCorrect && passwordIsCorrect && !didButtonSignPressed{
-//            logInButton.isEnabled = true 
-//        }else{
-//            logInButton.isEnabled = false
-//        }
- //   }
+    func textFieldDidChange(_ textField: UITextField) {
+        print("The method is called")
+        //This value define the minimum number of caractere that will be accepted for the user name
+        // 5 is the minimum for firebase
+        let userNameMinimumValue = 5
+        
+        switch textField.tag {
+        case 1:
+            if let name = nameTextField.text {
+                nameIsCorrect = name.characters.count >= userNameMinimumValue
+            }
+        case 2:
+            if let password = passwordTextField.text {
+                passwordIsCorrect = checkStength(password: password)
+                print(passwordIsCorrect)
+            }
+        case 3:
+            if let userName = nameTextField.text {
+                nameIsCorrect = userName.characters.count >= userNameMinimumValue
+            }
+        default:
+            print("No field are edited")
+        }
+        
+        if emailIsCorrect && passwordIsCorrect && nameIsCorrect {
+            validateButton.isEnabled = true
+        }else{
+            validateButton.isEnabled = true
+        }
+    }
 }

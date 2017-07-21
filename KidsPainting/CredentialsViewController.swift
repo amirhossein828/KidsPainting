@@ -35,12 +35,13 @@ extension CredentialsViewController: FBSDKLoginButtonDelegate {
         print("Inside the login button method")
         //If the user could not sign in then we have an error
         if let error = error {
+            print("This is the user while sign in with the facebook")
             print(error.localizedDescription)
             return
         }
         //If the user is successfully signed in we store
         if let result = result {
-            print(result)
+            print("This is the result of the facebook sign in decline permission ? = \(result.declinedPermissions) and autorize \(result.grantedPermissions) is cancelled ?= \(result.isCancelled)")
             //We check if the user give the permission to use is personal info from facebook
             if (result.grantedPermissions != nil){
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
@@ -87,6 +88,27 @@ extension CredentialsViewController : GIDSignInUIDelegate {
 extension CredentialsViewController: UINavigationControllerDelegate{
     
 }
+//Extension to hide the keyboard when touch anywhere on the view
+extension UIViewController: UIGestureRecognizerDelegate{
+    func dismissOnTap() {
+        self.view.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.delegate = self
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view is GIDSignInButton {
+            return false
+        }
+        return true
+    }
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+}
 
 class CredentialsViewController: UIViewController{
     
@@ -102,6 +124,8 @@ class CredentialsViewController: UIViewController{
     @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var forgetPasswordButton: UIButton!
     @IBOutlet weak var profilePictureButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     
     //MARK: - Variables
     var firebaseAuth : Auth!
@@ -115,10 +139,14 @@ class CredentialsViewController: UIViewController{
     //MARK: - Application Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        //To hide the keyboard when touch on the view
+        self.dismissOnTap()
         //Instanciate the firebse Authentication
         firebaseAuth = Auth.auth()
-        //Set the password field to be replace by start when typed
-        passwordTextField.isSecureTextEntry = true
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         //Add a target to the TextField, when user enter text on textField the method textFieldDidChange is triggered
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -129,6 +157,9 @@ class CredentialsViewController: UIViewController{
         GIDSignIn.sharedInstance().uiDelegate = self
         //Delegate for facebook logIn
         facebookLoginButton.delegate = self
+        
+        displaySignInMethod(true)
+        displayCredentialFields(false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -143,6 +174,8 @@ class CredentialsViewController: UIViewController{
             }else{
                 self.displaySignInMethod(true)
                 self.displayCredentialFields(false)
+                self.didButtonSignPressed = false
+                self.didButtonLogInPressed = false
             }
         }
     }
@@ -151,6 +184,9 @@ class CredentialsViewController: UIViewController{
         super.didReceiveMemoryWarning()
     }
     
+
+    
+
     //MARK: - Button actions
     
     @IBAction func didGoogleSignInButtonPressed(_ sender: GIDSignInButton) {
@@ -370,5 +406,28 @@ class CredentialsViewController: UIViewController{
         passwordTextField.isHidden = !value
         userNameTextField.isHidden = !value
         profilePictureButton.isHidden = !value
+    }
+    
+    //Boiller plate code to display the textfield on top of the keyboard
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillShow(notification:NSNotification){
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+    }
+    
+    func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
     }
 }
