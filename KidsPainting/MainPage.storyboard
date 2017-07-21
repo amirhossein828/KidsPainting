@@ -383,7 +383,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="OPT-Ly-bh5">
                             <connections>
                                 <action selector="nextBtn:" destination="lMS-j8-KOf" id="zu7-ww-Fi5"/>
-                                <segue destination="JUf-99-qLy" kind="show" identifier="goToNavigationBar" id="cLn-r8-wEH"/>
+                                <segue destination="JUf-99-qLy" kind="show" identifier="goToNavigationBar" id="PCo-Nt-9lf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
