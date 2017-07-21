@@ -16,10 +16,30 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.838121800279-qd52lg7lodjivc7lhbnk4dfpdgvhidfu</string>
+				<string>fb1936703696546244</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>1936703696546244</string>
+	<key>FacebookDisplayName</key>
+	<string>KidsPainting</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,6 +61,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+<<<<<<< HEAD
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
 	<key>CFBundleURLTypes</key>
@@ -93,5 +114,7 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Let us access to your camera so you can take awesome photos</string>
+=======
+>>>>>>> c27c35238f5e300c15d5f539c460eabfc164dfe4
 </dict>
 </plist>
