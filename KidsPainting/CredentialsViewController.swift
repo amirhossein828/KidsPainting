@@ -367,6 +367,9 @@ class CredentialsViewController: UIViewController{
                                 print("error while adding the user display name and the profile picture url \(error)")
                             } else {
                                 print("The user is now up to date")
+                                //Launch the main page
+                                let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "navigationPage")
+                                self.present(vc, animated: true, completion: nil)
                             }
                         }
                     })
