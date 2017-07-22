@@ -71,7 +71,7 @@ extension CredentialsViewController: FBSDKLoginButtonDelegate {
 }
 
 //Extension for the google sing in protocol
-extension CredentialsViewController : GIDSignInDelegate, GIDSignInUIDelegate {
+extension CredentialsViewController : GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
         if let error = error {
@@ -89,20 +89,25 @@ extension CredentialsViewController : GIDSignInDelegate, GIDSignInUIDelegate {
             }
             // User is signed in
             // ...
-            if let signedUser = user{
+            if user != nil{
                             let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "mainPage")
                             self.present(vc, animated: true, completion: nil)
-                print("This is the firebase user signed with google \(signedUser.displayName)")
             }
         }
     }
 }
 
-//This protocol is nedded in order to use facebook and google sing in
-//because this page use the navigation
+//To dispaly Google sign in in page
+extension CredentialsViewController: GIDSignInUIDelegate{
+    
+}
+
+//This protocol is nedded in order to use navigation bar in facebook and google sing page
 extension CredentialsViewController: UINavigationControllerDelegate{
     
 }
+
+
 //Extension to hide the keyboard when touch anywhere on the view
 extension UIViewController: UIGestureRecognizerDelegate{
     func dismissOnTap() {
@@ -113,6 +118,7 @@ extension UIViewController: UIGestureRecognizerDelegate{
         self.view.addGestureRecognizer(tap)
     }
     
+    // If user touched Google sign in view, do not hide the keyboard; just ignor it, so didGoogleSignInButtonPressed will be run
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if touch.view is GIDSignInButton {
             return false
@@ -124,6 +130,7 @@ extension UIViewController: UIGestureRecognizerDelegate{
         self.view.endEditing(true)
     }
 }
+
 
 class CredentialsViewController: UIViewController{
     
@@ -161,6 +168,7 @@ class CredentialsViewController: UIViewController{
         //Delegate for google sign in
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -230,7 +238,7 @@ class CredentialsViewController: UIViewController{
         signUpButton.isHidden = true
         emailTextField.isHidden = false
         if didButtonLogInPressed {
-            logUser()
+            logInUser()
         }
         didButtonLogInPressed = true
     }
@@ -379,7 +387,7 @@ class CredentialsViewController: UIViewController{
     }
     
     //Method to log in user using firebase
-    func logUser(){
+    func logInUser(){
         //Check if the email and the password are not nil
         guard let email = emailTextField.text,
             let password = passwordTextField.text

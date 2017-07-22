@@ -46,11 +46,11 @@ func checkStength(password: String) -> Bool{
 func upload(media: UIImage, completion: @escaping (_ url: URL) -> Void) {
     let storageRef = Storage.storage().reference().child("users").child("test.jpg")
     if let imageToUpload = UIImageJPEGRepresentation(media, 1.0){
-        storageRef.putData(imageToUpload, metadata: nil) { (metaData, error) in
+        storageRef.putData(imageToUpload, metadata: nil) { (backendData, error) in
             if let error = error{
                 print("Error while uploading the media, this is the error \(error)")
             }
-            if let storageMetaData = metaData{
+            if let storageMetaData = backendData{
                 if let url = storageMetaData.downloadURL(){
                     completion(url)
                 }
