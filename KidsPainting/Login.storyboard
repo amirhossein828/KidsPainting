@@ -13,7 +13,7 @@
         <!--Credentials View Controller-->
         <scene sceneID="KjF-dh-3lM">
             <objects>
-                <viewController id="08S-i3-QPE" customClass="CredentialsViewController" customModule="KidsPainting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="credentialViewController" id="08S-i3-QPE" customClass="CredentialsViewController" customModule="KidsPainting" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JSY-VU-eW1"/>
                         <viewControllerLayoutGuide type="bottom" id="tv8-2Z-NSe"/>

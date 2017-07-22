@@ -17,14 +17,13 @@ class ItemsServiceApi : ServiceApi{
     
     // get Info from firebase data base
     func getAllItemsFrimFireBaseDataBase(complition : @escaping ([Item]) -> Void){
-        
+        print("Inside the getAllItems ...")
         // Fetch list of items from firebase backend
         ref = Database.database().reference()
         
         // Access "posts" object in backend if it does not exist
-        ref.child("posts").observeSingleEvent(of: .value)
-        { (dataSnap : DataSnapshot) in
-            
+        ref.child("posts").observeSingleEvent(of: .value){ (dataSnap : DataSnapshot) in
+            print("inside the observerSingleEvent")
             let value = dataSnap.value as? NSDictionary
             print(value as Any)
             

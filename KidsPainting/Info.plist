@@ -61,7 +61,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-<<<<<<< HEAD
+
+<!--Florian part added for camera access and facebook auth-->
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
 	<key>CFBundleURLTypes</key>
@@ -114,7 +115,5 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Let us access to your camera so you can take awesome photos</string>
-=======
->>>>>>> c27c35238f5e300c15d5f539c460eabfc164dfe4
 </dict>
 </plist>

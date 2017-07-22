@@ -60,10 +60,13 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         cell.priceCell.text         = String(self.items[indexPath.row].price)
         
         // downloadImage method is implemented in an extention
-        cell.imageViewCell.downloadImage(from: items[indexPath.row].pathToImage)
+        downloadImageFrom(items[indexPath.row].pathToImage) { (dataImage) in
+            if let dataImage = dataImage{
+                cell.imageViewCell.image = UIImage(data:dataImage,scale:1.0)
+            }
+        }
         return cell
     }
-    
     
     // - make rows in table view selectable
     // - when one row get selected , go to detail page
@@ -95,13 +98,25 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
 
     override func viewWillAppear(_ animated: Bool) {
+        //In order to check if the user is sign in when display the page
+        _ = Auth.auth().addStateDidChangeListener { (auth, user) in
+            //If the user is sign in then we hide the sign in option
+            if user != nil{
+                print("The user is not nil \(user?.email)")
+                //If the user is not sign in then we display the sign in option
+            }else{
+                print("The user is nil")
+            }
+        }
+        
+        print("Inside the view will appear")
         // get Info from firebase data base and put in arrayList
         let serviceApi = ItemsServiceApi()
         serviceApi.getAllItemsFrimFireBaseDataBase { (allItems) in
+            print("Set the items")
             self.items = allItems
             self.tableView.reloadData()
         }
-        
     }
     override func viewDidDisappear(_ animated: Bool) { items.removeAll() }
     

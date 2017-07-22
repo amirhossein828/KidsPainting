@@ -71,14 +71,29 @@ extension CredentialsViewController: FBSDKLoginButtonDelegate {
 }
 
 //Extension for the google sing in protocol
-extension CredentialsViewController : GIDSignInUIDelegate {
-    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-        //Check if the user signed in
-        if (signIn.currentUser) != nil{
-            print("We should move to the next page")
-            //If yes we move to the main page
-            let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "mainPage")
-            self.present(vc, animated: true, completion: nil)
+extension CredentialsViewController : GIDSignInDelegate, GIDSignInUIDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        // ...
+        if let error = error {
+            print("error while sign in with google \(error)")
+            return
+        }
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                print("This is the error while sign in with firebase \(error)")
+                return
+            }
+            // User is signed in
+            // ...
+            if let signedUser = user{
+                            let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "mainPage")
+                            self.present(vc, animated: true, completion: nil)
+                print("This is the firebase user signed with google \(signedUser.displayName)")
+            }
         }
     }
 }
@@ -143,7 +158,9 @@ class CredentialsViewController: UIViewController{
         self.dismissOnTap()
         //Instanciate the firebse Authentication
         firebaseAuth = Auth.auth()
-        
+        //Delegate for google sign in
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -153,8 +170,6 @@ class CredentialsViewController: UIViewController{
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         userNameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
-        //Delegate for google sign in
-        GIDSignIn.sharedInstance().uiDelegate = self
         //Delegate for facebook logIn
         facebookLoginButton.delegate = self
         
@@ -183,9 +198,6 @@ class CredentialsViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
-    
 
     //MARK: - Button actions
     
@@ -426,7 +438,6 @@ class CredentialsViewController: UIViewController{
     }
     
     func keyboardWillHide(notification:NSNotification){
-        
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
     }

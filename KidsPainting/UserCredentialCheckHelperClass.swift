@@ -72,3 +72,16 @@ func downloadUserProfileBy(url: URL, completion: @escaping(_ image: Data) -> Voi
         }
     }
 }
+//Function that take a string containing the url and an escaping closure that get the image data
+func downloadImageFrom(_ urlString: String,completion: @escaping (_ data: Data?) -> Void) {
+    guard let url = URL(string: urlString) else{return}
+    let urlRequest = URLRequest(url: url)
+    let task = URLSession.shared.dataTask(with: urlRequest){ (data, response, error) in
+        if let error = error {
+            print("Error while downloading the image from firebase \(error)")
+            return
+        }
+        completion(data)
+    }
+    task.resume()
+}
