@@ -344,7 +344,7 @@ class CredentialsViewController: UIViewController{
             return
         }
         //We create the firebase user using the value from the fields
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+        firebaseAuth.createUser(withEmail: email, password: password, completion: { (user, error) in
             if error != nil{
                 print("Something wrong when creating the user")
             }
