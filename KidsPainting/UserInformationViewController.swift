@@ -47,6 +47,7 @@ class UserInformationViewController: UIViewController {
         _ = firebaseAuth.addStateDidChangeListener { (auth, user) in
             //If the user is sign in then we hide the sign in option
             if let user = user {
+                
                 self.nameTextField.text = user.displayName
                 self.emailTextField.text = user.email
                 if let photoURL = user.photoURL{
