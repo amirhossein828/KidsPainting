@@ -58,13 +58,13 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         cell.fullNameField.text = self.items[indexPath.row].author
         cell.nameOfArticleCell.text = self.items[indexPath.row].nameOfArticle
         cell.priceCell.text         = String(self.items[indexPath.row].price)
-        
+        cell.imageViewCell.downloadImage(from: items[indexPath.row].pathToImage)
         // downloadImage method is implemented in an extention
-        downloadImageFrom(items[indexPath.row].pathToImage) { (dataImage) in
-            if let dataImage = dataImage{
-                cell.imageViewCell.image = UIImage(data:dataImage,scale:1.0)
-            }
-        }
+//        downloadImageFrom(items[indexPath.row].pathToImage) { (dataImage) in
+//            if let dataImage = dataImage{
+//                cell.imageViewCell.image = UIImage(data:dataImage,scale:1.0)
+//            }
+//        }
         return cell
     }
     
