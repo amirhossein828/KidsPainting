@@ -25,11 +25,12 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        downloadImageFrom(itemFromMain.pathToImage) { (data) in
-            if let data = data{
-                self.detailImg.image = UIImage(data: data)
-            }
-        }
+        detailImg.downloadImage(from: itemFromMain.pathToImage)
+//        downloadImageFrom(itemFromMain.pathToImage) { (data) in
+//            if let data = data{
+//                self.detailImg.image = UIImage(data: data)
+//            }
+//        }
         self.priceImg.text = String(itemFromMain.price)
         self.nameOfAuther.text = itemFromMain.author
         self.nameOfRticleDetail.text = itemFromMain.nameOfArticle

@@ -10,4 +10,5 @@ import Foundation
 // Protocol for API implementaion
 protocol ServiceApi {
     func getAllItemsFrimFireBaseDataBase(complition : @escaping ([Item]) -> Void)
+//    func putItemInFireBaseDataBase()
 }

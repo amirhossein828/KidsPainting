@@ -62,5 +62,9 @@ class ItemsServiceApi : ServiceApi{
         ref.removeAllObservers()
     
     }
+    
+    func putItemInFireBaseDataBase(uploadImageView : UIImageView,complition : ((StorageMetadata?, Error?) -> Void)?) {
+
+    }
    
 }
