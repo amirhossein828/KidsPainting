@@ -16,10 +16,10 @@ class Item: NSObject {
     var price: Double!
     
     
-    // Attributes that are not used yet
     var userID: String!
     var postID: String!
     
+    // Attributes that are not used yet
     var numberOfAvilable: Int!
     var likes: Int!
     var peopleWhoLike: [String] = [String]()
