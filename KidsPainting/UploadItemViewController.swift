@@ -61,11 +61,14 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
     
     @IBAction func shareBtn(_ sender: UIButton)
     {
+        var item = Item()
         guard
             let nameOfArticle = nameofArticleField.text ,
             let price = priceField.text
             
             else { return }
+        let currentDate = Date()
+        let currentdateString =
         
         // Start spinner
         activityIndicator.startAnimating()
@@ -109,6 +112,14 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                 
                 // 9- If url to uploaded image exist
                 if let url = url {
+                    item.userID = uid
+                    item.pathToImage = url.absoluteString
+                    item.likes = 0
+                    item.author = Auth.auth().currentUser!.displayName!
+                    item.postID = key
+                    item.nameOfArticle = nameOfArticle
+                 //   item.price = price
+                    Item.dateToString(currentDate)
                     
                     // 10- Make dictionary of "posts" object attributes and corresponding keys in backed
                     let feed =
@@ -119,7 +130,8 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                             "author" : Auth.auth().currentUser!.displayName!,
                             "postID" : key,
                             "nameOfArticle" : nameOfArticle,
-                            "price" : price
+                            "price" : price,
+                            "currentDate" : Item.dateToString(currentDate)
                         ] as [String : Any]
                     
                     let postFeed = ["\(key)" : feed]
