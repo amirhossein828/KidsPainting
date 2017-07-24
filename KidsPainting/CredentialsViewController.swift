@@ -367,7 +367,7 @@ class CredentialsViewController: UIViewController{
                     let changeRequest = user.createProfileChangeRequest()
                     changeRequest.displayName = userDisplayName
                     //Upload the image into firebase storage and store the url into the user
-                    upload(media: image, completion: { (url) in
+                    upload(media: image, withName: "\(user.email)/\(NSDate().timeIntervalSince1970 * 1000)", completion: { (url) in
                         print("This is the url for the profile picture of the user \(url)")
                         changeRequest.photoURL = url
                         changeRequest.commitChanges { error in
