@@ -52,6 +52,8 @@ class ItemsServiceApi : ServiceApi{
                 item.pathToImage = answer["pathToImage"] as! String
                 item.nameOfArticle = answer["nameOfArticle"] as! String
                 item.price = Double(answer["price"] as! String)
+                let StringDate = answer["currentDate"] as! String
+                item.timeOfCreation = Item.dateFromString(StringDate)
                 
                 self.items.append(item)
             }

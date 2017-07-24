@@ -117,6 +117,8 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         serviceApi.getAllItemsFrimFireBaseDataBase { (allItems) in
             print("Set the items")
             self.items = allItems
+            self.items.sort(by: { $1.timeOfCreation < $0.timeOfCreation
+            })
             self.tableView.reloadData()
         }
     }
