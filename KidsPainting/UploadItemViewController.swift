@@ -84,7 +84,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
         let ref = Database.database().reference()
         let storage = Storage.storage().reference(forURL: "gs://kidspainting-33316.appspot.com")
         
-        // 3- Create a storage child (posts) with Auto increment ID: storage/posts                                           ?????
+        // 3- Create a database child (posts) with Auto increment ID: database/posts/key for each post
         let key = ref.child("posts").childByAutoId().key
         
         // 4- Locate image object in backend DB: storage/posts/uid/key.jpg
@@ -93,7 +93,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
         // 5- Convert image format to data format with compresstion rate 0.1
         let data = UIImageJPEGRepresentation(self.uploadImageView.image!, 0.1)
         
-        // 6- Upload image to backend database
+        // 6- Upload image to backend storage
         let uploadTask = imageRef.putData(data!, metadata: nil) { (metadata, error) in
             if error != nil {
                 print(error!.localizedDescription)
@@ -126,7 +126,6 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                     
                     // 11- Reference to Firebase DB: write data to backend as user object child with uid and userInfo dictionary
                     ref.child("posts").updateChildValues(postFeed)
-                    
                     // 12-  Stop activityIndicator or spinner
                     self.activityIndicator.stopAnimating()
                     

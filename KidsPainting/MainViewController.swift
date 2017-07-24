@@ -17,6 +17,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     //MARK: - Properties
     var items = [Item]()
     var ref: DatabaseReference!
+    var user : User!
 
     
     
@@ -91,7 +92,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     // MARK: Fix cell height to fix appearance cell problem when height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 100.0; //Choose your custom row height
+        return 140; //Choose your custom row height
     }
     
     //-----------------------------------------------------------------------------------
@@ -101,8 +102,9 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         //In order to check if the user is sign in when display the page
         _ = Auth.auth().addStateDidChangeListener { (auth, user) in
             //If the user is sign in then we hide the sign in option
-            if user != nil{
-                print("The user is not nil \(user?.email)")
+            if let user = user{
+                print("The user is not nil \(user.email)")
+                self.user = user
                 //If the user is not sign in then we display the sign in option
             }else{
                 print("The user is nil")
