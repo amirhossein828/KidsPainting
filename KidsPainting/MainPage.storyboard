@@ -38,10 +38,9 @@
                                             <constraint firstAttribute="height" constant="1000" id="esv-DL-Qlk"/>
                                         </constraints>
                                     </view>
-                                    <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HAd-30-6zX">
+                                    <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HAd-30-6zX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="LJO-wH-8Ia">
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LJO-wH-8Ia">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -125,8 +124,12 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="X6p-Pr-kxo" firstAttribute="leading" secondItem="NrV-yV-YXI" secondAttribute="leading" id="MiE-NO-8WQ"/>
+                                    <constraint firstItem="HAd-30-6zX" firstAttribute="leading" secondItem="NrV-yV-YXI" secondAttribute="leading" id="Oxt-BY-PVE"/>
+                                    <constraint firstAttribute="bottom" secondItem="HAd-30-6zX" secondAttribute="bottom" constant="-64" id="SC0-S8-j4j"/>
                                     <constraint firstItem="X6p-Pr-kxo" firstAttribute="top" secondItem="NrV-yV-YXI" secondAttribute="top" id="WGQ-hU-7QK"/>
                                     <constraint firstAttribute="bottom" secondItem="X6p-Pr-kxo" secondAttribute="bottom" id="gOK-jB-vO8"/>
+                                    <constraint firstItem="HAd-30-6zX" firstAttribute="top" secondItem="NrV-yV-YXI" secondAttribute="top" constant="64" id="hBh-3G-lJV"/>
+                                    <constraint firstAttribute="trailing" secondItem="HAd-30-6zX" secondAttribute="trailing" id="jcG-tg-oYM"/>
                                     <constraint firstAttribute="trailing" secondItem="X6p-Pr-kxo" secondAttribute="trailing" id="uh4-gc-civ"/>
                                 </constraints>
                             </scrollView>
@@ -144,6 +147,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="detailImg" destination="buS-dm-uGq" id="Mv6-yV-ode"/>
+                        <outlet property="giveRatingOutlet" destination="uNk-iD-VpT" id="688-Ko-mwN"/>
                         <outlet property="nameOfAuther" destination="IS7-Zc-yzc" id="Os7-9h-JBR"/>
                         <outlet property="nameOfRticleDetail" destination="Ez7-eO-NyH" id="R2Y-P6-fC7"/>
                         <outlet property="priceImg" destination="FYA-yb-ga8" id="mY9-9U-Kqv"/>
