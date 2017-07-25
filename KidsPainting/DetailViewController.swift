@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopUpDelegate{
     
     @IBOutlet weak var detailImg: UIImageView!
     
+    
+    @IBOutlet weak var giveRatingOutlet: UIButton!
     
     @IBOutlet weak var priceImg: UILabel!
     
@@ -51,6 +54,10 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
         self.priceImg.text = String(itemFromMain.price)
         self.nameOfAuther.text = itemFromMain.author
         self.nameOfRticleDetail.text = itemFromMain.nameOfArticle
+        // user just can rate other items (not his items)
+        if String((Auth.auth().currentUser?.uid)!) == itemFromMain.userID {
+            giveRatingOutlet.isEnabled = false
+        }
         
        
     }
