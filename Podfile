@@ -18,5 +18,7 @@ pod 'GoogleSignIn'
 
 pod 'SwiftyJSON'
 
+pod 'FloatRatingView', '~> 2.0.0'
+
 target 'KidsPainting' do
 end

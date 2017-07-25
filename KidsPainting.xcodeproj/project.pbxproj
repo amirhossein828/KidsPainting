@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04E763971F1FAF5600146FFD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E763961F1FAF5600146FFD /* Login.storyboard */; };
 		1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */; };
+		962FFDA21F24EB86006276CD /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CF1F205B7D00556C85 /* UIExtentions.swift */; };
 		966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2511F15587E00556C85 /* AppDelegate.swift */; };
 		966BF2591F15587E00556C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2581F15587E00556C85 /* Assets.xcassets */; };
 		966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966BF25A1F15587E00556C85 /* LaunchScreen.storyboard */; };
@@ -29,6 +30,8 @@
 		966BF2C81F1FE6CE00556C85 /* UserCredentialCheckHelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2C51F1FE6CE00556C85 /* UserCredentialCheckHelperClass.swift */; };
 		966BF2CB1F20535500556C85 /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CA1F20535500556C85 /* ServiceApi.swift */; };
 		966BF2CD1F20538900556C85 /* ItemsServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CC1F20538900556C85 /* ItemsServiceApi.swift */; };
+		96A989B91F26AF7D009A4E42 /* RatingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A989B81F26AF7D009A4E42 /* RatingPopUpViewController.swift */; };
+		96A989BB1F26B096009A4E42 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A989BA1F26B096009A4E42 /* FloatRatingView.swift */; };
 		D37E75E6AA7E8B4978EA614C /* Pods_KidsPainting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +85,8 @@
 		966BF2CA1F20535500556C85 /* ServiceApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
 		966BF2CC1F20538900556C85 /* ItemsServiceApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsServiceApi.swift; sourceTree = "<group>"; };
 		966BF2CF1F205B7D00556C85 /* UIExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtentions.swift; sourceTree = "<group>"; };
+		96A989B81F26AF7D009A4E42 /* RatingPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingPopUpViewController.swift; sourceTree = "<group>"; };
+		96A989BA1F26B096009A4E42 /* FloatRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatRatingView.swift; path = Pods/FloatRatingView/FloatRatingView.swift; sourceTree = "<group>"; };
 		D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsPainting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,6 +136,7 @@
 		966BF2451F15587D00556C85 = {
 			isa = PBXGroup;
 			children = (
+				96A989BA1F26B096009A4E42 /* FloatRatingView.swift */,
 				966BF2501F15587E00556C85 /* KidsPainting */,
 				966BF2651F15587E00556C85 /* KidsPaintingTests */,
 				966BF2701F15587E00556C85 /* KidsPaintingUITests */,
@@ -197,7 +203,6 @@
 			children = (
 				966BF2C41F1FE6CE00556C85 /* CredentialsViewController.swift */,
 				1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */,
-				966BF2C51F1FE6CE00556C85 /* UserCredentialCheckHelperClass.swift */,
 				966BF2811F16B66600556C85 /* SignUpViewController.swift */,
 				966BF2851F16E2CF00556C85 /* LoginViewController.swift */,
 				966BF28D1F173FC800556C85 /* MainViewController.swift */,
@@ -206,6 +211,7 @@
 				966BF2991F1C667200556C85 /* GalleryCollectionCollectionViewController.swift */,
 				966BF29B1F1C864300556C85 /* GalleryCollectionViewCell.swift */,
 				966BF29F1F1E5C0700556C85 /* DetailViewController.swift */,
+				96A989B81F26AF7D009A4E42 /* RatingPopUpViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 		966BF2D11F205B8400556C85 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				966BF2C51F1FE6CE00556C85 /* UserCredentialCheckHelperClass.swift */,
 				966BF2CF1F205B7D00556C85 /* UIExtentions.swift */,
 			);
 			name = Utils;
@@ -490,11 +497,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A989BB1F26B096009A4E42 /* FloatRatingView.swift in Sources */,
 				966BF2861F16E2CF00556C85 /* LoginViewController.swift in Sources */,
 				966BF2C71F1FE6CE00556C85 /* CredentialsViewController.swift in Sources */,
 				1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */,
 				966BF2CB1F20535500556C85 /* ServiceApi.swift in Sources */,
 				966BF29C1F1C864300556C85 /* GalleryCollectionViewCell.swift in Sources */,
+				96A989B91F26AF7D009A4E42 /* RatingPopUpViewController.swift in Sources */,
 				966BF2CD1F20538900556C85 /* ItemsServiceApi.swift in Sources */,
 				966BF29A1F1C667200556C85 /* GalleryCollectionCollectionViewController.swift in Sources */,
 				966BF2C81F1FE6CE00556C85 /* UserCredentialCheckHelperClass.swift in Sources */,
@@ -502,6 +511,7 @@
 				966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */,
 				966BF28E1F173FC800556C85 /* MainViewController.swift in Sources */,
 				966BF2981F1C5B7400556C85 /* UploadItemViewController.swift in Sources */,
+				962FFDA21F24EB86006276CD /* UIExtentions.swift in Sources */,
 				966BF2A01F1E5C0800556C85 /* DetailViewController.swift in Sources */,
 				966BF2941F174CAD00556C85 /* Item.swift in Sources */,
 				966BF2901F17450500556C85 /* MainTableViewCell.swift in Sources */,
