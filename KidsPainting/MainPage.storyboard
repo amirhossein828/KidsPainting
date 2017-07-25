@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -118,7 +118,19 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKu-mm-BiZ">
+                                                    <rect key="frame" x="19" y="817" width="348" height="30"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Write a review">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hKu-mm-BiZ" firstAttribute="leading" secondItem="LJO-wH-8Ia" secondAttribute="leading" id="awZ-Bg-nFz"/>
+                                                <constraint firstAttribute="bottom" secondItem="hKu-mm-BiZ" secondAttribute="bottom" constant="150" id="eWY-qp-2px"/>
+                                                <constraint firstAttribute="trailing" secondItem="hKu-mm-BiZ" secondAttribute="trailing" id="pKI-xx-b91"/>
+                                            </constraints>
                                         </view>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
@@ -222,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekX-47-RQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2022" y="-840"/>
+            <point key="canvasLocation" x="2046" y="-1071"/>
         </scene>
         <!--Items-->
         <scene sceneID="gz3-xx-jnG">
