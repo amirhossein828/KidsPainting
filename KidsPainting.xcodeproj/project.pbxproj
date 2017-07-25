@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046F8ED31F27A8A100652CD3 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED21F27A8A100652CD3 /* ReviewViewController.swift */; };
+		046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED41F27D1FB00652CD3 /* Review.swift */; };
 		04E763971F1FAF5600146FFD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E763961F1FAF5600146FFD /* Login.storyboard */; };
 		1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */; };
 		962FFDA21F24EB86006276CD /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CF1F205B7D00556C85 /* UIExtentions.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		046F8ED21F27A8A100652CD3 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		046F8ED41F27D1FB00652CD3 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		04E763961F1FAF5600146FFD /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1F1FCD881F1FFD0400393DB0 /* KidsPainting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsPainting.entitlements; sourceTree = "<group>"; };
 		1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 				966BF2C41F1FE6CE00556C85 /* CredentialsViewController.swift */,
 				1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */,
 				966BF2811F16B66600556C85 /* SignUpViewController.swift */,
+				046F8ED21F27A8A100652CD3 /* ReviewViewController.swift */,
 				966BF2851F16E2CF00556C85 /* LoginViewController.swift */,
 				966BF28D1F173FC800556C85 /* MainViewController.swift */,
 				966BF28F1F17450500556C85 /* MainTableViewCell.swift */,
@@ -239,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				966BF2931F174CAD00556C85 /* Item.swift */,
+				046F8ED41F27D1FB00652CD3 /* Review.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -499,8 +505,10 @@
 			files = (
 				96A989BB1F26B096009A4E42 /* FloatRatingView.swift in Sources */,
 				966BF2861F16E2CF00556C85 /* LoginViewController.swift in Sources */,
+				046F8ED31F27A8A100652CD3 /* ReviewViewController.swift in Sources */,
 				966BF2C71F1FE6CE00556C85 /* CredentialsViewController.swift in Sources */,
 				1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */,
+				046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */,
 				966BF2CB1F20535500556C85 /* ServiceApi.swift in Sources */,
 				966BF29C1F1C864300556C85 /* GalleryCollectionViewCell.swift in Sources */,
 				96A989B91F26AF7D009A4E42 /* RatingPopUpViewController.swift in Sources */,

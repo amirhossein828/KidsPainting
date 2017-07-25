@@ -93,9 +93,16 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
         if segue.identifier == "detailToPop" {
             let vc = segue.destination as! RatingPopUpViewController
             vc.delegate = self
-            
         }
+        // Pass itemFromMain to review page
+        else if segue.identifier == "goToReview" {
+            let vc = segue.destination as! ReviewViewController
+            vc.currentItem = itemFromMain
+        }
+        
     }
+    
+  
 
 }
 
