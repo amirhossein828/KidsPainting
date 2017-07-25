@@ -64,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FloatRatingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMOAuth2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -112,12 +117,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>15DBF612697154C91ED4765856339727</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2EFAB241B0592A1CB4A0AAE59C9F8AE1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>332F91393FB1DE033D370B4CEDDD5FCF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>3380590F973AFAFA30255D504B7DEDAC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3C813353DE33EEEA8DDF67BF07BE44EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,22 +172,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8655A66A7E0C5C6D676F8E3FAC5D41C3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A1C076767748CE5564306EF3E4C9F3C1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>A7FEAA14E89971698ACA148F7F7202F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF42AB442E68A473B7BA49D445E44596</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,12 +197,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DDF8C15CD108D85F2842CB25C6054560</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E0A53AD0C93AD4E2F6A7A008CA5D1DD5</key>
+		<key>E10250FECAFAA00B2CAAF40A7178BE26</key>
 		<dict>
 			<key>primary</key>
 			<true/>
