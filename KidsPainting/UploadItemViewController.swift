@@ -68,7 +68,6 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
             
             else { return }
         let currentDate = Date()
-        let currentdateString =
         
         // Start spinner
         activityIndicator.startAnimating()

@@ -203,7 +203,6 @@
 			children = (
 				966BF2C41F1FE6CE00556C85 /* CredentialsViewController.swift */,
 				1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */,
-				966BF2C51F1FE6CE00556C85 /* UserCredentialCheckHelperClass.swift */,
 				966BF2811F16B66600556C85 /* SignUpViewController.swift */,
 				966BF2851F16E2CF00556C85 /* LoginViewController.swift */,
 				966BF28D1F173FC800556C85 /* MainViewController.swift */,
@@ -256,6 +255,7 @@
 		966BF2D11F205B8400556C85 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				966BF2C51F1FE6CE00556C85 /* UserCredentialCheckHelperClass.swift */,
 				966BF2CF1F205B7D00556C85 /* UIExtentions.swift */,
 			);
 			name = Utils;

@@ -70,10 +70,11 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         
     }
+    
     func upDateRating(newRating: Float) {
         
         // - get the itemRating for this post and calculate new rating for this post
-        
+        // increate number of user who did rating
         self.itemFromMain.numberOfPeopleWhoDidRating =
             self.itemFromMain.numberOfPeopleWhoDidRating + 1
         var calculatedRating : Float {
