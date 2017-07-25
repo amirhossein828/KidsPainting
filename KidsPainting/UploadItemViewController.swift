@@ -125,6 +125,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                     let postFeed = ["\(key)" : feed]
                     
                     // 11- Reference to Firebase DB: write data to backend as user object child with uid and userInfo dictionary
+                    // This method will add our new post to backend DB
                     ref.child("posts").updateChildValues(postFeed)
                     
                     // 12-  Stop activityIndicator or spinner
