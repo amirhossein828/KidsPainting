@@ -54,6 +54,9 @@ class ItemsServiceApi : ServiceApi{
                 item.price = Double(answer["price"] as! String)
                 let StringDate = answer["currentDate"] as! String
                 item.timeOfCreation = Item.dateFromString(StringDate)
+                item.postID = answer["postID"] as! String
+                item.itemRating = Float(answer["itemRating"] as! NSNumber)
+                item.numberOfPeopleWhoDidRating = answer["numberOfPeopleWhoDidRating"] as! Int
                 
                 self.items.append(item)
             }
@@ -68,5 +71,14 @@ class ItemsServiceApi : ServiceApi{
     func putItemInFireBaseDataBase(uploadImageView : UIImageView,complition : ((StorageMetadata?, Error?) -> Void)?) {
 
     }
+    
+    // update rating and numberOfPeopleWhoDidRating in fireBase database
+    func updateRatingOfItem(postKey : String, rating : Float, numOfPeople : Int){
+        ref = Database.database().reference()
+        self.ref.child("posts/\(postKey)/itemRating").setValue(rating)
+        self.ref.child("posts/\(postKey)/numberOfPeopleWhoDidRating").setValue(numOfPeople)
+    }
+
    
 }
+

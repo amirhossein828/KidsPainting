@@ -24,7 +24,13 @@ class Item: NSObject {
     var likes: Int!
     var peopleWhoLike: [String] = [String]()
     var timeOfCreation : Date!
-    var itemRating : Float!
+    var itemRating : Float
+    var numberOfPeopleWhoDidRating : Int
+    
+    override init() {
+        self.itemRating = 0
+        self.numberOfPeopleWhoDidRating = 0
+    }
 }
 
 extension Item {
