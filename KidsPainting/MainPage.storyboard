@@ -119,11 +119,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKu-mm-BiZ">
-                                                    <rect key="frame" x="19" y="817" width="348" height="30"/>
+                                                    <rect key="frame" x="42" y="817" width="302" height="30"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="Write a review">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="UgN-SQ-U2e" kind="presentation" identifier="goToReview" id="gpp-GB-YhU"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -164,7 +167,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PP1-5V-xme" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="-905.84707646176923"/>
+            <point key="canvasLocation" x="2022" y="-1206"/>
+        </scene>
+        <!--Review-->
+        <scene sceneID="rl7-9r-YHW">
+            <objects>
+                <viewController title="Review" id="UgN-SQ-U2e" customClass="ReviewViewController" customModule="KidsPainting" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j4a-WV-f4b"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mnq-7A-WOQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wSl-4P-my1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-235767" translatesAutoresizingMaskIntoConstraints="NO" id="sFL-KY-8M2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9n-Uf-T3A">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gmI-HF-Z6e">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pag-cM-ZFJ">
+                                            <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Submit">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="submitReview:" destination="UgN-SQ-U2e" eventType="touchUpInside" id="Djw-QC-l1f"/>
+                                            </connections>
+                                        </button>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write your review" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVa-7m-NcK">
+                                            <rect key="frame" x="16" y="36" width="343" height="252"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEw-4s-SVD">
+                                            <rect key="frame" x="16" y="376" width="343" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Take a Photo">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sFL-KY-8M2" firstAttribute="top" secondItem="wSl-4P-my1" secondAttribute="top" id="2eu-9a-LnT"/>
+                            <constraint firstItem="Mnq-7A-WOQ" firstAttribute="top" secondItem="h9n-Uf-T3A" secondAttribute="bottom" id="7VD-tq-Szs"/>
+                            <constraint firstItem="h9n-Uf-T3A" firstAttribute="top" secondItem="wSl-4P-my1" secondAttribute="top" id="Dec-pH-VSX"/>
+                            <constraint firstItem="Mnq-7A-WOQ" firstAttribute="top" secondItem="sFL-KY-8M2" secondAttribute="bottom" id="Zw7-Xe-i8e"/>
+                            <constraint firstItem="sFL-KY-8M2" firstAttribute="leading" secondItem="wSl-4P-my1" secondAttribute="leading" id="bNz-ZM-xQJ"/>
+                            <constraint firstItem="h9n-Uf-T3A" firstAttribute="leading" secondItem="wSl-4P-my1" secondAttribute="leading" id="cIf-0Y-Zps"/>
+                            <constraint firstAttribute="trailing" secondItem="h9n-Uf-T3A" secondAttribute="trailing" id="eyZ-4z-o3p"/>
+                            <constraint firstAttribute="trailing" secondItem="sFL-KY-8M2" secondAttribute="trailing" id="lKQ-sk-ERF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="reviewEditableTextView" destination="ZVa-7m-NcK" id="Fuw-tb-J9m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7m-7n-19E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2804" y="-1826.5367316341831"/>
         </scene>
         <!--Rating Pop Up View Controller-->
         <scene sceneID="Gyx-lZ-aOq">
@@ -234,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekX-47-RQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2046" y="-1071"/>
+            <point key="canvasLocation" x="2804" y="-937"/>
         </scene>
         <!--Items-->
         <scene sceneID="gz3-xx-jnG">
