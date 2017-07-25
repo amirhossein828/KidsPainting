@@ -90,7 +90,7 @@ extension CredentialsViewController : GIDSignInDelegate {
             // User is signed in
             // ...
             if user != nil{
-                            let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "mainPage")
+                            let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "navigationPage")
                             self.present(vc, animated: true, completion: nil)
             }
         }
