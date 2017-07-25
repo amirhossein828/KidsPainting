@@ -24,7 +24,7 @@ class Item: NSObject {
     var likes: Int!
     var peopleWhoLike: [String] = [String]()
     var timeOfCreation : Date!
-    
+    var itemRating : Float!
 }
 
 extension Item {

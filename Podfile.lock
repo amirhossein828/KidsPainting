@@ -92,6 +92,7 @@ PODS:
   - FirebaseUI/Twitter (4.1.1):
     - FirebaseUI/Auth
     - TwitterKit (~> 2.4)
+  - FloatRatingView (2.0)
   - GoogleSignIn (4.0.2):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -139,6 +140,7 @@ DEPENDENCIES:
   - Firebase/RemoteConfig
   - Firebase/Storage
   - FirebaseUI
+  - FloatRatingView (~> 2.0.0)
   - GoogleSignIn
   - SwiftyJSON
 
@@ -160,6 +162,7 @@ SPEC CHECKSUMS:
   FirebaseRemoteConfig: 328244399f64226cfdfa32efee596bb010ef5665
   FirebaseStorage: 8110a1ed2034c8fbfd83890d2acc9cdbbd99afec
   FirebaseUI: 5ebebe2c096c71f20abd1d43d0388958373bdaa0
+  FloatRatingView: 857ab8f10040d06a42fc979f486c8f9fecd2f2e5
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
@@ -171,6 +174,6 @@ SPEC CHECKSUMS:
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
 
-PODFILE CHECKSUM: 9e707eb18eba1a5c3cb4b77e80cc25ea916c97a8
+PODFILE CHECKSUM: 62b6b394ebbf2af562c1a1899a06cc7c744a5489
 
 COCOAPODS: 1.2.1
