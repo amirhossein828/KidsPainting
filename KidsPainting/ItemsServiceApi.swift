@@ -60,6 +60,7 @@ class ItemsServiceApi : ServiceApi{
                 item.postID = answer["postID"] as! String
                 item.itemRating = Float(answer["itemRating"] as! NSNumber)
                 item.numberOfPeopleWhoDidRating = answer["numberOfPeopleWhoDidRating"] as! Int
+                item.userID = answer["userID"] as! String
                 
                 self.items.append(item)
             }
