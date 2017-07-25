@@ -131,7 +131,9 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                             "postID" : key,
                             "nameOfArticle" : nameOfArticle,
                             "price" : price,
-                            "currentDate" : Item.dateToString(currentDate)
+                            "currentDate" : Item.dateToString(currentDate),
+                            "itemRating" : 0 ,
+                            "numberOfPeopleWhoDidRating" : 0
                         ] as [String : Any]
                     
                     let postFeed = ["\(key)" : feed]

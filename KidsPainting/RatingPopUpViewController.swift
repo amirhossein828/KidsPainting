@@ -30,10 +30,9 @@ class RatingPopUpViewController: UIViewController  ,FloatRatingViewDelegate{
         self.floatingStar.editable = true
         self.floatingStar.halfRatings = true
         self.floatingStar.floatRatings = false
-        
+        // make the corner of pop up view circle shape
         popupView.layer.cornerRadius = 20
-        
-        //self.resultlabel.text = NSString(format: "%.2f", self.floatingStar.rating) as String
+
         
     }
 
@@ -44,7 +43,6 @@ class RatingPopUpViewController: UIViewController  ,FloatRatingViewDelegate{
     
     func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating:Float) {
         self.rating = self.floatingStar.rating
-       // self.resultlabel.text = NSString(format: "%.2f", self.floatingStar.rating) as String
     }
     
 

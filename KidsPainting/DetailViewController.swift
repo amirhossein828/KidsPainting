@@ -34,7 +34,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
         self.starRatingDetail.contentMode = UIViewContentMode.scaleAspectFit
         self.starRatingDetail.maxRating = 5
         self.starRatingDetail.minRating = 1
-        self.starRatingDetail.rating = 0
+        self.starRatingDetail.rating = itemFromMain.itemRating
         self.starRatingDetail.editable = false
         self.starRatingDetail.halfRatings = true
         self.starRatingDetail.floatRatings = false
@@ -61,11 +61,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("eeeeeeeeeeeeeeeeeeefefefe")
-        if let newAllRating = newRating {
-            print("eeeeeeeeeeeeeeeeeeefefefe")
-            //self.starRatingDetail.rating = Float(newAllRating)
-        }
+       
     }
     
     func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating:Float) {
@@ -75,11 +71,21 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
         
     }
     func upDateRating(newRating: Float) {
-        // - go to firebase database and find the post
+        
         // - get the itemRating for this post and calculate new rating for this post
+        
+        self.itemFromMain.numberOfPeopleWhoDidRating =
+            self.itemFromMain.numberOfPeopleWhoDidRating + 1
+        var calculatedRating : Float {
+            get {
+                return ((itemFromMain.itemRating + newRating) / Float(itemFromMain.numberOfPeopleWhoDidRating))
+            }
+        }
         // - update the itemRating for this post
+        let service = ItemsServiceApi()
+        service.updateRatingOfItem(postKey: itemFromMain.postID, rating: calculatedRating, numOfPeople: self.itemFromMain.numberOfPeopleWhoDidRating)
         // - update starRatingDetail in the view
-        self.starRatingDetail.rating = newRating
+        self.starRatingDetail.rating = calculatedRating
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -89,9 +95,6 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
             
         }
     }
-    
-
-
 
 }
 

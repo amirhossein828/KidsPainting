@@ -11,4 +11,5 @@ import Foundation
 protocol ServiceApi {
     func getAllItemsFrimFireBaseDataBase(complition : @escaping ([Item]) -> Void)
 //    func putItemInFireBaseDataBase()
+    func updateRatingOfItem(postKey : String, rating : Float, numOfPeople : Int)
 }
