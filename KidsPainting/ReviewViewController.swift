@@ -29,13 +29,30 @@ class ReviewViewController: UIViewController {
         // 2- Create a reference to backend database
         let ref = Database.database().reference()
         
-        // 3- Write review to backend as a child of review Object
+        // 3- Write a review to backend as a child of review Object
         ref.child("reviews").childByAutoId().setValue(
             [
                 "writer" : uid,
                 "reviewString" : myReview,
                 "item" : currentItem.postID
             ])
+        
+        // 4- Query Firebase DB
+        let myQuery = ref.child("reviews").queryOrdered(byChild: "reviewString") //.queryEqual(toValue: currentItem.postID)
+        print("--------------------  This is saver review query result from Firebase DB: \(String(describing: myQuery))")
+        
+        ref.child("reviews").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let reviewString = value?["reviewString"] as? String ?? ""
+            
+            print("This is value dictionary: \(String(describing: value))")
+            print("This is review string: \(reviewString)")
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     
@@ -133,6 +150,23 @@ class ReviewViewController: UIViewController {
     }
     */
     
+    
+    /*
+     var key = ref.child("reviews").key
+     
+     ref.child("reviews").child(key).observeSingleEvent(of: .value, with: { (snapshot) in
+     // Get user value
+     let value = snapshot.value as? NSDictionary
+     let reviewString = value?["reviewString"] as? String ?? ""
+     print(reviewString)
+     
+     // ...
+     }) { (error) in
+     print(error.localizedDescription)
+     }
+    */
+ 
+ 
     /*
     // MARK: - Navigation
 
