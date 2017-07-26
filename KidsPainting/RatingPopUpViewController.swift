@@ -38,7 +38,6 @@ class RatingPopUpViewController: UIViewController  ,FloatRatingViewDelegate{
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-       
     }
     
     func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating:Float) {
