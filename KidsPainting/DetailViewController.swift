@@ -9,7 +9,9 @@
 import UIKit
 import Firebase
 
-class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopUpDelegate{
+
+
+class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPopUpDelegate, UITableViewDelegate, UITableViewDataSource {
     
     
     //MARK: Outlets
@@ -19,16 +21,35 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
     @IBOutlet weak var nameOfAuther: UILabel!
     @IBOutlet weak var nameOfRticleDetail: UILabel!
     @IBOutlet weak var starRatingDetail: FloatRatingView!
-    @IBOutlet weak var itemReview: UITextView!
     
+    
+    // Review Outlet
+    @IBOutlet weak var itemReview: UITextView!
+    @IBOutlet weak var tableView: UITableView!
+   
     
     //MARK: Attributes
     var itemFromMain : Item! = nil
+    
+    // ArrayList of Reviews to feed Review TableView
+    var itemReviewArray = [Review]()
+    
+//        {
+//        didSet {
+//            let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "reviewTable") as! ReviewTableViewController
+//            vc.itemFromMain = self.itemFromMain
+//        }
+//    }
     var newRating : Double?
     
     //MARK: Default Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: Initialize tableViewReviews
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         
         // Required float rating view params
         self.starRatingDetail.emptyImage = UIImage(named: "StarEmpty")
@@ -69,9 +90,37 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
         
         //TODO: Update itemReview textView with new review
         connectToDBandQueryItemReviews()
-        
+        self.tableView.reloadData()
     }
     
+    
+    // MARK: - Table view data source ------------------------------------------------------------------------------
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        print("This is the number of sections 1")
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        print("This is the number of items \(itemReviewArray.count)")
+        return itemReviewArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewTableViewCell
+        cell.displayName.text  = self.itemReviewArray[indexPath.row].displayName
+        cell.reviewString.text = self.itemReviewArray[indexPath.row].reviewString
+    
+        return cell
+    }
+    //-----------------------------------------------------------------------------------------------------------------
+
+    
+    
+    // MARK: Query from databse for current item reviews --------------------------------------------------------------
     func connectToDBandQueryItemReviews(){
         // 1- Get the current user uid
         let uid = Auth.auth().currentUser!.uid
@@ -85,39 +134,46 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
             let value = snapshot.value as? NSDictionary
             
             // All values is array of dictionary
-            let allReviews = value?.allValues as! [[String:String]]
+            guard let allReviews = value?.allValues as? [[String:String]] else {return}
             //print("This is allReviews: \(String(describing: allReviews))")
             
             var allItemReviews = ""
             for currentReviewDictionary in allReviews {
                 
-                if currentReviewDictionary["item"] == self.itemFromMain.postID{
+                if currentReviewDictionary["itemPostID"] == self.itemFromMain.postID{
+                    
+                    
+                    let displayName = currentReviewDictionary["displayName"]! as String
                     let reviewString = currentReviewDictionary["reviewString"]!
                     
+                    // Create a review object
+                    let currentReviewObject = Review(displayName: displayName, reviewString: reviewString)
+                    
+                    // Add review object to review tableView Array
+                    self.itemReviewArray.append(currentReviewObject)
+                    print("This is itemReviewArray: \(self.itemReviewArray.description)")
+                    // Update review textView ------------------------------------------------------------------------------------
                     allItemReviews = allItemReviews + reviewString + "\n" + "-----------------------------------------------------"
+                    //------------------------------------------------------------------------------------------------------------
                     
                     print("\n ------------ Item reviews in detail page: ")
                     print(reviewString)
                 }
             }
             self.itemReview.text = allItemReviews
-            
         }) { (error) in
             print(error.localizedDescription)
         }
 
     }
+    //---------------------------------------------------------------------------------------------------------------------
     
-    func queryCurrentItemReviews(){
-        
-        
-    }
     
+    
+    
+    // MARK: Rating -------------------------------------------------------------------------------------------------------
     func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating:Float) {
         // self.resultlabel.text = NSString(format: "%.2f", self.floatingStar.rating) as String
-    }
-    
-    override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
     }
     
     func upDateRating(newRating: Float) {
@@ -137,8 +193,9 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
         service.updateRatingOfItem(postKey: itemFromMain.postID, rating: calculatedRating, numOfPeople: self.itemFromMain.numberOfPeopleWhoDidRating)
         
         // - update starRatingDetail in the view
-        self.starRatingDetail.rating = calculatedRating
+        //self.starRatingDetail.rating = calculatedRating
     }
+    //---------------------------------------------------------------------------------------------------------------------
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailToPop" {
@@ -151,6 +208,10 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate,ratingPopU
             vc.currentItem = itemFromMain
         }
     }
+    
+    override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+    }
+
 }
 
 
