@@ -73,12 +73,15 @@ extension CredentialsViewController: FBSDKLoginButtonDelegate {
 //Extension for the google sing in protocol
 extension CredentialsViewController : GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        print("Insidet the google sign in method")
         // ...
         if let error = error {
             print("error while sign in with google \(error)")
             return
         }
-        guard let authentication = user.authentication else { return }
+        guard let authentication = user.authentication else {
+            print("Inside the guard authentication")
+            return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         
@@ -90,8 +93,9 @@ extension CredentialsViewController : GIDSignInDelegate {
             // User is signed in
             // ...
             if user != nil{
-                            let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "navigationPage")
-                            self.present(vc, animated: true, completion: nil)
+                print("The user is not nil")
+                let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "navigationPage")
+                self.present(vc, animated: true, completion: nil)
             }
         }
     }
@@ -153,10 +157,12 @@ class CredentialsViewController: UIViewController{
     var firebaseAuth : Auth!
     var didButtonSignPressed = false
     var didButtonLogInPressed = false
+    var didPictureButtonPressed = false
     var emailIsCorrect = false
     var passwordIsCorrect = false
     var userNameIsCorrect = false
     var imagePicker: UIImagePickerController!
+    var handle: AuthStateDidChangeListenerHandle!
     
     //MARK: - Application Lifecycle
     override func viewDidLoad() {
@@ -165,6 +171,7 @@ class CredentialsViewController: UIViewController{
         self.dismissOnTap()
         //Instanciate the firebse Authentication
         firebaseAuth = Auth.auth()
+
         //Delegate for google sign in
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
@@ -186,27 +193,40 @@ class CredentialsViewController: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.didButtonSignPressed = false
+        self.didButtonLogInPressed = false
         //Everytime the view is display we check if a user is signed
-        _ = Auth.auth().addStateDidChangeListener { (auth, user) in
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             //If the user is sign in then we hide the sign in option
             if user != nil{
                 print("The user is not nil")
                 self.displaySignInMethod(false)
                 self.displayCredentialFields(false)
             //If the user is not sign in then we display the sign in option
+            }else if self.didPictureButtonPressed{
+                self.displayCredentialFields(true)
+                self.displaySignInMethod(false)
+                self.didButtonSignPressed = true
+                self.signUpButton.isHidden = false
+                self.signOutButton.isHidden = true
             }else{
                 self.displaySignInMethod(true)
                 self.displayCredentialFields(false)
-                self.didButtonSignPressed = false
-                self.didButtonLogInPressed = false
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
     //MARK: - Button actions
     
     @IBAction func didGoogleSignInButtonPressed(_ sender: GIDSignInButton) {
@@ -246,9 +266,19 @@ class CredentialsViewController: UIViewController{
     //If the user dont remember is password we display the email field
     //need to implement the password recovery
     @IBAction func didForgetPasswordButtonPressed(_ sender: UIButton) {
-        userNameTextField.isHidden = false
-    }
+        emailTextField.isHidden = false
+        if let email = emailTextField.text, checkIfCorrect(email: email){
+            firebaseAuth.sendPasswordReset(withEmail: email, completion: { (error) in
+                if let error = error{
+                    print("This is the error while trying to send the recover email \(error)")
+                    self.alert(title: "Ho no",message: "Something whent wrong when trying to send a email to your address")
+                }else{
+                    self.alert(title: "Great", message: "Check your email, you will find an email to reset your password")
+                }
+            })
+        }
     
+    }
     //Same then login we check how many time the sign in button is pressed
     //If its the first time we display the email field
     //If not the first time we call the sign in method
@@ -256,10 +286,10 @@ class CredentialsViewController: UIViewController{
         logInButton.isHidden = true
         signUpButton.isEnabled = false
         emailTextField.isHidden = false
-        didButtonSignPressed = true
         if didButtonSignPressed {
             signInUser()
         }
+        didButtonSignPressed = true
     }
     
     //If the sign out button is pressed we logout the firebase user
@@ -276,6 +306,7 @@ class CredentialsViewController: UIViewController{
     
     //This method will start the process to take a picture
     @IBAction func didProfileButtonPressed(_ sender: UIButton) {
+        didPictureButtonPressed = true
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
@@ -367,7 +398,7 @@ class CredentialsViewController: UIViewController{
                     let changeRequest = user.createProfileChangeRequest()
                     changeRequest.displayName = userDisplayName
                     //Upload the image into firebase storage and store the url into the user
-                    upload(media: image, withName: "\(user.email)/\(NSDate().timeIntervalSince1970 * 1000)", completion: { (url) in
+                    upload(media: image, withName: "\(user.uid)", completion: { (url) in
                         print("This is the url for the profile picture of the user \(url)")
                         changeRequest.photoURL = url
                         changeRequest.commitChanges { error in
@@ -398,6 +429,7 @@ class CredentialsViewController: UIViewController{
         //If not nill we can not authenticate with fierbase using the email and password
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let error = error {
+                self.alert(title: "Huho" ,message: "Your information are not correct")
                 print("Error while sing in the user by email \(error)")
             }
             //If the log in is successfull we can display the main page
