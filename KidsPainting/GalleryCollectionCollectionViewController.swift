@@ -27,6 +27,7 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
         self.collectionView.delegate = self
         
         grabPhotos()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,6 +116,10 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
                  vc.newImage = self.imageArray[index!]
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.bigImage.image = imageArray[0]
     }
  
 
