@@ -11,6 +11,7 @@
 		046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED41F27D1FB00652CD3 /* Review.swift */; };
 		04E763971F1FAF5600146FFD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E763961F1FAF5600146FFD /* Login.storyboard */; };
 		1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */; };
+		1F9A79061F2A711E0006ED31 /* CustomCellUserItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A79051F2A711E0006ED31 /* CustomCellUserItemViewController.swift */; };
 		962FFDA21F24EB86006276CD /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CF1F205B7D00556C85 /* UIExtentions.swift */; };
 		966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2511F15587E00556C85 /* AppDelegate.swift */; };
 		966BF2591F15587E00556C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2581F15587E00556C85 /* Assets.xcassets */; };
@@ -60,6 +61,8 @@
 		04E763961F1FAF5600146FFD /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1F1FCD881F1FFD0400393DB0 /* KidsPainting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsPainting.entitlements; sourceTree = "<group>"; };
 		1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
+		1F9A79051F2A711E0006ED31 /* CustomCellUserItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellUserItemViewController.swift; sourceTree = "<group>"; };
+		1FA6CF1D1F2A67560084D3CF /* AKPickerView_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AKPickerView_Swift.framework; path = "../../Library/Developer/Xcode/DerivedData/KidsPainting-gazafxvthziutpdceztyfmltmouu/Build/Products/Debug-iphonesimulator/AKPickerView-Swift/AKPickerView_Swift.framework"; sourceTree = "<group>"; };
 		644285956F7D7794CB257D41 /* Pods-KidsPainting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.debug.xcconfig"; sourceTree = "<group>"; };
 		6BC54C19E581D5790294C84B /* Pods-KidsPainting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.release.xcconfig"; sourceTree = "<group>"; };
 		966BF24E1F15587E00556C85 /* KidsPainting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsPainting.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +135,7 @@
 		926B7D4E3F9813120D44FA92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1FA6CF1D1F2A67560084D3CF /* AKPickerView_Swift.framework */,
 				D4B65FE768D9D5CCC6CC3FC1 /* Pods_KidsPainting.framework */,
 			);
 			name = Frameworks;
@@ -217,6 +221,7 @@
 				966BF29B1F1C864300556C85 /* GalleryCollectionViewCell.swift */,
 				966BF29F1F1E5C0700556C85 /* DetailViewController.swift */,
 				96A989B81F26AF7D009A4E42 /* RatingPopUpViewController.swift */,
+				1F9A79051F2A711E0006ED31 /* CustomCellUserItemViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -425,7 +430,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B3B3519B78208E7EB9E39433 /* [CP] Copy Pods Resources */ = {
@@ -440,6 +445,9 @@
 				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
 				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
 				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle,
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Versions/A/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle",
 			);
@@ -466,6 +474,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/FloatRatingView/FloatRatingView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -483,6 +492,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatRatingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -510,6 +520,7 @@
 				1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */,
 				046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */,
 				966BF2CB1F20535500556C85 /* ServiceApi.swift in Sources */,
+				1F9A79061F2A711E0006ED31 /* CustomCellUserItemViewController.swift in Sources */,
 				966BF29C1F1C864300556C85 /* GalleryCollectionViewCell.swift in Sources */,
 				96A989B91F26AF7D009A4E42 /* RatingPopUpViewController.swift in Sources */,
 				966BF2CD1F20538900556C85 /* ItemsServiceApi.swift in Sources */,

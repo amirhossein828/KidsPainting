@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -17,7 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        GMSPlacesClient.provideAPIKey("AIzaSyAwycclhIKgID76swMuC4zdujGcyLqcaWM")
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        //Choose which view should be display first
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let mainStoryboard = UIStoryboard(name: "MainPage", bundle: nil)
+        if Auth.auth().currentUser?.email != nil{
+            self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "mainPage")
+            self.window?.makeKeyAndVisible()
+        }else{
+            self.window?.rootViewController = loginStoryboard.instantiateViewController(withIdentifier: "credentialsViewController")
+            self.window?.makeKeyAndVisible()
+        }
         return true
     }
     
