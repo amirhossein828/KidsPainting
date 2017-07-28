@@ -14,12 +14,14 @@ class ReviewViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var reviewEditableTextView: UITextView!
     
+    
     // MARK: - Variables
     var firebaseUser : AuthStateDidChangeListenerHandle!
     var currentItem : Item!
     
     // Write a review in Firebase backend
-    @IBAction func submitReview(_ sender: UIButton) {
+    @IBAction func submitReview(_ sender: UIButton)
+    {
         
         let myReview = reviewEditableTextView.text
         
@@ -32,27 +34,44 @@ class ReviewViewController: UIViewController {
         // 3- Write a review to backend as a child of review Object
         ref.child("reviews").childByAutoId().setValue(
             [
-                "writer" : uid,
-                "reviewString" : myReview,
-                "item" : currentItem.postID
+                "uid" : uid,
+                "displayName" : Auth.auth().currentUser?.displayName,
+                "itemPostID" : currentItem.postID,
+                "reviewString" : myReview
             ])
-        
-        // 4- Query Firebase DB
+        // TODO: Step 4 should be moved to detail page
+        // 4- Test query Firebase DB for related reviews
         let myQuery = ref.child("reviews").queryOrdered(byChild: "reviewString") //.queryEqual(toValue: currentItem.postID)
-        print("--------------------  This is saver review query result from Firebase DB: \(String(describing: myQuery))")
+        //print("--------------------  This is saver review query result from Firebase DB: \(String(describing: myQuery))")
         
         ref.child("reviews").observeSingleEvent(of: .value, with: { (snapshot) in
             
             // Get user value
             let value = snapshot.value as? NSDictionary
-            let reviewString = value?["reviewString"] as? String ?? ""
             
-            print("This is value dictionary: \(String(describing: value))")
-            print("This is review string: \(reviewString)")
-            
+            // All values is array of dictionary
+            let allReviews = value?.allValues as! [[String:String]]      //value?.allKeys.description
+            print("This is allReviews: \(String(describing: allReviews))")
+
+            for currentReviewDictionary in allReviews {
+                
+                if currentReviewDictionary["itemPostID"] == self.currentItem.postID{
+                    let reviewString = currentReviewDictionary["reviewString"]
+                    //print("\n")
+                    print(reviewString ?? "No review for this item")
+                }
+            }
         }) { (error) in
             print(error.localizedDescription)
         }
+        
+        // Goback to detail page
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func cancelBtn(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -65,7 +84,7 @@ class ReviewViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    // ----------------------------------------------------------------
+    // ---------------------------------------------------------------
     
     
     override func viewWillAppear(_ animated: Bool) {

@@ -11,15 +11,14 @@ import Firebase
 
 class Review{
     
-    var review : String
-    var writer : String
+    var displayName : String
+    var reviewString : String
     //var date : Date
-    var item : Item!      //TODO: Must be complete
+    //var item : Item!
     
-    init(){
-        self.review = "No review"
-        self.writer = "No writer"
-        //self.date = Date()
+    init(displayName : String, reviewString : String){
+        self.displayName = displayName
+        self.reviewString = reviewString
     }
     
 }
