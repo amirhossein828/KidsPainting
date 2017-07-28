@@ -14,6 +14,7 @@ class ReviewViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var reviewEditableTextView: UITextView!
     
+    
     // MARK: - Variables
     var firebaseUser : AuthStateDidChangeListenerHandle!
     var currentItem : Item!
@@ -33,8 +34,9 @@ class ReviewViewController: UIViewController {
         // 3- Write a review to backend as a child of review Object
         ref.child("reviews").childByAutoId().setValue(
             [
-                "writer" : uid,
-                "item" : currentItem.postID,
+                "uid" : uid,
+                "displayName" : Auth.auth().currentUser?.displayName,
+                "itemPostID" : currentItem.postID,
                 "reviewString" : myReview
             ])
         // TODO: Step 4 should be moved to detail page
@@ -49,14 +51,14 @@ class ReviewViewController: UIViewController {
             
             // All values is array of dictionary
             let allReviews = value?.allValues as! [[String:String]]      //value?.allKeys.description
-            //print("This is allReviews: \(String(describing: allReviews))")
+            print("This is allReviews: \(String(describing: allReviews))")
 
             for currentReviewDictionary in allReviews {
                 
-                if currentReviewDictionary["item"] == self.currentItem.postID{
+                if currentReviewDictionary["itemPostID"] == self.currentItem.postID{
                     let reviewString = currentReviewDictionary["reviewString"]
                     //print("\n")
-                    //print(reviewString ?? "No review for this item")
+                    print(reviewString ?? "No review for this item")
                 }
             }
         }) { (error) in
@@ -64,6 +66,11 @@ class ReviewViewController: UIViewController {
         }
         
         // Goback to detail page
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func cancelBtn(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
