@@ -15,6 +15,10 @@ pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
 pod 'GoogleSignIn'
+# Google place Api
+pod 'GooglePlaces'
+pod 'GooglePlacePicker'
+pod 'GoogleMaps'
 
 pod 'SwiftyJSON'
 
