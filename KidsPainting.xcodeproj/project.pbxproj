@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		046F8ED31F27A8A100652CD3 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED21F27A8A100652CD3 /* ReviewViewController.swift */; };
 		046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED41F27D1FB00652CD3 /* Review.swift */; };
-		046F8ED71F2920D700652CD3 /* ReviewTableViewController._ in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED61F2920D700652CD3 /* ReviewTableViewController._ */; };
 		046F8ED91F2921C700652CD3 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED81F2921C700652CD3 /* ReviewTableViewCell.swift */; };
 		04E763971F1FAF5600146FFD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E763961F1FAF5600146FFD /* Login.storyboard */; };
 		1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */; };
@@ -60,7 +59,6 @@
 /* Begin PBXFileReference section */
 		046F8ED21F27A8A100652CD3 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		046F8ED41F27D1FB00652CD3 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		046F8ED61F2920D700652CD3 /* ReviewTableViewController._ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReviewTableViewController._; sourceTree = "<group>"; };
 		046F8ED81F2921C700652CD3 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		04E763961F1FAF5600146FFD /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1F1FCD881F1FFD0400393DB0 /* KidsPainting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsPainting.entitlements; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 			children = (
 				966BF2C41F1FE6CE00556C85 /* CredentialsViewController.swift */,
 				1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */,
-				046F8ED61F2920D700652CD3 /* ReviewTableViewController._ */,
 				966BF2811F16B66600556C85 /* SignUpViewController.swift */,
 				046F8ED21F27A8A100652CD3 /* ReviewViewController.swift */,
 				046F8ED81F2921C700652CD3 /* ReviewTableViewCell.swift */,
@@ -523,7 +520,6 @@
 				966BF2861F16E2CF00556C85 /* LoginViewController.swift in Sources */,
 				046F8ED31F27A8A100652CD3 /* ReviewViewController.swift in Sources */,
 				966BF2C71F1FE6CE00556C85 /* CredentialsViewController.swift in Sources */,
-				046F8ED71F2920D700652CD3 /* ReviewTableViewController._ in Sources */,
 				1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */,
 				046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */,
 				966BF2CB1F20535500556C85 /* ServiceApi.swift in Sources */,
