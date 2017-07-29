@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="08S-i3-QPE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="08S-i3-QPE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -57,7 +57,7 @@
                                         </constraints>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="painting" translatesAutoresizingMaskIntoConstraints="NO" id="eK3-1j-TRg">
-                                        <rect key="frame" x="20" y="20" width="275" height="128"/>
+                                        <rect key="frame" x="20" y="40" width="275" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="Y7U-dF-Qhu"/>
                                         </constraints>
@@ -90,7 +90,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orR-Np-9aq" customClass="GIDSignInButton">
-                                        <rect key="frame" x="95" y="181" width="125" height="40"/>
+                                        <rect key="frame" x="95" y="201" width="125" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="U3d-MD-2U7"/>
@@ -108,7 +108,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQU-dg-gZs" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="125" y="251" width="64" height="30"/>
+                                        <rect key="frame" x="125" y="271" width="64" height="10"/>
                                         <state key="normal" title="facebook"/>
                                         <connections>
                                             <action selector="didFacebookLoginButtonPressed:" destination="08S-i3-QPE" eventType="touchUpInside" id="zXd-cu-m4j"/>
@@ -145,6 +145,7 @@
                                     <constraint firstItem="cUQ-XK-cXw" firstAttribute="leading" secondItem="O9e-zN-Fv2" secondAttribute="leading" constant="20" id="IEa-dR-wHw"/>
                                     <constraint firstItem="orR-Np-9aq" firstAttribute="top" secondItem="eK3-1j-TRg" secondAttribute="bottom" constant="33" id="JEf-lI-KDV"/>
                                     <constraint firstAttribute="trailing" secondItem="eK3-1j-TRg" secondAttribute="trailing" constant="20" id="JVK-nZ-p8c"/>
+                                    <constraint firstItem="eK3-1j-TRg" firstAttribute="top" secondItem="O9e-zN-Fv2" secondAttribute="top" constant="40" id="KVd-zd-1iI"/>
                                     <constraint firstItem="aih-hw-mPP" firstAttribute="top" secondItem="KHW-Bi-vcj" secondAttribute="bottom" constant="20" id="QvX-vW-n31"/>
                                     <constraint firstItem="oPs-HR-RSp" firstAttribute="leading" secondItem="O9e-zN-Fv2" secondAttribute="leading" constant="20" id="TMH-zM-tlE"/>
                                     <constraint firstItem="orR-Np-9aq" firstAttribute="centerX" secondItem="O9e-zN-Fv2" secondAttribute="centerX" id="Tu7-e1-mkA"/>

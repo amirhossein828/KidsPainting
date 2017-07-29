@@ -66,6 +66,7 @@ extension UserInformationViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("Items count \(items.count)")
         if items.count > 0{
             displayEmptyImage = false
             return items.count
@@ -97,8 +98,8 @@ class UserInformationViewController: UIViewController {
     @IBOutlet weak var profilePictureButton: UIButton!
     @IBOutlet weak var nameImageView: UIImageView!
     @IBOutlet weak var emailImageView: UIImageView!
-    @IBOutlet weak var locationImageView: UIImageView!
     @IBOutlet weak var passwordImageView: UIImageView!
+    @IBOutlet weak var locationImageView: UIImageView!
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -158,7 +159,9 @@ class UserInformationViewController: UIViewController {
      The action used to triger the action is onDown
      We set the delegate google place and we present the google place view
      */
-    @IBAction func didLocationTextFieldPressed(_ sender: UITextField) {
+
+    @IBAction func didLocationTextFieldTouched(_ sender: UITextField) {
+        print("We touch the location text field")
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
