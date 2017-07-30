@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
         let mainStoryboard = UIStoryboard(name: "MainPage", bundle: nil)
         if Auth.auth().currentUser?.email != nil{
-            self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "mainPage")
+            self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "navigationPage")
             self.window?.makeKeyAndVisible()
         }else{
             self.window?.rootViewController = loginStoryboard.instantiateViewController(withIdentifier: "credentialsViewController")
