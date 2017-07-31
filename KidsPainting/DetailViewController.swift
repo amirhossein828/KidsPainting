@@ -23,8 +23,8 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     @IBOutlet weak var starRatingDetail: FloatRatingView!
     
     
-    // Review Outlet
-    @IBOutlet weak var itemReview: UITextView!
+//    // Review Outlet
+//    @IBOutlet weak var itemReview: UITextView!
     @IBOutlet weak var tableView: UITableView!
    
     
