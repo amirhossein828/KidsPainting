@@ -109,7 +109,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
             // 8- Get the uploaded picture URL
             imageRef.downloadURL(completion: { (url, error) in
                 
-                // 9- If url to uploaded image exist
+                // 9- If url to uploaded image exist, create item object
                 if let url = url {
                     item.userID = uid
                     item.pathToImage = url.absoluteString
@@ -120,7 +120,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                  //   item.price = price
                     Item.dateToString(currentDate)
                     
-                    // 10- Make dictionary of "posts" object attributes and corresponding keys in backed
+                    // 10- Make dictionary of "posts" object attributes and corresponding key
                     let feed =
                         [
                             "userID" : uid,
@@ -137,7 +137,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                     
                     let postFeed = ["\(key)" : feed]
                     
-                    // 11- Reference to Firebase DB: write data to backend as user object child with uid and userInfo dictionary
+                    // 11- Reference to Firebase DB: write data (postFeed) to backend as "posts" object child with key and feed dictionary
                     // This method will add our new post to backend DB
                     ref.child("posts").updateChildValues(postFeed)
                     // 12-  Stop activityIndicator or spinner

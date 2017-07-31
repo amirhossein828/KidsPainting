@@ -108,11 +108,20 @@ func upload(media: UIImage, withName: String, completion: @escaping (_ url: URL)
     }
 }
 
-func downloadUserProfileBy(url: URL, completion: @escaping(_ image: Data) -> Void){
+func downloadUserProfileBy(url: String, completion: @escaping(_ image: Data) -> Void){
     let storage = Storage.storage()
-    print("This is the url in the helper class \(url)")
-    let ref = storage.reference(forURL: url.path)
-    ref.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//    print("This is the url in the helper class \(url)")
+//    let ref = storage.reference(forURL: url.path)
+//    ref.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//        if let error = error {
+//            print("Error while downloading the profile picture, this is the error \(error)")
+//        }
+//        if let data = data{
+//            completion(data)
+//        }
+//    }
+    let httpsReference = storage.reference(forURL: url)
+    httpsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
         if let error = error {
             print("Error while downloading the profile picture, this is the error \(error)")
         }
@@ -121,6 +130,15 @@ func downloadUserProfileBy(url: URL, completion: @escaping(_ image: Data) -> Voi
         }
     }
 }
+
+func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+    URLSession.shared.dataTask(with: url) {
+        (data, response, error) in
+        completion(data, response, error)
+        }.resume()
+}
+
+
 //Function that take a string containing the url and an escaping closure that get the image data
 func downloadImageFrom(_ urlString: String,completion: @escaping (_ data: Data?) -> Void) {
     guard let url = URL(string: urlString) else{return}
