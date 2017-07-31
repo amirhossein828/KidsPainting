@@ -20,22 +20,22 @@
                         <viewControllerLayoutGuide type="bottom" id="lD3-og-sha"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="t2B-wL-IgK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrV-yV-YXI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6p-Pr-kxo">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X6p-Pr-kxo">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-235767" translatesAutoresizingMaskIntoConstraints="NO" id="IgM-3W-xte">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pexels-photo-235767" translatesAutoresizingMaskIntoConstraints="NO" id="IgM-3W-xte">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                                             </imageView>
-                                            <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAd-30-6zX">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                            <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HAd-30-6zX">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LJO-wH-8Ia">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="buS-dm-uGq">
@@ -135,6 +135,11 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PfF-qT-9ux">
+                                                            <rect key="frame" x="8" y="831" width="359" height="276"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </tableView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="buS-dm-uGq" firstAttribute="leading" secondItem="LJO-wH-8Ia" secondAttribute="leading" id="1SI-uf-9E1"/>
@@ -194,7 +199,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="375" height="1500"/>
                     <connections>
                         <outlet property="detailImg" destination="buS-dm-uGq" id="Mv6-yV-ode"/>
                         <outlet property="giveRatingOutlet" destination="uNk-iD-VpT" id="688-Ko-mwN"/>
@@ -202,11 +207,12 @@
                         <outlet property="nameOfRticleDetail" destination="Ez7-eO-NyH" id="R2Y-P6-fC7"/>
                         <outlet property="priceImg" destination="FYA-yb-ga8" id="mY9-9U-Kqv"/>
                         <outlet property="starRatingDetail" destination="JDz-UH-lxT" id="mX9-wr-L6X"/>
+                        <outlet property="tableView" destination="PfF-qT-9ux" id="3tF-md-95H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PP1-5V-xme" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146.5625" y="-906.25"/>
+            <point key="canvasLocation" x="1146.4000000000001" y="-906.74662668665678"/>
         </scene>
         <!--Rating Pop Up View Controller-->
         <scene sceneID="Gyx-lZ-aOq">
@@ -791,7 +797,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navigationPage" automaticallyAdjustsScrollViewInsets="NO" id="jZC-rB-AYz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UEf-RR-lUt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UEf-RR-lUt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -810,7 +816,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qb3-QF-DJn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="GALLERY" id="4LY-B9-dUF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiI-Mh-RQU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HiI-Mh-RQU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -829,7 +835,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x1g-Wt-nIW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="PHOTO" id="mYC-Ej-639"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z2U-Wj-QaM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z2U-Wj-QaM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
