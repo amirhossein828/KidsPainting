@@ -28,12 +28,20 @@ class KidsPaintingUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testGOfromTableViewToAddItem() {
+    func testGoFromTableViewToAddItem() {
+        
         let app = XCUIApplication()
-        app.toolbars.buttons["Add"].tap()
-        app.collectionViews.children(matching: .cell).element(boundBy: 2).children(matching: .other).element.tap()
-        app.navigationBars["KidsPainting.GalleryCollectionCollectionView"].buttons["Next"].tap()
-        app.navigationBars["KidsPainting.UploadItemView"].buttons["Cancel"].tap()
+        app.buttons["GIDSignInButton"].tap()
+        
+        let webViewsQuery = app.webViews
+        webViewsQuery.textFields["Email or phone"].typeText("hashemi.eng19")
+        app.typeText("85@")
+        webViewsQuery.secureTextFields["Enter your password"].typeText("gmail.com09188140699")
+        
+    }
+    
+    func testAddAndComeBack() {
+        
     }
     
 }

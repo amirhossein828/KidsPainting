@@ -142,6 +142,32 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="180" id="bog-9a-aBa"/>
                                                             </constraints>
+                                                            <prototypes>
+                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reviewCell" textLabel="cin-2T-sRD" detailTextLabel="8hh-0C-hZn" style="IBUITableViewCellStyleSubtitle" id="ja4-Zt-R32">
+                                                                    <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ja4-Zt-R32" id="eZN-O0-CKj">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cin-2T-sRD">
+                                                                                <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8hh-0C-hZn">
+                                                                                <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </tableViewCellContentView>
+                                                                </tableViewCell>
+                                                            </prototypes>
                                                         </tableView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2n-u7-NGt">
                                                             <rect key="frame" x="238" y="742" width="100" height="30"/>
@@ -821,7 +847,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navigationPage" automaticallyAdjustsScrollViewInsets="NO" id="jZC-rB-AYz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UEf-RR-lUt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UEf-RR-lUt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -840,7 +866,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qb3-QF-DJn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="GALLERY" id="4LY-B9-dUF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiI-Mh-RQU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HiI-Mh-RQU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -859,7 +885,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x1g-Wt-nIW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="PHOTO" id="mYC-Ej-639"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z2U-Wj-QaM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z2U-Wj-QaM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
