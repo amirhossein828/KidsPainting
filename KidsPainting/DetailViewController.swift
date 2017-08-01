@@ -22,6 +22,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     @IBOutlet weak var nameOfRticleDetail: UILabel!
     @IBOutlet weak var starRatingDetail: FloatRatingView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
 //    // Review Outlet
 //    @IBOutlet weak var itemReview: UITextView!
@@ -233,6 +234,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
     }
+    
 
 }
 

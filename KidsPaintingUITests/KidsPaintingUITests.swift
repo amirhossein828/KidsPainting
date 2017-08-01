@@ -24,13 +24,24 @@ class KidsPaintingUITests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGoFromTableViewToAddItem() {
+        
+        let app = XCUIApplication()
+        app.buttons["GIDSignInButton"].tap()
+        
+        let webViewsQuery = app.webViews
+        webViewsQuery.textFields["Email or phone"].typeText("hashemi.eng19")
+        app.typeText("85@")
+        webViewsQuery.secureTextFields["Enter your password"].typeText("gmail.com09188140699")
+        
+    }
+    
+    func testAddAndComeBack() {
+        
     }
     
 }
