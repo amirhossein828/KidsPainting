@@ -66,12 +66,12 @@ class ReviewViewController: UIViewController {
         }
         
         // Goback to detail page
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
     }
     
     
     @IBAction func cancelBtn(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
     }
     
     
@@ -79,6 +79,8 @@ class ReviewViewController: UIViewController {
     // MARK: - DEfault methods ---------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        //print("========================\(currentItem.description)")
+        print("")
     }
 
     override func didReceiveMemoryWarning() {
