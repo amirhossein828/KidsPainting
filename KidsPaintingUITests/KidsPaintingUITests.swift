@@ -24,13 +24,16 @@ class KidsPaintingUITests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGOfromTableViewToAddItem() {
+        let app = XCUIApplication()
+        app.toolbars.buttons["Add"].tap()
+        app.collectionViews.children(matching: .cell).element(boundBy: 2).children(matching: .other).element.tap()
+        app.navigationBars["KidsPainting.GalleryCollectionCollectionView"].buttons["Next"].tap()
+        app.navigationBars["KidsPainting.UploadItemView"].buttons["Cancel"].tap()
     }
     
 }

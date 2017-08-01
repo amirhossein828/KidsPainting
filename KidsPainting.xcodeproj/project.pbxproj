@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04140E5C1F2FE215005FF495 /* ReviewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04140E5B1F2FE215005FF495 /* ReviewStoryboard.storyboard */; };
 		046F8ED31F27A8A100652CD3 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED21F27A8A100652CD3 /* ReviewViewController.swift */; };
 		046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED41F27D1FB00652CD3 /* Review.swift */; };
 		046F8ED91F2921C700652CD3 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED81F2921C700652CD3 /* ReviewTableViewCell.swift */; };
@@ -58,7 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04140E5B1F2FE215005FF495 /* ReviewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReviewStoryboard.storyboard; sourceTree = "<group>"; };
 		046F8ED21F27A8A100652CD3 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		046F8ED41F27D1FB00652CD3 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		046F8ED81F2921C700652CD3 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 			children = (
 				04E763961F1FAF5600146FFD /* Login.storyboard */,
 				966BF2831F16D8E700556C85 /* MainPage.storyboard */,
-				04140E5B1F2FE215005FF495 /* ReviewStoryboard.storyboard */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -349,7 +346,7 @@
 				TargetAttributes = {
 					966BF24D1F15587E00556C85 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = KBP8LKVSHF;
+						DevelopmentTeam = 68MJJA856T;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -397,7 +394,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */,
-				04140E5C1F2FE215005FF495 /* ReviewStoryboard.storyboard in Resources */,
 				966BF2591F15587E00556C85 /* Assets.xcassets in Resources */,
 				966BF2841F16D8E700556C85 /* MainPage.storyboard in Resources */,
 				04E763971F1FAF5600146FFD /* Login.storyboard in Resources */,
@@ -689,7 +685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = KidsPainting/KidsPainting.entitlements;
-				DEVELOPMENT_TEAM = KBP8LKVSHF;
+				DEVELOPMENT_TEAM = 68MJJA856T;
 				INFOPLIST_FILE = KidsPainting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -705,7 +701,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = KidsPainting/KidsPainting.entitlements;
-				DEVELOPMENT_TEAM = KBP8LKVSHF;
+				DEVELOPMENT_TEAM = 68MJJA856T;
 				INFOPLIST_FILE = KidsPainting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
