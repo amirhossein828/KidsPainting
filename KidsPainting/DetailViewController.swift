@@ -23,9 +23,13 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     @IBOutlet weak var starRatingDetail: FloatRatingView!
     
     
-    // Review Outlet
-    @IBOutlet weak var itemReview: UITextView!
+//    // Review Outlet
+//    @IBOutlet weak var itemReview: UITextView!
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    @IBAction func writeReviewBtn(_ sender: UIButton) {
+    }
    
     
     //MARK: Attributes
@@ -160,7 +164,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
                     print(reviewString)
                 }
             }
-            self.itemReview.text = allItemReviews
+//            self.itemReview.text = allItemReviews
         }) { (error) in
             print(error.localizedDescription)
         }
