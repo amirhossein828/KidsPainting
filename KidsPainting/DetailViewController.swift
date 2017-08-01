@@ -207,12 +207,17 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
             let vc = segue.destination as! RatingPopUpViewController
             vc.delegate = self
         }
-        // Pass itemFromMain to review page
+            
+        // TODO: Need to be updated to go to new storyboard
+            
+        // Pass itemFromMain to review page  ==============================================================================
         else if segue.identifier == "goToReview" {
-            let vc = segue.destination as! ReviewViewController
-            vc.currentItem = itemFromMain
+            //let vc = segue.destination as! ReviewViewController
+            let vc = UIStoryboard(name: "Review", bundle: nil).instantiateViewController(withIdentifier: "Review")
+            //vc.currentItem = itemFromMain
+            self.present(vc, animated: true, completion: nil)
         }
-    }
+    }   //=================================================================================================================
     
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
     }
