@@ -29,6 +29,14 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     
     
     @IBAction func writeReviewBtn(_ sender: UIButton) {
+        
+        let reviewViewController = UIStoryboard(name: "Review", bundle: nil).instantiateViewController(withIdentifier: "Review") as! ReviewViewController
+        reviewViewController.currentItem = itemFromMain
+        self.show(reviewViewController, sender: self)
+        
+        //print(">>>>>>>>\(itemFromMain.description)")
+        //print("~~~~~~~~\(reviewViewController.currentItem.description)")
+        //print("")
     }
    
     
@@ -155,15 +163,16 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
                     
                     // Add review object to review tableView Array
                     self.itemReviewArray.append(currentReviewObject)
-                    print("This is itemReviewArray: \(self.itemReviewArray.description)")
+                    //print("This is itemReviewArray: \(self.itemReviewArray.description)")
                     // Update review textView ------------------------------------------------------------------------------------
                     allItemReviews = allItemReviews + reviewString + "\n" + "-----------------------------------------------------"
                     //------------------------------------------------------------------------------------------------------------
                     
-                    print("\n ------------ Item reviews in detail page: ")
-                    print(reviewString)
+                    //print("\n ------------ Item reviews in detail page: ")
+                    
                 }
             }
+            print(allItemReviews)
 //            self.itemReview.text = allItemReviews
         }) { (error) in
             print(error.localizedDescription)
@@ -209,13 +218,17 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
             
         // TODO: Need to be updated to go to new storyboard
             
+        
         // Pass itemFromMain to review page  ==============================================================================
-        else if segue.identifier == "goToReview" {
-            //let vc = segue.destination as! ReviewViewController
-            let vc = UIStoryboard(name: "Review", bundle: nil).instantiateViewController(withIdentifier: "Review")
-            //vc.currentItem = itemFromMain
-            self.present(vc, animated: true, completion: nil)
-        }
+        
+//        if  == "Review" {
+//            
+//            let vc = segue.destination as! ReviewViewController
+//            //vc.currentItem = itemFromMain
+//            
+//            //let vc = UIStoryboard(name: "Review", bundle: nil).instantiateViewController(withIdentifier: "Review")
+//            //self.present(vc, animated: true, completion: nil)
+//        }
     }   //=================================================================================================================
     
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
