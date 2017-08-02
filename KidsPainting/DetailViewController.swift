@@ -30,6 +30,14 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     
     
     @IBAction func writeReviewBtn(_ sender: UIButton) {
+        
+        let reviewViewController = UIStoryboard(name: "Review", bundle: nil).instantiateViewController(withIdentifier: "Review") as! ReviewViewController
+        reviewViewController.currentItem = itemFromMain
+        self.show(reviewViewController, sender: self)
+        
+        //print(">>>>>>>>\(itemFromMain.description)")
+        //print("~~~~~~~~\(reviewViewController.currentItem.description)")
+        //print("")
     }
    
     
@@ -97,8 +105,10 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     override func viewWillAppear(_ animated: Bool) {
         
         //TODO: Update itemReview textView with new review
-        connectToDBandQueryItemReviews()
-        self.tableView.reloadData()
+        connectToDBandQueryItemReviews{() in
+            self.itemReviewArray.sort(by: {$1.reviewDate < $0.reviewDate})
+            self.tableView.reloadData()
+        }
     }
     
     
@@ -118,9 +128,10 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewTableViewCell
-        cell.displayName.text  = self.itemReviewArray[indexPath.row].displayName
-        cell.reviewString.text = self.itemReviewArray[indexPath.row].reviewString
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) 
+        cell.textLabel?.text  = self.itemReviewArray[indexPath.row].reviewString
+        cell.detailTextLabel?.text = self.itemReviewArray[indexPath.row].displayName
+        
     
         return cell
     }
@@ -129,7 +140,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     
     
     // MARK: Query from databse for current item reviews --------------------------------------------------------------
-    func connectToDBandQueryItemReviews(){
+    func connectToDBandQueryItemReviews(updateReviewTableViewWhenDownloadingReviewsIsDoneCompletion : @escaping () -> Void){
         // 1- Get the current user uid
         let uid = Auth.auth().currentUser!.uid
         
@@ -146,6 +157,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
             //print("This is allReviews: \(String(describing: allReviews))")
             
             var allItemReviews = ""
+            self.itemReviewArray.removeAll()
             for currentReviewDictionary in allReviews {
                 
                 if currentReviewDictionary["itemPostID"] == self.itemFromMain.postID{
@@ -153,26 +165,34 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
                     
                     let displayName = currentReviewDictionary["displayName"]! as String
                     let reviewString = currentReviewDictionary["reviewString"]!
+                    let reviewDateString = currentReviewDictionary["reviewDate"]! as String
+                    let reviewDate = Item.dateFromString(reviewDateString)!
+                    
                     
                     // Create a review object
-                    let currentReviewObject = Review(displayName: displayName, reviewString: reviewString)
+                    let currentReviewObject = Review(displayName: displayName, reviewString: reviewString, reviewDate : reviewDate)
                     
                     // Add review object to review tableView Array
                     self.itemReviewArray.append(currentReviewObject)
-                    print("This is itemReviewArray: \(self.itemReviewArray.description)")
+                    
+                    
+                    
+                    //print("This is itemReviewArray: \(self.itemReviewArray.description)")
                     // Update review textView ------------------------------------------------------------------------------------
                     allItemReviews = allItemReviews + reviewString + "\n" + "-----------------------------------------------------"
                     //------------------------------------------------------------------------------------------------------------
+                    //print("\n ------------ Item reviews in detail page: ")
                     
-                    print("\n ------------ Item reviews in detail page: ")
-                    print(reviewString)
+                    
                 }
             }
-//            self.itemReview.text = allItemReviews
+            updateReviewTableViewWhenDownloadingReviewsIsDoneCompletion()
+            print(allItemReviews)
+            //self.itemReview.text = allItemReviews
         }) { (error) in
             print(error.localizedDescription)
         }
-
+        ref.removeAllObservers()
     }
     //---------------------------------------------------------------------------------------------------------------------
     
@@ -213,13 +233,17 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
             
         // TODO: Need to be updated to go to new storyboard
             
+        
         // Pass itemFromMain to review page  ==============================================================================
-        else if segue.identifier == "goToReview" {
-            //let vc = segue.destination as! ReviewViewController
-            let vc = UIStoryboard(name: "Review", bundle: nil).instantiateViewController(withIdentifier: "Review")
-            //vc.currentItem = itemFromMain
-            self.present(vc, animated: true, completion: nil)
-        }
+        
+//        if  == "Review" {
+//            
+//            let vc = segue.destination as! ReviewViewController
+//            //vc.currentItem = itemFromMain
+//            
+//            //let vc = UIStoryboard(name: "Review", bundle: nil).instantiateViewController(withIdentifier: "Review")
+//            //self.present(vc, animated: true, completion: nil)
+//        }
     }   //=================================================================================================================
     
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
