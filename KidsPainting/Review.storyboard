@@ -76,6 +76,7 @@
                     </view>
                     <connections>
                         <outlet property="reviewEditableTextView" destination="HpQ-aG-aEc" id="FSW-V7-JLv"/>
+                        <outlet property="submitBtn" destination="6W4-67-5xO" id="Zox-XY-CFn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cR5-fm-TTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
