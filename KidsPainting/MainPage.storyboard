@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -469,7 +469,11 @@
                                                     </connections>
                                                 </barButtonItem>
                                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="MQc-XP-kfY"/>
-                                                <barButtonItem title="Profile" id="c5d-GC-Kfq"/>
+                                                <barButtonItem title="Profile" id="c5d-GC-Kfq">
+                                                    <connections>
+                                                        <action selector="didProfileButtonPressed:" destination="otD-JR-vGu" id="eej-rY-SRB"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </items>
                                         </toolbar>
                                     </subviews>
@@ -865,7 +869,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navigationPage" automaticallyAdjustsScrollViewInsets="NO" id="jZC-rB-AYz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UEf-RR-lUt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UEf-RR-lUt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -884,7 +888,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qb3-QF-DJn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="GALLERY" id="4LY-B9-dUF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiI-Mh-RQU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HiI-Mh-RQU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -903,7 +907,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x1g-Wt-nIW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="PHOTO" id="mYC-Ej-639"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z2U-Wj-QaM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z2U-Wj-QaM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
