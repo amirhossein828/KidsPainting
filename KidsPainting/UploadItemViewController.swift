@@ -45,6 +45,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         
         view.addSubview(activityIndicator)
+        self.tabBarController?.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
