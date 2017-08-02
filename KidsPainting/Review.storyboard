@@ -21,38 +21,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HpQ-aG-aEc">
-                                <rect key="frame" x="16" y="97" width="343" height="311"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W4-67-5xO">
-                                <rect key="frame" x="16" y="431" width="158" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submitReview:" destination="Zsg-ha-4aX" eventType="touchUpInside" id="p2C-q5-fR5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmJ-9B-jHB">
-                                <rect key="frame" x="206" y="431" width="153" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelBtn:" destination="Zsg-ha-4aX" eventType="touchUpInside" id="kBU-LV-zZC"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUQ-C4-Dzu">
-                                <rect key="frame" x="160" y="58" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-235767" translatesAutoresizingMaskIntoConstraints="NO" id="GYC-UI-Ui9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nR-It-SmA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ugh-5w-ukn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HpQ-aG-aEc">
+                                            <rect key="frame" x="16" y="86" width="343" height="311"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80353702910958902" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="311" id="tTS-2F-EfP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W4-67-5xO">
+                                            <rect key="frame" x="16" y="412" width="343" height="30"/>
+                                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.78654751712328763" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Submit">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="submitReview:" destination="Zsg-ha-4aX" eventType="touchUpInside" id="p2C-q5-fR5"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="HpQ-aG-aEc" firstAttribute="leading" secondItem="Ugh-5w-ukn" secondAttribute="leading" constant="16" id="9jw-g1-Gzs"/>
+                                        <constraint firstItem="6W4-67-5xO" firstAttribute="top" secondItem="HpQ-aG-aEc" secondAttribute="bottom" constant="15" id="JxO-up-xgb"/>
+                                        <constraint firstItem="6W4-67-5xO" firstAttribute="leading" secondItem="Ugh-5w-ukn" secondAttribute="leading" constant="16" id="RC7-Ex-CRZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="6W4-67-5xO" secondAttribute="trailing" constant="16" id="SSp-mZ-Asi"/>
+                                        <constraint firstItem="HpQ-aG-aEc" firstAttribute="top" secondItem="Ugh-5w-ukn" secondAttribute="top" constant="86" id="SW5-7D-1Ol"/>
+                                        <constraint firstAttribute="trailing" secondItem="HpQ-aG-aEc" secondAttribute="trailing" constant="16" id="ljO-Vr-F5K"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GYC-UI-Ui9" firstAttribute="top" secondItem="3mA-TC-3Id" secondAttribute="top" id="2Tj-9k-Mka"/>
+                            <constraint firstItem="Sgh-xt-83e" firstAttribute="top" secondItem="8nR-It-SmA" secondAttribute="bottom" id="6WD-Cd-5xl"/>
+                            <constraint firstItem="GYC-UI-Ui9" firstAttribute="leading" secondItem="3mA-TC-3Id" secondAttribute="leading" id="8TT-6Y-z67"/>
+                            <constraint firstItem="Sgh-xt-83e" firstAttribute="top" secondItem="GYC-UI-Ui9" secondAttribute="bottom" id="ANg-Z7-QGR"/>
+                            <constraint firstItem="8nR-It-SmA" firstAttribute="leading" secondItem="3mA-TC-3Id" secondAttribute="leading" id="ZTN-Ka-PMo"/>
+                            <constraint firstItem="8nR-It-SmA" firstAttribute="top" secondItem="3mA-TC-3Id" secondAttribute="top" id="aNr-HA-edT"/>
+                            <constraint firstAttribute="trailing" secondItem="8nR-It-SmA" secondAttribute="trailing" id="dtH-CM-9HS"/>
+                            <constraint firstAttribute="trailing" secondItem="GYC-UI-Ui9" secondAttribute="trailing" id="g5q-dh-rsK"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="reviewEditableTextView" destination="HpQ-aG-aEc" id="FSW-V7-JLv"/>
@@ -63,4 +83,7 @@
             <point key="canvasLocation" x="-90.400000000000006" y="-120.98950524737631"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pexels-photo-235767" width="1080" height="1920"/>
+    </resources>
 </document>
