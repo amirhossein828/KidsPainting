@@ -15,6 +15,7 @@
 		1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */; };
 		1F9A79061F2A711E0006ED31 /* CustomCellUserItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A79051F2A711E0006ED31 /* CustomCellUserItemViewController.swift */; };
 		962FFDA21F24EB86006276CD /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CF1F205B7D00556C85 /* UIExtentions.swift */; };
+		9642C5321F32284E008A7C6B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642C5311F32284E008A7C6B /* CameraViewController.swift */; };
 		966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2511F15587E00556C85 /* AppDelegate.swift */; };
 		966BF2591F15587E00556C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2581F15587E00556C85 /* Assets.xcassets */; };
 		966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966BF25A1F15587E00556C85 /* LaunchScreen.storyboard */; };
@@ -69,6 +70,7 @@
 		1FA6CF1D1F2A67560084D3CF /* AKPickerView_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AKPickerView_Swift.framework; path = "../../Library/Developer/Xcode/DerivedData/KidsPainting-gazafxvthziutpdceztyfmltmouu/Build/Products/Debug-iphonesimulator/AKPickerView-Swift/AKPickerView_Swift.framework"; sourceTree = "<group>"; };
 		644285956F7D7794CB257D41 /* Pods-KidsPainting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.debug.xcconfig"; sourceTree = "<group>"; };
 		6BC54C19E581D5790294C84B /* Pods-KidsPainting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.release.xcconfig"; sourceTree = "<group>"; };
+		9642C5311F32284E008A7C6B /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		966BF24E1F15587E00556C85 /* KidsPainting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsPainting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966BF2511F15587E00556C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966BF2581F15587E00556C85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				966BF29F1F1E5C0700556C85 /* DetailViewController.swift */,
 				96A989B81F26AF7D009A4E42 /* RatingPopUpViewController.swift */,
 				1F9A79051F2A711E0006ED31 /* CustomCellUserItemViewController.swift */,
+				9642C5311F32284E008A7C6B /* CameraViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				96A989BB1F26B096009A4E42 /* FloatRatingView.swift in Sources */,
 				966BF2861F16E2CF00556C85 /* LoginViewController.swift in Sources */,
 				046F8ED31F27A8A100652CD3 /* ReviewViewController.swift in Sources */,
+				9642C5321F32284E008A7C6B /* CameraViewController.swift in Sources */,
 				966BF2C71F1FE6CE00556C85 /* CredentialsViewController.swift in Sources */,
 				1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */,
 				046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */,
