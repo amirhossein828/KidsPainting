@@ -106,13 +106,12 @@
                                                                 <segue destination="vP7-ya-OlW" kind="presentation" identifier="detailToPop" modalPresentationStyle="overCurrentContext" id="lAH-vF-yKw"/>
                                                             </connections>
                                                         </button>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zHj-Qh-RL8">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zHj-Qh-RL8">
                                                             <rect key="frame" x="16" y="533" width="343" height="146"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="146" id="4cK-0Y-HJe"/>
                                                             </constraints>
-                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
@@ -249,6 +248,7 @@
                     <connections>
                         <outlet property="detailImg" destination="buS-dm-uGq" id="Mv6-yV-ode"/>
                         <outlet property="giveRatingOutlet" destination="uNk-iD-VpT" id="688-Ko-mwN"/>
+                        <outlet property="itemDescription" destination="zHj-Qh-RL8" id="zph-x7-2bT"/>
                         <outlet property="nameOfAuther" destination="IS7-Zc-yzc" id="Os7-9h-JBR"/>
                         <outlet property="nameOfRticleDetail" destination="Ez7-eO-NyH" id="R2Y-P6-fC7"/>
                         <outlet property="priceImg" destination="FYA-yb-ga8" id="mY9-9U-Kqv"/>
@@ -506,10 +506,10 @@
             </objects>
             <point key="canvasLocation" x="932" y="113.79310344827587"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="psT-jZ-IFz">
             <objects>
-                <viewController id="ofn-EW-lVK" sceneMemberID="viewController">
+                <viewController id="ofn-EW-lVK" customClass="CameraViewController" customModule="KidsPainting" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HTh-mM-S3W"/>
                         <viewControllerLayoutGuide type="bottom" id="MA7-rc-IA0"/>
@@ -531,6 +531,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SBb-du-jhq"/>
+                    <connections>
+                        <segue destination="JUf-99-qLy" kind="show" identifier="goFromCameraToUpload" id="Dja-zq-u7f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LO-K9-g0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -558,13 +561,13 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="UfA-IU-B5k">
-                                            <rect key="frame" x="0.0" y="64" width="458" height="624"/>
+                                            <rect key="frame" x="0.0" y="64" width="200" height="624"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="253" verticalCompressionResistancePriority="700" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Sgv-DS-bCI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="458" height="396"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="396"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="150" verticalHuggingPriority="150" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="700" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAj-sk-ubF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="458" height="396"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="396"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="200" id="pQS-Yd-Xwf"/>
                                                             </constraints>
@@ -577,10 +580,10 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="w2F-Rm-KHw">
-                                                    <rect key="frame" x="0.0" y="405" width="458" height="219"/>
+                                                    <rect key="frame" x="0.0" y="405" width="200" height="219"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hb1-zm-Idb">
-                                                            <rect key="frame" x="0.0" y="0.0" width="458" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name of Article" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8G-wv-7Y0">
                                                                     <rect key="frame" x="0.0" y="0.0" width="119" height="30"/>
@@ -589,7 +592,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nzv-kG-3PW">
-                                                                    <rect key="frame" x="119" y="0.0" width="339" height="30"/>
+                                                                    <rect key="frame" x="119" y="0.0" width="81" height="30"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -600,7 +603,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwu-lr-OXy">
-                                                            <rect key="frame" x="0.0" y="37" width="458" height="30"/>
+                                                            <rect key="frame" x="0.0" y="37" width="200" height="30"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkd-JK-F8V">
                                                                     <rect key="frame" x="0.0" y="0.0" width="119" height="30"/>
@@ -609,7 +612,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-Iu-ngM">
-                                                                    <rect key="frame" x="119" y="0.0" width="339" height="30"/>
+                                                                    <rect key="frame" x="119" y="0.0" width="81" height="30"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -620,24 +623,23 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1CB-Zz-p7o">
-                                                            <rect key="frame" x="0.0" y="74" width="458" height="88"/>
+                                                            <rect key="frame" x="0.0" y="74" width="200" height="88"/>
                                                             <subviews>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nUt-Zg-4pi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="458" height="88"/>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="88"/>
+                                                                    <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="88" id="bfm-Oe-99z">
                                                                             <variation key="heightClass=compact" constant="50"/>
                                                                         </constraint>
                                                                     </constraints>
-                                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cN0-Xj-7YY">
-                                                            <rect key="frame" x="199" y="169" width="60" height="50"/>
+                                                            <rect key="frame" x="70" y="169" width="60" height="50"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAd-F0-wF0">
                                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
@@ -677,7 +679,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="UfA-IU-B5k" firstAttribute="leading" secondItem="mG9-6r-hIf" secondAttribute="leading" id="JiB-dN-miq"/>
-                                        <constraint firstAttribute="trailing" secondItem="UfA-IU-B5k" secondAttribute="trailing" id="d2i-wY-QNW"/>
+                                        <constraint firstAttribute="trailing" secondItem="UfA-IU-B5k" secondAttribute="trailing" id="ZbR-Hu-PhB"/>
                                         <constraint firstAttribute="bottom" secondItem="UfA-IU-B5k" secondAttribute="bottom" constant="48" id="hR4-8U-YFH"/>
                                         <constraint firstItem="UfA-IU-B5k" firstAttribute="top" secondItem="mG9-6r-hIf" secondAttribute="top" constant="64" id="m2H-Se-m6V"/>
                                     </constraints>
@@ -713,6 +715,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="itemDescriptionUpload" destination="nUt-Zg-4pi" id="HOb-b0-60h"/>
                         <outlet property="nameofArticleField" destination="nzv-kG-3PW" id="LpA-jY-ob1"/>
                         <outlet property="priceField" destination="daZ-Iu-ngM" id="Ts1-rh-JD5"/>
                         <outlet property="shareButton" destination="lAd-F0-wF0" id="rcl-Sc-dmx"/>
@@ -721,7 +724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFw-AZ-qHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4578.75" y="-217.6056338028169"/>
+            <point key="canvasLocation" x="4578.2608695652179" y="-217.66304347826087"/>
         </scene>
         <!--Gallery Collection Collection View Controller-->
         <scene sceneID="YXz-1v-a6x">
@@ -916,4 +919,7 @@
         <image name="StarFull" width="22" height="22"/>
         <image name="pexels-photo-235767" width="1080" height="1920"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dja-zq-u7f"/>
+    </inferredMetricsTieBreakers>
 </document>

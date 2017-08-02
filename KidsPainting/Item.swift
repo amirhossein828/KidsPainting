@@ -26,6 +26,7 @@ class Item: NSObject {
     var timeOfCreation : Date!
     var itemRating : Float
     var numberOfPeopleWhoDidRating : Int
+    var itemDescription : String!
     
     override init() {
         self.itemRating = 0

@@ -13,6 +13,7 @@ class ReviewViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var reviewEditableTextView: UITextView!
+    @IBOutlet weak var submitBtn: UIButton!
     
     
     // MARK: - Variables
@@ -94,6 +95,8 @@ class ReviewViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         detectCurrentUser()
+        disableReviewSubmitBtnForItemOwner()
+        
         addBorderToTextView()
         addPlaceHolderToTextView()
     }
@@ -137,6 +140,14 @@ class ReviewViewController: UIViewController {
         }
     }
     
+    
+    func disableReviewSubmitBtnForItemOwner(){
+        
+        if String(describing: Auth.auth().currentUser?.uid) == self.currentItem.userID {
+            self.submitBtn.isEnabled = false
+        }
+        
+    }
     
     /*
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
