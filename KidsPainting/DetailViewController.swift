@@ -102,8 +102,10 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     override func viewWillAppear(_ animated: Bool) {
         
         //TODO: Update itemReview textView with new review
-        connectToDBandQueryItemReviews()
-        self.tableView.reloadData()
+        connectToDBandQueryItemReviews{() in
+                self.tableView.reloadData()
+                print("")
+        }
     }
     
     
@@ -123,9 +125,10 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewTableViewCell
-        cell.displayName.text  = self.itemReviewArray[indexPath.row].displayName
-        cell.reviewString.text = self.itemReviewArray[indexPath.row].reviewString
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) 
+        cell.textLabel?.text  = self.itemReviewArray[indexPath.row].displayName
+        cell.detailTextLabel?.text = self.itemReviewArray[indexPath.row].reviewString
+        
     
         return cell
     }
@@ -134,7 +137,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     
     
     // MARK: Query from databse for current item reviews --------------------------------------------------------------
-    func connectToDBandQueryItemReviews(){
+    func connectToDBandQueryItemReviews(updateReviewTableViewWhenDownloadingReviewsIsDoneCompletion : @escaping () -> Void){
         // 1- Get the current user uid
         let uid = Auth.auth().currentUser!.uid
         
@@ -164,17 +167,21 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
                     
                     // Add review object to review tableView Array
                     self.itemReviewArray.append(currentReviewObject)
+                    
+                    
+                    
                     //print("This is itemReviewArray: \(self.itemReviewArray.description)")
                     // Update review textView ------------------------------------------------------------------------------------
                     allItemReviews = allItemReviews + reviewString + "\n" + "-----------------------------------------------------"
                     //------------------------------------------------------------------------------------------------------------
-                    
                     //print("\n ------------ Item reviews in detail page: ")
+                    
                     
                 }
             }
+            updateReviewTableViewWhenDownloadingReviewsIsDoneCompletion()
             print(allItemReviews)
-//            self.itemReview.text = allItemReviews
+            //self.itemReview.text = allItemReviews
         }) { (error) in
             print(error.localizedDescription)
         }
