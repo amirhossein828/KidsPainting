@@ -25,10 +25,10 @@ class ItemsServiceApi : ServiceApi{
         ref.child("posts").observeSingleEvent(of: .value){ (dataSnap : DataSnapshot) in
             print("inside the observerSingleEvent")
             let value = dataSnap.value as? NSDictionary
-            for (key, value) in value!{
-                print("This is the key \(key)")
-                print("This is the value \(value)")
-            }
+//            for (key, value) in value!{
+//                print("This is the key \(key)")
+//                print("This is the value \(value)")
+//            }
             
             let allAnswer = value?.allValues as? [[String:Any]]
             
@@ -61,6 +61,7 @@ class ItemsServiceApi : ServiceApi{
                 item.itemRating = Float(answer["itemRating"] as! NSNumber)
                 item.numberOfPeopleWhoDidRating = answer["numberOfPeopleWhoDidRating"] as! Int
                 item.userID = answer["userID"] as! String
+                item.itemDescription = answer["itemDescription"] as! String
                 
                 self.items.append(item)
             }

@@ -21,7 +21,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     @IBOutlet weak var nameOfAuther: UILabel!
     @IBOutlet weak var nameOfRticleDetail: UILabel!
     @IBOutlet weak var starRatingDetail: FloatRatingView!
-    
+    @IBOutlet weak var itemDescription: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
     
 //    // Review Outlet
@@ -94,6 +94,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
         if String((Auth.auth().currentUser?.uid)!) == itemFromMain.userID {
             giveRatingOutlet.isEnabled = false
         }
+        self.itemDescription.text = itemFromMain.itemDescription
     }
 
     override func didReceiveMemoryWarning() {
