@@ -32,6 +32,7 @@ class RatingPopUpViewController: UIViewController  ,FloatRatingViewDelegate{
         self.floatingStar.floatRatings = false
         // make the corner of pop up view circle shape
         popupView.layer.cornerRadius = 20
+        self.rating = 4
 
         
     }
