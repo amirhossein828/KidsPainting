@@ -30,13 +30,7 @@ class KidsPaintingUITests: XCTestCase {
     
     func testGoFromTableViewToAddItem() {
         
-        let app = XCUIApplication()
-        app.buttons["GIDSignInButton"].tap()
         
-        let webViewsQuery = app.webViews
-        webViewsQuery.textFields["Email or phone"].typeText("hashemi.eng19")
-        app.typeText("85@")
-        webViewsQuery.secureTextFields["Enter your password"].typeText("gmail.com09188140699")
         
     }
     

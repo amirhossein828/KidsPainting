@@ -19,7 +19,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var nameofArticleField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var shareButton: UIButton!
-    
+    @IBOutlet weak var itemDescriptionUpload: UITextView!
     //MARK: UIActivityIndicatorView is like spinner in android
     var activityIndicator = UIActivityIndicatorView()
     // - get it position and color
@@ -45,6 +45,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         
         view.addSubview(activityIndicator)
+        self.tabBarController?.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -132,7 +133,8 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                             "price" : price,
                             "currentDate" : Item.dateToString(currentDate),
                             "itemRating" : 0 ,
-                            "numberOfPeopleWhoDidRating" : 0
+                            "numberOfPeopleWhoDidRating" : 0,
+                            "itemDescription" : self.itemDescriptionUpload.text
                         ] as [String : Any]
                     
                     let postFeed = ["\(key)" : feed]
