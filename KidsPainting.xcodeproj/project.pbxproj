@@ -12,6 +12,7 @@
 		046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED41F27D1FB00652CD3 /* Review.swift */; };
 		046F8ED91F2921C700652CD3 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED81F2921C700652CD3 /* ReviewTableViewCell.swift */; };
 		04E763971F1FAF5600146FFD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E763961F1FAF5600146FFD /* Login.storyboard */; };
+		1F55000C1F323CAF000AE686 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F55000B1F323CAF000AE686 /* UserProfile.storyboard */; };
 		1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */; };
 		1F9A79061F2A711E0006ED31 /* CustomCellUserItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A79051F2A711E0006ED31 /* CustomCellUserItemViewController.swift */; };
 		962FFDA21F24EB86006276CD /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CF1F205B7D00556C85 /* UIExtentions.swift */; };
@@ -64,6 +65,7 @@
 		046F8ED81F2921C700652CD3 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		04E763961F1FAF5600146FFD /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1F1FCD881F1FFD0400393DB0 /* KidsPainting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KidsPainting.entitlements; sourceTree = "<group>"; };
+		1F55000B1F323CAF000AE686 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = UserProfile.storyboard; path = ../../KidsPaintingWithNewStoryBoard/KidsPainting/UserProfile.storyboard; sourceTree = "<group>"; };
 		1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		1F9A79051F2A711E0006ED31 /* CustomCellUserItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellUserItemViewController.swift; sourceTree = "<group>"; };
 		1FA6CF1D1F2A67560084D3CF /* AKPickerView_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AKPickerView_Swift.framework; path = "../../Library/Developer/Xcode/DerivedData/KidsPainting-gazafxvthziutpdceztyfmltmouu/Build/Products/Debug-iphonesimulator/AKPickerView-Swift/AKPickerView_Swift.framework"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		966BF2871F16E6F000556C85 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				1F55000B1F323CAF000AE686 /* UserProfile.storyboard */,
 				04E763961F1FAF5600146FFD /* Login.storyboard */,
 				966BF2831F16D8E700556C85 /* MainPage.storyboard */,
 				04140E611F2FFE39005FF495 /* Review.storyboard */,
@@ -396,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F55000C1F323CAF000AE686 /* UserProfile.storyboard in Resources */,
 				04140E621F2FFE39005FF495 /* Review.storyboard in Resources */,
 				966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */,
 				966BF2591F15587E00556C85 /* Assets.xcassets in Resources */,
@@ -437,7 +441,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B3B3519B78208E7EB9E39433 /* [CP] Copy Pods Resources */ = {
