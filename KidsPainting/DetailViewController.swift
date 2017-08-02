@@ -103,8 +103,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
         
         //TODO: Update itemReview textView with new review
         connectToDBandQueryItemReviews{() in
-                self.tableView.reloadData()
-                print("")
+            self.tableView.reloadData()
         }
     }
     
@@ -126,8 +125,8 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) 
-        cell.textLabel?.text  = self.itemReviewArray[indexPath.row].displayName
-        cell.detailTextLabel?.text = self.itemReviewArray[indexPath.row].reviewString
+        cell.textLabel?.text  = self.itemReviewArray[indexPath.row].reviewString
+        cell.detailTextLabel?.text = self.itemReviewArray[indexPath.row].displayName
         
     
         return cell
@@ -154,6 +153,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
             //print("This is allReviews: \(String(describing: allReviews))")
             
             var allItemReviews = ""
+            self.itemReviewArray.removeAll()
             for currentReviewDictionary in allReviews {
                 
                 if currentReviewDictionary["itemPostID"] == self.itemFromMain.postID{
@@ -185,7 +185,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
         }) { (error) in
             print(error.localizedDescription)
         }
-
+        ref.removeAllObservers()
     }
     //---------------------------------------------------------------------------------------------------------------------
     
