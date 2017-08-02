@@ -38,6 +38,13 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didProfileButtonPressed(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "UserProfile", bundle: nil)
+        let VC1 = storyboard.instantiateViewController(withIdentifier: "UserInformationViewController") as! UserInformationViewController
+        let navController = UINavigationController(rootViewController: VC1) // Creating a navigation controller with VC1 at the root of the navigation stack.
+        self.show(navController, sender:true)
+    }
+    
     
     // MARK: ------------------------------------------------- TableView initialization methods
     func numberOfSections(in tableView: UITableView) -> Int {
