@@ -154,18 +154,25 @@ class UserInformationViewController: UIViewController {
         
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    @IBAction func didCancelButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
      This method is called when the user want to edit the location text field
      The action used to triger the action is onDown
      We set the delegate google place and we present the google place view
      */
 
-    @IBAction func didLocationTextFieldTouched(_ sender: UITextField) {
-        print("We touch the location text field")
+
+    @IBAction func didLocationTextFieldPressed(_ sender: UITextField) {
+        print("Touch the location text field")
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
     }
+    
     /*
         To save the modification inside firebase
  `  */
@@ -195,6 +202,8 @@ class UserInformationViewController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
     }
+    
+    
 
     //MARK: - Methods
     /*
