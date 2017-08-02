@@ -33,6 +33,9 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     }
    
     
+    @IBAction func buyBtn(_ sender: UIButton) {
+        self.alert(title: "warning", message: " This function have not been implemented yet")
+    }
     //MARK: Attributes
     var itemFromMain : Item! = nil
     
