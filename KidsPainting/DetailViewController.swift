@@ -103,6 +103,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
         
         //TODO: Update itemReview textView with new review
         connectToDBandQueryItemReviews{() in
+            self.itemReviewArray.sort(by: {$1.reviewDate < $0.reviewDate})
             self.tableView.reloadData()
         }
     }
@@ -161,9 +162,12 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
                     
                     let displayName = currentReviewDictionary["displayName"]! as String
                     let reviewString = currentReviewDictionary["reviewString"]!
+                    let reviewDateString = currentReviewDictionary["reviewDate"]! as String
+                    let reviewDate = Item.dateFromString(reviewDateString)!
+                    
                     
                     // Create a review object
-                    let currentReviewObject = Review(displayName: displayName, reviewString: reviewString)
+                    let currentReviewObject = Review(displayName: displayName, reviewString: reviewString, reviewDate : reviewDate)
                     
                     // Add review object to review tableView Array
                     self.itemReviewArray.append(currentReviewObject)

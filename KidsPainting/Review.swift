@@ -13,12 +13,12 @@ class Review{
     
     var displayName : String
     var reviewString : String
-    //var date : Date
-    //var item : Item!
+    var reviewDate : Date
     
-    init(displayName : String, reviewString : String){
+    init(displayName : String, reviewString : String, reviewDate : Date){
         self.displayName = displayName
         self.reviewString = reviewString
+        self.reviewDate = reviewDate
     }
     
 }

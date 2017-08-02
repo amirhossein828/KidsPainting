@@ -32,12 +32,15 @@ class ReviewViewController: UIViewController {
         let ref = Database.database().reference()
         
         // 3- Write a review to backend as a child of review Object
+        
+        let currentDate = Date()
         ref.child("reviews").childByAutoId().setValue(
             [
                 "uid" : uid,
                 "displayName" : Auth.auth().currentUser?.displayName,
                 "itemPostID" : currentItem.postID,
-                "reviewString" : myReview
+                "reviewString" : myReview,
+                "reviewDate" : Item.dateToString(currentDate)
             ])
         // TODO: Step 4 should be moved to detail page
         // 4- Test query Firebase DB for related reviews
