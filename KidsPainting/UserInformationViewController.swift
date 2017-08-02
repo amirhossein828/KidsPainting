@@ -229,13 +229,15 @@ class UserInformationViewController: UIViewController {
     func displayFirebaseUserInformations(){
         nameTextField.text = currentUser.displayName
         emailTextField.text = currentUser.email
-        getDataFromUrl(url: (self.currentUser.photoURL)!, completion: { (data, response, error) in
-            if let image = UIImage(data: data!){
-                DispatchQueue.main.sync {
-                    self.profilePictureButton.setImage(image, for: .normal)
+        if let url = self.currentUser.photoURL{
+            getDataFromUrl(url: url, completion: { (data, response, error) in
+                if let image = UIImage(data: data!){
+                    DispatchQueue.main.sync {
+                        self.profilePictureButton.setImage(image, for: .normal)
+                    }
                 }
-            }
-        })
+            })
+        }
     }
     
     //Update the information of the user, this infos will be modify in the firebase user object
