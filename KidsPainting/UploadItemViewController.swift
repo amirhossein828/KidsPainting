@@ -19,7 +19,8 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var nameofArticleField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var shareButton: UIButton!
-    @IBOutlet weak var itemDescriptionUpload: UITextView!
+    
+    @IBOutlet weak var itemDescriptionField: UITextField!
     //MARK: UIActivityIndicatorView is like spinner in android
     var activityIndicator = UIActivityIndicatorView()
     // - get it position and color
@@ -134,7 +135,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                             "currentDate" : Item.dateToString(currentDate),
                             "itemRating" : 0 ,
                             "numberOfPeopleWhoDidRating" : 0,
-                            "itemDescription" : self.itemDescriptionUpload.text
+                            "itemDescription" : self.itemDescriptionField.text ?? ""
                         ] as [String : Any]
                     
                     let postFeed = ["\(key)" : feed]
@@ -182,5 +183,23 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
         let enabled = !articleText.isEmpty && !priceText.isEmpty
         shareButton.isEnabled = enabled
     }
+    
+    // Start Editing The Text Field
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveTextField(textField, moveDistance: -250, up: true, viewController: self)
+    }
+    
+    // Finish Editing The Text Field
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveTextField(textField, moveDistance: -250, up: false, viewController: self)
+    }
+    
+    // Hide the keyboard when the return key pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
 
 }

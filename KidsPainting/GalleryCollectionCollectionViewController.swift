@@ -119,7 +119,9 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if imageArray.count > 0 {
         self.bigImage.image = imageArray[0]
+        }
     }
  
 
