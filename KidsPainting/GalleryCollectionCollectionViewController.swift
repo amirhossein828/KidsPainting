@@ -95,8 +95,10 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
             if fetchResult.count > 0 {
                 for i in 0..<fetchResult.count {
                     imgManager.requestImage(for: fetchResult.object(at: i), targetSize: CGSize(width : 200,height : 200), contentMode: .aspectFill, options: requestOptions, resultHandler: { (image, error) in
-                        self.imageArray.append(image!)
-                        self.collectionView?.reloadData()
+                        if let image = image {
+                            self.imageArray.append(image)
+                            self.collectionView?.reloadData()
+                        }
                     })
                 }
             }else{
@@ -112,7 +114,6 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
         if segue.identifier == "goToNavigationBar" {
 
             if let vc = segue.destination as? UploadItemViewController {
-                print(index)
                  vc.newImage = self.imageArray[index!]
             }
         }
