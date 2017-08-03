@@ -46,6 +46,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     }
     //MARK: Attributes
     var itemFromMain : Item! = nil
+    var lastRating : Float! = nil
     
     // ArrayList of Reviews to feed Review TableView
     var itemReviewArray = [Review]()
@@ -95,6 +96,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
             giveRatingOutlet.isEnabled = false
         }
         self.itemDescription.text = itemFromMain.itemDescription
+        lastRating = itemFromMain.itemRating
     }
 
     override func didReceiveMemoryWarning() {
@@ -213,16 +215,26 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
             self.itemFromMain.numberOfPeopleWhoDidRating + 1
         var calculatedRating : Float {
             get {
-                return ((itemFromMain.itemRating + newRating) / Float(itemFromMain.numberOfPeopleWhoDidRating))
+                print(newRating)
+                print(lastRating)
+                let numberOfPeople = itemFromMain.numberOfPeopleWhoDidRating
+                let totalRating = ((lastRating * Float(numberOfPeople - 1)) + newRating)
+                let finalRating = totalRating / Float(numberOfPeople)
+                print("ffffff")
+                return finalRating
             }
         }
+        let calRating = calculatedRating
         
         // - update the itemRating for this post
         let service = ItemsServiceApi()
-        service.updateRatingOfItem(postKey: itemFromMain.postID, rating: calculatedRating, numOfPeople: self.itemFromMain.numberOfPeopleWhoDidRating)
-        
+        service.updateRatingOfItem(postKey: itemFromMain.postID, rating: calRating, numOfPeople: self.itemFromMain.numberOfPeopleWhoDidRating)
+        print(calRating)
         // - update starRatingDetail in the view
-        self.starRatingDetail.rating = calculatedRating
+        self.starRatingDetail.rating = calRating
+        lastRating = calRating
+        
+        
     }
     //---------------------------------------------------------------------------------------------------------------------
     
