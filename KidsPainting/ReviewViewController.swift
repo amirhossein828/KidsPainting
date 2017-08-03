@@ -13,7 +13,7 @@ class ReviewViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var reviewEditableTextView: UITextView!
-    @IBOutlet weak var submitBtn: UIButton!
+    @IBOutlet weak var submitBtn: UIBarButtonItem!
     
     
     // MARK: - Variables
@@ -21,7 +21,7 @@ class ReviewViewController: UIViewController {
     var currentItem : Item!
     
     // Write a review in Firebase backend
-    @IBAction func submitReview(_ sender: UIButton)
+    @IBAction func submitReview(_ sender: UIBarButtonItem)
     {
         
         let myReview = reviewEditableTextView.text
