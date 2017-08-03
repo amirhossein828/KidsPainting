@@ -30,11 +30,46 @@ class KidsPaintingUITests: XCTestCase {
     
     func testGoFromTableViewToAddItem() {
         
-        
-        
+        let app = XCUIApplication()
+        app.toolbars.buttons["Add"].tap()
+        app.collectionViews.children(matching: .cell).element(boundBy: 1).children(matching: .other).element.tap()
+        app.navigationBars["KidsPainting.GalleryCollectionCollectionView"].buttons["Next"].tap()
+        let nameOfArticle = app.textFields["nameOfArticle"]
+        nameOfArticle.tap()
+        nameOfArticle.typeText("waterfall2")
+        let price = app.textFields["price"]
+        price.tap()
+        price.typeText("123")
+        app.buttons["Share"].tap()
+        let itemText = app.navigationBars["Items"]
+        sleep(2)
+        XCTAssert(itemText.exists)
     }
     
+    
+    
     func testAddAndComeBack() {
+        
+        let app = XCUIApplication()
+        app.toolbars.buttons["Add"].tap()
+        app.collectionViews.children(matching: .cell).element(boundBy: 4).children(matching: .other).element.tap()
+        app.navigationBars["KidsPainting.GalleryCollectionCollectionView"].buttons["Next"].tap()
+        app.navigationBars["KidsPainting.UploadItemView"].buttons["Cancel"].tap()
+        let itemText = app.navigationBars["Items"]
+        sleep(2)
+        XCTAssert(itemText.exists)
+        
+    
+    }
+    
+    func testMainToDetail() {
+        let app = XCUIApplication()
+        app.tables.element(boundBy: 0).tap()
+        let buyBtn = app.buttons["Buy"]
+        sleep(2)
+        XCTAssert(buyBtn.exists)
+    }
+    func testLoginWithUserAndPassword() {
         
     }
     
