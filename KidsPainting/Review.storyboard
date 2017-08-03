@@ -39,22 +39,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W4-67-5xO">
-                                            <rect key="frame" x="16" y="412" width="343" height="30"/>
-                                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.78654751712328763" colorSpace="calibratedRGB"/>
-                                            <state key="normal" title="Submit">
-                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="submitReview:" destination="Zsg-ha-4aX" eventType="touchUpInside" id="p2C-q5-fR5"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="HpQ-aG-aEc" firstAttribute="leading" secondItem="Ugh-5w-ukn" secondAttribute="leading" constant="16" id="9jw-g1-Gzs"/>
-                                        <constraint firstItem="6W4-67-5xO" firstAttribute="top" secondItem="HpQ-aG-aEc" secondAttribute="bottom" constant="15" id="JxO-up-xgb"/>
-                                        <constraint firstItem="6W4-67-5xO" firstAttribute="leading" secondItem="Ugh-5w-ukn" secondAttribute="leading" constant="16" id="RC7-Ex-CRZ"/>
-                                        <constraint firstAttribute="trailing" secondItem="6W4-67-5xO" secondAttribute="trailing" constant="16" id="SSp-mZ-Asi"/>
                                         <constraint firstItem="HpQ-aG-aEc" firstAttribute="top" secondItem="Ugh-5w-ukn" secondAttribute="top" constant="86" id="SW5-7D-1Ol"/>
                                         <constraint firstAttribute="trailing" secondItem="HpQ-aG-aEc" secondAttribute="trailing" constant="16" id="ljO-Vr-F5K"/>
                                     </constraints>
@@ -74,12 +61,37 @@
                             <constraint firstAttribute="trailing" secondItem="GYC-UI-Ui9" secondAttribute="trailing" id="g5q-dh-rsK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="T9s-uQ-a7i">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="dym-vc-xWl">
+                            <connections>
+                                <action selector="submitReview:" destination="Zsg-ha-4aX" id="xrH-l8-bQL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="reviewEditableTextView" destination="HpQ-aG-aEc" id="FSW-V7-JLv"/>
-                        <outlet property="submitBtn" destination="6W4-67-5xO" id="Zox-XY-CFn"/>
+                        <outlet property="submitBtn" destination="dym-vc-xWl" id="5mA-EN-x1L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cR5-fm-TTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848.79999999999995" y="-120.98950524737631"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w6p-ax-o8q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bon-Lp-McN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TNi-ah-dTR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zsg-ha-4aX" kind="relationship" relationship="rootViewController" id="XGD-4N-Y2q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVO-Z0-LAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-90.400000000000006" y="-120.98950524737631"/>
         </scene>
