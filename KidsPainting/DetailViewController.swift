@@ -222,7 +222,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
         service.updateRatingOfItem(postKey: itemFromMain.postID, rating: calculatedRating, numOfPeople: self.itemFromMain.numberOfPeopleWhoDidRating)
         
         // - update starRatingDetail in the view
-        //self.starRatingDetail.rating = calculatedRating
+        self.starRatingDetail.rating = calculatedRating
     }
     //---------------------------------------------------------------------------------------------------------------------
     

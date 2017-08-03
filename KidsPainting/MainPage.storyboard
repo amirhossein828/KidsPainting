@@ -38,7 +38,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="buS-dm-uGq">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="buS-dm-uGq">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="415"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="415" id="cYJ-Wg-aM4"/>
@@ -395,7 +395,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0V-Wa-xSe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OoF-HD-yus">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OoF-HD-yus">
                                                                         <rect key="frame" x="25" y="22" width="131" height="80"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="131" id="qE3-ah-OYR"/>
@@ -576,7 +576,7 @@
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="253" verticalCompressionResistancePriority="700" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Sgv-DS-bCI">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="385"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="150" verticalHuggingPriority="150" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="cAj-sk-ubF">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="150" verticalHuggingPriority="150" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="cAj-sk-ubF">
                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="385"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="200" id="pQS-Yd-Xwf"/>
@@ -789,7 +789,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="118" height="112"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YmU-vI-Wab">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YmU-vI-Wab">
                                                             <rect key="frame" x="3" y="8" width="123" height="117"/>
                                                         </imageView>
                                                     </subviews>
