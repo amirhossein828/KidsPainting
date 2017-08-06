@@ -11,7 +11,7 @@ import Firebase
 
 
 // The UITextFieldDelegate protocol defines methods that you use to manage the editing and validation of text in a UITextField object.
-class UploadItemViewController: UIViewController , UITextFieldDelegate{
+class UploadItemViewController: UIViewController {
     
     
     //MARK: Outlets
@@ -30,9 +30,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
 
     // MARK: Attributes
     var newImage : UIImage?
-//    var name : String?
-//    var p : String?
-    
+
     
     override func viewDidLoad()
     {
@@ -41,10 +39,8 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
         if let newImg = newImage { self.uploadImageView.image = newImg }
         
         // Configuration for activityIndicator
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        view.addSubview(activityIndicator)
+        configurationForactivityIndicator()
+        // hide tabBar
         self.tabBarController?.tabBar.isHidden = true
     }
 
@@ -62,7 +58,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
     
     @IBAction func shareBtn(_ sender: UIButton)
     {
-        var item = Item()
+        let item = Item()
         guard
             let nameOfArticle = nameofArticleField.text ,
             let price = priceField.text
@@ -118,8 +114,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                     item.author = Auth.auth().currentUser!.displayName!
                     item.postID = key
                     item.nameOfArticle = nameOfArticle
-                 //   item.price = price
-                    Item.dateToString(currentDate)
+
                     
                     // 10- Make dictionary of "posts" object attributes and corresponding key
                     let feed =
@@ -131,7 +126,7 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                             "postID" : key,
                             "nameOfArticle" : nameOfArticle,
                             "price" : price,
-                            "currentDate" : Item.dateToString(currentDate),
+                            "currentDate" : Item.dateToString(currentDate)!,
                             "itemRating" : 0 ,
                             "numberOfPeopleWhoDidRating" : 0,
                             "itemDescription" : self.itemDescriptionField.text ?? ""
@@ -150,7 +145,6 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
                     
                     // 14- Dismisses the view controller that was presented modally by the view controller.
                     self.dismiss(animated: true, completion: nil)
-//                    _ = self.navigationController?.popViewController(animated: true)
                 }
             })
         }
@@ -158,6 +152,27 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
     }
     //--------------------------------------------------------------------------------------
     
+
+    // Enabble share Btn when item name and price have value
+        func updateShareButton(articleText: String, priceText: String) {
+        
+        let enabled = !articleText.isEmpty && !priceText.isEmpty
+        shareButton.isEnabled = enabled
+    }
+    
+    // Configuration for activityIndicator
+    func configurationForactivityIndicator() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+    }
+    
+    
+
+}
+
+extension UploadItemViewController : UITextFieldDelegate{
     
     // We could use this method from UITextFieldDelegate protocol to prevent the user from entering anything but numerical values.
     // Initialize item name and price with an empty string if, the value does not exist to prevent crashing the application
@@ -173,16 +188,6 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
         }
         return true
     }
-    
-
-    
-    // Enabble share Btn when item name and price have value
-    private func updateShareButton(articleText: String, priceText: String) {
-        
-        let enabled = !articleText.isEmpty && !priceText.isEmpty
-        shareButton.isEnabled = enabled
-    }
-    
     // Start Editing The Text Field
     func textFieldDidBeginEditing(_ textField: UITextField) {
         moveTextField(textField, moveDistance: -250, up: true, viewController: self)
@@ -198,7 +203,6 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
-    
-    
 
+    
 }
