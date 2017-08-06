@@ -34,10 +34,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
         let reviewViewController = UIStoryboard(name: "Review", bundle: nil).instantiateViewController(withIdentifier: "Review") as! ReviewViewController
         reviewViewController.currentItem = itemFromMain
         self.show(reviewViewController, sender: self)
-        
-        //print(">>>>>>>>\(itemFromMain.description)")
-        //print("~~~~~~~~\(reviewViewController.currentItem.description)")
-        //print("")
+ 
     }
    
     
@@ -51,12 +48,6 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     // ArrayList of Reviews to feed Review TableView
     var itemReviewArray = [Review]()
     
-//        {
-//        didSet {
-//            let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "reviewTable") as! ReviewTableViewController
-//            vc.itemFromMain = self.itemFromMain
-//        }
-//    }
     var newRating : Double?
     
     //MARK: Default Methods
@@ -67,27 +58,9 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        // Required float rating view params
-        self.starRatingDetail.emptyImage = UIImage(named: "StarEmpty")
-        self.starRatingDetail.fullImage = UIImage(named: "StarFull")
-        
-        // Optional params
-        self.starRatingDetail.delegate = self
-        self.starRatingDetail.contentMode = UIViewContentMode.scaleAspectFit
-        self.starRatingDetail.maxRating = 5
-        self.starRatingDetail.minRating = 1
-        self.starRatingDetail.rating = itemFromMain.itemRating
-        self.starRatingDetail.editable = false
-        self.starRatingDetail.halfRatings = true
-        self.starRatingDetail.floatRatings = false
-        
+        configurationForRating()
+        // populate labels and image in this page
         detailImg.downloadImage(from: itemFromMain.pathToImage)
-//        downloadImageFrom(itemFromMain.pathToImage) { (data) in
-//            if let data = data{
-//                self.detailImg.image = UIImage(data: data)
-//            }
-//        }
         self.priceImg.text = String(itemFromMain.price)
         self.nameOfAuther.text = itemFromMain.author
         self.nameOfRticleDetail.text = itemFromMain.nameOfArticle
@@ -96,7 +69,6 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
             giveRatingOutlet.isEnabled = false
         }
         self.itemDescription.text = itemFromMain.itemDescription
-        lastRating = itemFromMain.itemRating
     }
 
     override func didReceiveMemoryWarning() {
@@ -145,7 +117,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     // MARK: Query from databse for current item reviews --------------------------------------------------------------
     func connectToDBandQueryItemReviews(updateReviewTableViewWhenDownloadingReviewsIsDoneCompletion : @escaping () -> Void){
         // 1- Get the current user uid
-        let uid = Auth.auth().currentUser!.uid
+        _ = Auth.auth().currentUser!.uid
         
         // 2- Create a reference to backend database
         let ref = Database.database().reference()
@@ -203,24 +175,37 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     
     
     // MARK: Rating -------------------------------------------------------------------------------------------------------
-    func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating:Float) {
-        // self.resultlabel.text = NSString(format: "%.2f", self.floatingStar.rating) as String
+    func configurationForRating() {
+        // Required float rating view params
+        self.starRatingDetail.emptyImage = UIImage(named: "StarEmpty")
+        self.starRatingDetail.fullImage = UIImage(named: "StarFull")
+        
+        // Optional params
+        self.starRatingDetail.delegate = self
+        self.starRatingDetail.contentMode = UIViewContentMode.scaleAspectFit
+        self.starRatingDetail.maxRating = 5
+        self.starRatingDetail.minRating = 1
+        self.starRatingDetail.rating = itemFromMain.itemRating
+        self.starRatingDetail.editable = false
+        self.starRatingDetail.halfRatings = true
+        self.starRatingDetail.floatRatings = false
+        lastRating = itemFromMain.itemRating
+
     }
     
+    func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating:Float) {
+    }
+    
+    // - get the itemRating for this post and calculate new rating for this post
+    // increate number of user who did rating
     func upDateRating(newRating: Float) {
-        
-        // - get the itemRating for this post and calculate new rating for this post
-        // increate number of user who did rating
         self.itemFromMain.numberOfPeopleWhoDidRating =
             self.itemFromMain.numberOfPeopleWhoDidRating + 1
         var calculatedRating : Float {
             get {
-                print(newRating)
-                print(lastRating)
                 let numberOfPeople = itemFromMain.numberOfPeopleWhoDidRating
                 let totalRating = ((lastRating * Float(numberOfPeople - 1)) + newRating)
                 let finalRating = totalRating / Float(numberOfPeople)
-                print("ffffff")
                 return finalRating
             }
         }
@@ -229,11 +214,9 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
         // - update the itemRating for this post
         let service = ItemsServiceApi()
         service.updateRatingOfItem(postKey: itemFromMain.postID, rating: calRating, numOfPeople: self.itemFromMain.numberOfPeopleWhoDidRating)
-        print(calRating)
         // - update starRatingDetail in the view
         self.starRatingDetail.rating = calRating
         lastRating = calRating
-        
         
     }
     //---------------------------------------------------------------------------------------------------------------------
@@ -258,10 +241,6 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
 //            //self.present(vc, animated: true, completion: nil)
 //        }
     }   //=================================================================================================================
-    
-    override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-    }
-    
 
 }
 
