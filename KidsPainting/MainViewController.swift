@@ -55,7 +55,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // Return number of items in item array, if it does not exist return 0
-        return items.count ?? 0
+        return items.count
     }
     
     
@@ -67,12 +67,6 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         cell.nameOfArticleCell.text = self.items[indexPath.row].nameOfArticle
         cell.priceCell.text         = String(self.items[indexPath.row].price)
         cell.imageViewCell.downloadImage(from: items[indexPath.row].pathToImage)
-        // downloadImage method is implemented in an extention
-//        downloadImageFrom(items[indexPath.row].pathToImage) { (dataImage) in
-//            if let dataImage = dataImage{
-//                cell.imageViewCell.image = UIImage(data:dataImage,scale:1.0)
-//            }
-//        }
         return cell
     }
     
@@ -85,6 +79,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
     }
     
+    // send the item to DetailViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goDetail" {
             let detailVC = segue.destination as! DetailViewController
@@ -110,7 +105,6 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         _ = Auth.auth().addStateDidChangeListener { (auth, user) in
             //If the user is sign in then we hide the sign in option
             if let user = user{
-                print("The user is not nil \(user.email)")
                 self.user = user
                 //If the user is not sign in then we display the sign in option
             }else{
@@ -118,7 +112,6 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
             }
         }
         
-        print("Inside the view will appear")
         // get Info from firebase data base and put in arrayList
         let serviceApi = ItemsServiceApi()
         serviceApi.getAllItemsFrimFireBaseDataBase { (allItems) in
