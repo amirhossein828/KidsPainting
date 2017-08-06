@@ -30,8 +30,8 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
 
     // MARK: Attributes
     var newImage : UIImage?
-    var name : String?
-    var p : String?
+//    var name : String?
+//    var p : String?
     
     
     override func viewDidLoad()
@@ -44,7 +44,6 @@ class UploadItemViewController: UIViewController , UITextFieldDelegate{
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        
         view.addSubview(activityIndicator)
         self.tabBarController?.tabBar.isHidden = true
     }
