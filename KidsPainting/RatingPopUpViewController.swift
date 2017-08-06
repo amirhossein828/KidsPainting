@@ -18,23 +18,10 @@ class RatingPopUpViewController: UIViewController  ,FloatRatingViewDelegate{
     @IBOutlet weak var floatingStar: FloatRatingView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Required float rating view params
-        self.floatingStar.emptyImage = UIImage(named: "StarEmpty")
-        self.floatingStar.fullImage = UIImage(named: "StarFull")
-        // Optional params
-        self.floatingStar.delegate = self
-        self.floatingStar.contentMode = UIViewContentMode.scaleAspectFit
-        self.floatingStar.maxRating = 5
-        self.floatingStar.minRating = 1
-        self.floatingStar.rating = 4
-        self.floatingStar.editable = true
-        self.floatingStar.halfRatings = true
-        self.floatingStar.floatRatings = false
+        // configure rating view
+        configurationForRating()
         // make the corner of pop up view circle shape
         popupView.layer.cornerRadius = 20
-//        self.rating = 4
-
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,10 +38,25 @@ class RatingPopUpViewController: UIViewController  ,FloatRatingViewDelegate{
     @IBAction func closeButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-
+    
+    // update the rating in the DetailViewController and dismiss popUp
     @IBAction func doneBtton(_ sender: UIButton) {
-        
         self.delegate?.upDateRating(newRating: rating!)
         dismiss(animated: true, completion: nil)
+    }
+    
+    func configurationForRating() {
+        // Required float rating view params
+        self.floatingStar.emptyImage = UIImage(named: "StarEmpty")
+        self.floatingStar.fullImage = UIImage(named: "StarFull")
+        // Optional params
+        self.floatingStar.delegate = self
+        self.floatingStar.contentMode = UIViewContentMode.scaleAspectFit
+        self.floatingStar.maxRating = 5
+        self.floatingStar.minRating = 1
+        self.floatingStar.rating = 4
+        self.floatingStar.editable = true
+        self.floatingStar.halfRatings = true
+        self.floatingStar.floatRatings = false
     }
 }
