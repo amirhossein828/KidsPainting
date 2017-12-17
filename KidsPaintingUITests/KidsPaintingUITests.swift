@@ -36,13 +36,13 @@ class KidsPaintingUITests: XCTestCase {
         app.navigationBars["KidsPainting.GalleryCollectionCollectionView"].buttons["Next"].tap()
         let nameOfArticle = app.textFields["nameOfArticle"]
         nameOfArticle.tap()
-        nameOfArticle.typeText("waterfall2")
+        nameOfArticle.typeText("bestEverApp")
         let price = app.textFields["price"]
         price.tap()
         price.typeText("123")
         app.buttons["Share"].tap()
         let itemText = app.navigationBars["Items"]
-        sleep(2)
+        sleep(4)
         XCTAssert(itemText.exists)
     }
     
@@ -56,7 +56,7 @@ class KidsPaintingUITests: XCTestCase {
         app.navigationBars["KidsPainting.GalleryCollectionCollectionView"].buttons["Next"].tap()
         app.navigationBars["KidsPainting.UploadItemView"].buttons["Cancel"].tap()
         let itemText = app.navigationBars["Items"]
-        sleep(2)
+        sleep(3)
         XCTAssert(itemText.exists)
         
     
@@ -66,7 +66,7 @@ class KidsPaintingUITests: XCTestCase {
         let app = XCUIApplication()
         app.tables.element(boundBy: 0).tap()
         let buyBtn = app.buttons["Buy"]
-        sleep(2)
+        sleep(3)
         XCTAssert(buyBtn.exists)
     }
     func testLoginWithUserAndPassword() {

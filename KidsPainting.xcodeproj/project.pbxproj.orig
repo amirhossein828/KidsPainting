@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
+=======
 		04140E621F2FFE39005FF495 /* Review.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04140E611F2FFE39005FF495 /* Review.storyboard */; };
+>>>>>>> 42492ee1ca08a2ce059cb490d984afb368a5b9e1
 		046F8ED31F27A8A100652CD3 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED21F27A8A100652CD3 /* ReviewViewController.swift */; };
 		046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED41F27D1FB00652CD3 /* Review.swift */; };
 		046F8ED91F2921C700652CD3 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F8ED81F2921C700652CD3 /* ReviewTableViewCell.swift */; };
@@ -15,9 +18,6 @@
 		1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFC151F22AFAE005F9F5D /* UserInformationViewController.swift */; };
 		1F9A79061F2A711E0006ED31 /* CustomCellUserItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A79051F2A711E0006ED31 /* CustomCellUserItemViewController.swift */; };
 		962FFDA21F24EB86006276CD /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2CF1F205B7D00556C85 /* UIExtentions.swift */; };
-		9642C5321F32284E008A7C6B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642C5311F32284E008A7C6B /* CameraViewController.swift */; };
-		9642C5341F326965008A7C6B /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9642C5331F326965008A7C6B /* UserProfile.storyboard */; };
-		9642C5361F32E060008A7C6B /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642C5351F32E060008A7C6B /* Util.swift */; };
 		966BF2521F15587E00556C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF2511F15587E00556C85 /* AppDelegate.swift */; };
 		966BF2591F15587E00556C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966BF2581F15587E00556C85 /* Assets.xcassets */; };
 		966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966BF25A1F15587E00556C85 /* LaunchScreen.storyboard */; };
@@ -61,7 +61,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
+=======
 		04140E611F2FFE39005FF495 /* Review.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Review.storyboard; sourceTree = "<group>"; };
+>>>>>>> 42492ee1ca08a2ce059cb490d984afb368a5b9e1
 		046F8ED21F27A8A100652CD3 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		046F8ED41F27D1FB00652CD3 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		046F8ED81F2921C700652CD3 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -72,9 +75,6 @@
 		1FA6CF1D1F2A67560084D3CF /* AKPickerView_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AKPickerView_Swift.framework; path = "../../Library/Developer/Xcode/DerivedData/KidsPainting-gazafxvthziutpdceztyfmltmouu/Build/Products/Debug-iphonesimulator/AKPickerView-Swift/AKPickerView_Swift.framework"; sourceTree = "<group>"; };
 		644285956F7D7794CB257D41 /* Pods-KidsPainting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.debug.xcconfig"; sourceTree = "<group>"; };
 		6BC54C19E581D5790294C84B /* Pods-KidsPainting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsPainting.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsPainting/Pods-KidsPainting.release.xcconfig"; sourceTree = "<group>"; };
-		9642C5311F32284E008A7C6B /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		9642C5331F326965008A7C6B /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
-		9642C5351F32E060008A7C6B /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		966BF24E1F15587E00556C85 /* KidsPainting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsPainting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966BF2511F15587E00556C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966BF2581F15587E00556C85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -210,10 +210,12 @@
 		966BF2871F16E6F000556C85 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				9642C5331F326965008A7C6B /* UserProfile.storyboard */,
 				04E763961F1FAF5600146FFD /* Login.storyboard */,
 				966BF2831F16D8E700556C85 /* MainPage.storyboard */,
+<<<<<<< HEAD
+=======
 				04140E611F2FFE39005FF495 /* Review.storyboard */,
+>>>>>>> 42492ee1ca08a2ce059cb490d984afb368a5b9e1
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -235,7 +237,6 @@
 				966BF29F1F1E5C0700556C85 /* DetailViewController.swift */,
 				96A989B81F26AF7D009A4E42 /* RatingPopUpViewController.swift */,
 				1F9A79051F2A711E0006ED31 /* CustomCellUserItemViewController.swift */,
-				9642C5311F32284E008A7C6B /* CameraViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -282,7 +283,6 @@
 			children = (
 				966BF2C51F1FE6CE00556C85 /* UserCredentialCheckHelperClass.swift */,
 				966BF2CF1F205B7D00556C85 /* UIExtentions.swift */,
-				9642C5351F32E060008A7C6B /* Util.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -358,7 +358,11 @@
 				TargetAttributes = {
 					966BF24D1F15587E00556C85 = {
 						CreatedOnToolsVersion = 8.3.3;
+<<<<<<< HEAD
 						DevelopmentTeam = 68MJJA856T;
+=======
+						DevelopmentTeam = 3JEECEY2RT;
+>>>>>>> 42492ee1ca08a2ce059cb490d984afb368a5b9e1
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -405,7 +409,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9642C5341F326965008A7C6B /* UserProfile.storyboard in Resources */,
 				04140E621F2FFE39005FF495 /* Review.storyboard in Resources */,
 				966BF25C1F15587E00556C85 /* LaunchScreen.storyboard in Resources */,
 				966BF2591F15587E00556C85 /* Assets.xcassets in Resources */,
@@ -447,7 +450,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B3B3519B78208E7EB9E39433 /* [CP] Copy Pods Resources */ = {
@@ -533,7 +536,6 @@
 				96A989BB1F26B096009A4E42 /* FloatRatingView.swift in Sources */,
 				966BF2861F16E2CF00556C85 /* LoginViewController.swift in Sources */,
 				046F8ED31F27A8A100652CD3 /* ReviewViewController.swift in Sources */,
-				9642C5321F32284E008A7C6B /* CameraViewController.swift in Sources */,
 				966BF2C71F1FE6CE00556C85 /* CredentialsViewController.swift in Sources */,
 				1F6CFC161F22AFAE005F9F5D /* UserInformationViewController.swift in Sources */,
 				046F8ED51F27D1FB00652CD3 /* Review.swift in Sources */,
@@ -549,7 +551,6 @@
 				966BF28E1F173FC800556C85 /* MainViewController.swift in Sources */,
 				966BF2981F1C5B7400556C85 /* UploadItemViewController.swift in Sources */,
 				046F8ED91F2921C700652CD3 /* ReviewTableViewCell.swift in Sources */,
-				9642C5361F32E060008A7C6B /* Util.swift in Sources */,
 				962FFDA21F24EB86006276CD /* UIExtentions.swift in Sources */,
 				966BF2A01F1E5C0800556C85 /* DetailViewController.swift in Sources */,
 				966BF2941F174CAD00556C85 /* Item.swift in Sources */,
@@ -701,8 +702,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = KidsPainting/KidsPainting.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 68MJJA856T;
+=======
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3JEECEY2RT;
+>>>>>>> 42492ee1ca08a2ce059cb490d984afb368a5b9e1
 				INFOPLIST_FILE = KidsPainting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -719,8 +724,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = KidsPainting/KidsPainting.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 68MJJA856T;
+=======
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3JEECEY2RT;
+>>>>>>> 42492ee1ca08a2ce059cb490d984afb368a5b9e1
 				INFOPLIST_FILE = KidsPainting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
