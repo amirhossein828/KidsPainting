@@ -45,7 +45,7 @@ class ReviewViewController: UIViewController {
             ])
         // TODO: Step 4 should be moved to detail page
         // 4- Test query Firebase DB for related reviews
-        let myQuery = ref.child("reviews").queryOrdered(byChild: "reviewString") //.queryEqual(toValue: currentItem.postID)
+        _ = ref.child("reviews").queryOrdered(byChild: "reviewString") //.queryEqual(toValue: currentItem.postID)
         //print("--------------------  This is saver review query result from Firebase DB: \(String(describing: myQuery))")
         
         ref.child("reviews").observeSingleEvent(of: .value, with: { (snapshot) in

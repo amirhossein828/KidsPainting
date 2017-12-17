@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
             }
             
             // Go to main page in other story board
-            if let user = user {
+            if user != nil {
                 
                 let vc = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "navigationPage")
                 // Show new storyboard first controller
