@@ -25,6 +25,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var buyButton: UIButton!
     
+    @IBOutlet weak var numberOfRating: UILabel!
     //    // Review Outlet
 //    @IBOutlet weak var itemReview: UITextView!
     @IBOutlet weak var tableView: UITableView!
@@ -60,9 +61,10 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
         configurationForRating()
         // populate labels and image in this page
         detailImg.downloadImage(from: itemFromMain.pathToImage)
-        self.priceImg.text = String(itemFromMain.price)
+        self.priceImg.text = String(Int(itemFromMain.price))
         self.nameOfAuther.text = itemFromMain.author
         self.nameOfRticleDetail.text = itemFromMain.nameOfArticle
+        self.numberOfRating.text = String(itemFromMain.numberOfPeopleWhoDidRating)
         // user just can rate other items (not his items)
         if String((Auth.auth().currentUser?.uid)!) == itemFromMain.userID {
             giveRatingOutlet.isEnabled = false
