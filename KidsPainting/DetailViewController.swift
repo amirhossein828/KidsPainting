@@ -23,8 +23,9 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     @IBOutlet weak var starRatingDetail: FloatRatingView!
     @IBOutlet weak var itemDescription: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var buyButton: UIButton!
     
-//    // Review Outlet
+    //    // Review Outlet
 //    @IBOutlet weak var itemReview: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -53,11 +54,9 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
     //MARK: Default Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // MARK: Initialize tableViewReviews
         tableView.delegate = self
         tableView.dataSource = self
-        
         configurationForRating()
         // populate labels and image in this page
         detailImg.downloadImage(from: itemFromMain.pathToImage)
@@ -69,6 +68,7 @@ class DetailViewController: UIViewController ,FloatRatingViewDelegate, ratingPop
             giveRatingOutlet.isEnabled = false
         }
         self.itemDescription.text = itemFromMain.itemDescription
+        self.buyButton.layer.cornerRadius = 10
     }
 
     override func didReceiveMemoryWarning() {
