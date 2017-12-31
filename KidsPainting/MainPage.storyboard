@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -443,11 +444,20 @@
                                                                     <constraint firstItem="m90-js-1J2" firstAttribute="top" secondItem="LyZ-PY-Gdy" secondAttribute="top" id="w9S-zS-ecP"/>
                                                                 </constraints>
                                                             </view>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-1577909_960_720" translatesAutoresizingMaskIntoConstraints="NO" id="qUC-Nj-XQp">
+                                                                <rect key="frame" x="15" y="5" width="30" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="qUC-Nj-XQp" secondAttribute="height" multiplier="1:1" id="uJc-aE-Kbb"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="qUC-Nj-XQp" firstAttribute="leading" secondItem="5iC-tO-37s" secondAttribute="leading" constant="15" id="0S0-2E-c8V"/>
+                                                            <constraint firstItem="qUC-Nj-XQp" firstAttribute="height" secondItem="5iC-tO-37s" secondAttribute="height" multiplier="0.135" id="LcA-3I-hCg"/>
                                                             <constraint firstItem="Wr9-Tv-b7J" firstAttribute="leading" secondItem="5iC-tO-37s" secondAttribute="leadingMargin" constant="48" id="OSt-Pl-ub0"/>
                                                             <constraint firstItem="Wp5-Xw-X9i" firstAttribute="bottom" secondItem="5iC-tO-37s" secondAttribute="bottomMargin" id="PAt-l3-JhU"/>
                                                             <constraint firstItem="Wr9-Tv-b7J" firstAttribute="top" secondItem="5iC-tO-37s" secondAttribute="topMargin" id="VyA-dp-ZYK"/>
+                                                            <constraint firstItem="qUC-Nj-XQp" firstAttribute="top" secondItem="5iC-tO-37s" secondAttribute="top" constant="5" id="alP-AY-Ipm"/>
                                                             <constraint firstItem="JhD-Cv-MbH" firstAttribute="bottom" secondItem="5iC-tO-37s" secondAttribute="bottomMargin" id="cY4-fn-f5u"/>
                                                             <constraint firstItem="Wp5-Xw-X9i" firstAttribute="top" secondItem="LyZ-PY-Gdy" secondAttribute="bottom" constant="8" id="ccF-tg-AMG"/>
                                                             <constraint firstItem="LyZ-PY-Gdy" firstAttribute="trailing" secondItem="5iC-tO-37s" secondAttribute="trailingMargin" id="eDg-tI-Xbr"/>
@@ -463,6 +473,7 @@
                                                         <outlet property="imageViewCell" destination="m90-js-1J2" id="FDk-Es-mjF"/>
                                                         <outlet property="nameOfArticleCell" destination="Wp5-Xw-X9i" id="t50-51-Ula"/>
                                                         <outlet property="priceCell" destination="JhD-Cv-MbH" id="UuY-fB-Cmq"/>
+                                                        <outlet property="profilePhoto" destination="qUC-Nj-XQp" id="wuB-r2-niQ"/>
                                                     </connections>
                                                 </tableViewCell>
                                             </prototypes>
@@ -922,6 +933,7 @@
     <resources>
         <image name="StarEmpty" width="22" height="22"/>
         <image name="StarFull" width="22" height="22"/>
+        <image name="avatar-1577909_960_720" width="720" height="720"/>
         <image name="pexels-photo-235767" width="1080" height="1920"/>
     </resources>
     <inferredMetricsTieBreakers>
