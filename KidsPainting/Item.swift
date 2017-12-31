@@ -14,8 +14,6 @@ class Item: NSObject {
     var pathToImage: String!
     var nameOfArticle: String!
     var price: Double!
-    
-    
     var userID: String!
     var postID: String!
     
@@ -51,8 +49,4 @@ extension Item {
         let val = dateformatter.string(from: date)
         return val
     }
-<<<<<<< HEAD
-    // fdfdfdfd
-=======
->>>>>>> 24e2c19c03c269405dfba28487b2b80046d1a9b2
 }
