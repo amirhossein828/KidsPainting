@@ -267,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PP1-5V-xme" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1754" y="-880"/>
+            <point key="canvasLocation" x="1730" y="-978"/>
         </scene>
         <!--Rating Pop Up View Controller-->
         <scene sceneID="Gyx-lZ-aOq">
@@ -450,6 +450,12 @@
                                                                     <constraint firstAttribute="width" secondItem="qUC-Nj-XQp" secondAttribute="height" multiplier="1:1" id="uJc-aE-Kbb"/>
                                                                 </constraints>
                                                             </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pr-fD-1VX">
+                                                                <rect key="frame" x="250" y="198" width="11" height="21"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="qUC-Nj-XQp" firstAttribute="leading" secondItem="5iC-tO-37s" secondAttribute="leading" constant="15" id="0S0-2E-c8V"/>
@@ -463,7 +469,9 @@
                                                             <constraint firstItem="LyZ-PY-Gdy" firstAttribute="trailing" secondItem="5iC-tO-37s" secondAttribute="trailingMargin" id="eDg-tI-Xbr"/>
                                                             <constraint firstAttribute="trailingMargin" secondItem="JhD-Cv-MbH" secondAttribute="trailing" constant="3" id="gzv-tl-ieZ"/>
                                                             <constraint firstItem="LyZ-PY-Gdy" firstAttribute="leading" secondItem="5iC-tO-37s" secondAttribute="leadingMargin" id="iSf-mM-NXU"/>
+                                                            <constraint firstItem="2pr-fD-1VX" firstAttribute="bottom" secondItem="5iC-tO-37s" secondAttribute="bottomMargin" id="lrY-yv-rzH"/>
                                                             <constraint firstItem="LyZ-PY-Gdy" firstAttribute="top" secondItem="Wr9-Tv-b7J" secondAttribute="bottom" constant="8" id="uu4-Fs-c2s"/>
+                                                            <constraint firstItem="JhD-Cv-MbH" firstAttribute="leading" secondItem="2pr-fD-1VX" secondAttribute="trailing" constant="2" id="w2Q-ZP-t4g"/>
                                                             <constraint firstItem="Wp5-Xw-X9i" firstAttribute="leading" secondItem="5iC-tO-37s" secondAttribute="leadingMargin" id="xzB-sG-VZd"/>
                                                         </constraints>
                                                     </tableViewCellContentView>

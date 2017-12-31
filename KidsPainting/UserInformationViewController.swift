@@ -229,6 +229,7 @@ class UserInformationViewController: UIViewController {
     func displayFirebaseUserInformations(){
         nameTextField.text = currentUser.displayName
         emailTextField.text = currentUser.email
+        
         if let url = self.currentUser.photoURL{
             getDataFromUrl(url: url, completion: { (data, response, error) in
                 if let image = UIImage(data: data!){

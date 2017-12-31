@@ -309,7 +309,7 @@ class CredentialsViewController: UIViewController{
         didPictureButtonPressed = true
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+//        imagePicker.sourceType = .camera
         
         present(imagePicker, animated: true, completion: nil)
     }

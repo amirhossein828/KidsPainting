@@ -20,7 +20,6 @@ class ItemsServiceApi : ServiceApi{
         print("Inside the getAllItems ...")
         // Fetch list of items from firebase backend
         ref = Database.database().reference()
-        
         // Access "posts" object in backend if it does not exist
         ref.child("posts").observeSingleEvent(of: .value){ (dataSnap : DataSnapshot) in
             print("inside the observerSingleEvent")
