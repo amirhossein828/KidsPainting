@@ -944,7 +944,7 @@
         <scene sceneID="qUI-YG-BDn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qb3-QF-DJn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="GALLERY" id="4LY-B9-dUF"/>
+                    <tabBarItem key="tabBarItem" title="GALLERY" image="ic_insert_photo_2x" selectedImage="ic_insert_photo_2x" id="4LY-B9-dUF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HiI-Mh-RQU">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -963,7 +963,7 @@
         <scene sceneID="yAn-5h-LPe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x1g-Wt-nIW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="PHOTO" id="mYC-Ej-639"/>
+                    <tabBarItem key="tabBarItem" title="PHOTO" image="ic_photo_camera_2x" selectedImage="ic_photo_camera_2x" id="mYC-Ej-639"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z2U-Wj-QaM">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -983,6 +983,8 @@
         <image name="StarEmpty" width="22" height="22"/>
         <image name="StarFull" width="22" height="22"/>
         <image name="avatar-1577909_960_720" width="720" height="720"/>
+        <image name="ic_insert_photo_2x" width="48" height="48"/>
+        <image name="ic_photo_camera_2x" width="48" height="48"/>
         <image name="pexels-photo-235767" width="1080" height="1920"/>
     </resources>
     <inferredMetricsTieBreakers>
