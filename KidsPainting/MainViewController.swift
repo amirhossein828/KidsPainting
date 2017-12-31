@@ -94,7 +94,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     // MARK: Fix cell height to fix appearance cell problem when height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 140; //Choose your custom row height
+        return 230; //Choose your custom row height
     }
     
     //-----------------------------------------------------------------------------------
