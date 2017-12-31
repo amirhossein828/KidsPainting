@@ -11,7 +11,7 @@ import Photos
 
 private let reuseIdentifier = "Cell"
 
-class GalleryCollectionCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class GalleryCollectionCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var imageArray = [UIImage]()
     var index : Int?
     
@@ -27,6 +27,7 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
         self.collectionView.delegate = self
         
         grabPhotos()
+        self.collectionView.contentInset = UIEdgeInsets(top: 3, left: 0, bottom: 0, right: 3)
         
     }
 
@@ -123,6 +124,19 @@ class GalleryCollectionCollectionViewController: UIViewController,UICollectionVi
         if imageArray.count > 0 {
         self.bigImage.image = imageArray[0]
         }
+    }
+    
+    //     make the size of each cell half of the screen
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.frame.width - 9)/3, height: self.view.frame.size.height * 0.15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 3
     }
  
 
