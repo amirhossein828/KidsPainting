@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UINavigationBar.appearance().backgroundColor = UIColor.red
         FirebaseApp.configure()
         GMSPlacesClient.provideAPIKey("AIzaSyAwycclhIKgID76swMuC4zdujGcyLqcaWM")
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
