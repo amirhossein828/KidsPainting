@@ -1,4 +1,4 @@
-//
+ //
 //  GalleryCollectionCollectionViewController.swift
 //  KidsPainting
 //
