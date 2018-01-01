@@ -13,9 +13,9 @@ import UIKit
 // downloads image from specified url and put it in UIImageView
 extension UIImageView {
     
-    func downloadImage(from imgURL: String!)  {
-        
-        let url = URLRequest(url: URL(string: imgURL)!)
+    func downloadImage(from imgURL: String)  {
+        guard let urlForRequest = URL(string: imgURL) else { return  }
+         let url = URLRequest(url: urlForRequest)
         let task = URLSession.shared.dataTask(with: url)
         { (data, response, error) in
             
