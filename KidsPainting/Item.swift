@@ -16,6 +16,7 @@ class Item: NSObject {
     var price: Double!
     var userID: String!
     var postID: String!
+    var profilePhoto : String?
     
     // Attributes that are not used yet
     var numberOfAvilable: Int!
