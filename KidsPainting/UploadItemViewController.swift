@@ -115,7 +115,7 @@ class UploadItemViewController: UIViewController {
                     item.postID = key
                     item.nameOfArticle = nameOfArticle
 
-                    
+                    let photoUrl = Auth.auth().currentUser?.photoURL?.absoluteString ?? ""
                     // 10- Make dictionary of "posts" object attributes and corresponding key
                     let feed =
                         [
@@ -129,7 +129,8 @@ class UploadItemViewController: UIViewController {
                             "currentDate" : Item.dateToString(currentDate)!,
                             "itemRating" : 0 ,
                             "numberOfPeopleWhoDidRating" : 0,
-                            "itemDescription" : self.itemDescriptionField.text ?? ""
+                            "itemDescription" : self.itemDescriptionField.text ?? "",
+                            "autherPhoto" : photoUrl
                         ] as [String : Any]
                     
                     let postFeed = ["\(key)" : feed]
