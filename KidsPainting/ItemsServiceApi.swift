@@ -15,6 +15,7 @@ class ItemsServiceApi : ServiceApi{
     var items = [Item]()
     var ref: DatabaseReference!
     
+   
     // get Info from firebase data base
     func getAllItemsFrimFireBaseDataBase(complition : @escaping ([Item]) -> Void){
         print("Inside the getAllItems ...")
@@ -61,7 +62,7 @@ class ItemsServiceApi : ServiceApi{
                 item.numberOfPeopleWhoDidRating = answer["numberOfPeopleWhoDidRating"] as! Int
                 item.userID = answer["userID"] as! String
                 item.itemDescription = answer["itemDescription"] as! String
-                
+                item.profilePhoto = answer["autherPhoto"] as? String
                 self.items.append(item)
             }
             complition(self.items)
@@ -75,6 +76,12 @@ class ItemsServiceApi : ServiceApi{
     func putItemInFireBaseDataBase(uploadImageView : UIImageView,complition : ((StorageMetadata?, Error?) -> Void)?) {
 
     }
+    
+    // get all users from database
+    func getAllUsers () {
+        
+    }
+    
     
     // update rating and numberOfPeopleWhoDidRating in fireBase database
     func updateRatingOfItem(postKey : String, rating : Float, numOfPeople : Int){
