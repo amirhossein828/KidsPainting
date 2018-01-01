@@ -22,6 +22,7 @@ extension CredentialsViewController : UIImagePickerControllerDelegate{
         imagePicker.dismiss(animated: true, completion: nil)
         //If the image exists extract it and store in a constant
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            profilePhoto = image
             //Whe can then assing is to the button
             profilePictureButton.setImage(image, for: .normal)
         }
@@ -163,7 +164,7 @@ class CredentialsViewController: UIViewController{
     var userNameIsCorrect = false
     var imagePicker: UIImagePickerController!
     var handle: AuthStateDidChangeListenerHandle!
-    
+    var profilePhoto : UIImage? = nil
     //MARK: - Application Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -390,6 +391,7 @@ class CredentialsViewController: UIViewController{
             //If the user is successfully created using the password and the email
             //We can add the profile picture and the user name
             if let user = user{
+
                 print("The user is added to the database")
                 //Check again is the user name and the profile picture are not empty
                 if let userDisplayName = self.userNameTextField.text,
