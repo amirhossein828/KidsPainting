@@ -67,6 +67,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         cell.nameOfArticleCell.text = self.items[indexPath.row].nameOfArticle
         cell.priceCell.text         = String(Int(self.items[indexPath.row].price))
         cell.imageViewCell.downloadImage(from: items[indexPath.row].pathToImage)
+        cell.profilePhoto.downloadImage(from: items[indexPath.row].profilePhoto ?? "")
         return cell
     }
     
