@@ -90,7 +90,7 @@ class UploadItemViewController: UIViewController {
         let imageRef = storage.child("posts").child(uid).child("\(key).jpg")
         
         // 5- Convert image format to data format with compresstion rate 0.1
-        let data = UIImageJPEGRepresentation(self.uploadImageView.image!, 0.1)
+        let data = UIImageJPEGRepresentation(self.uploadImageView.image!, 0.8)
         
         // 6- Upload image to backend storage
         let uploadTask = imageRef.putData(data!, metadata: nil) { (metadata, error) in

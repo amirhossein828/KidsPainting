@@ -11,6 +11,23 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ChalkboardSE.ttc">
+            <string>ChalkboardSE-Regular</string>
+        </array>
+        <array key="Georgia.ttf">
+            <string>Georgia</string>
+        </array>
+        <array key="GeorgiaBold.ttf">
+            <string>Georgia-Bold</string>
+        </array>
+        <array key="GeorgiaBoldItalic.ttf">
+            <string>Georgia-BoldItalic</string>
+        </array>
+        <array key="GeorgiaItalic.ttf">
+            <string>Georgia-Italic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Detail View Controller-->
         <scene sceneID="YFE-xp-Wmt">
@@ -52,7 +69,7 @@
                                                                 <constraint firstAttribute="width" constant="224" id="Gq1-xh-iqf"/>
                                                                 <constraint firstAttribute="height" constant="30" id="LPV-sa-6gL"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -62,17 +79,17 @@
                                                                 <constraint firstAttribute="width" constant="55" id="Oyi-ta-S0w"/>
                                                                 <constraint firstAttribute="height" constant="30" id="hb4-jZ-iWO"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="100" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS7-Zc-yzc">
-                                                            <rect key="frame" x="16" y="500" width="145" height="23"/>
+                                                            <rect key="frame" x="16" y="499" width="145" height="23"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="145" id="0Fh-uY-XJI"/>
                                                                 <constraint firstAttribute="height" constant="23" id="h31-Ze-Vgk"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -98,11 +115,12 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNk-iD-VpT">
-                                                            <rect key="frame" x="37" y="736" width="79" height="30"/>
+                                                            <rect key="frame" x="37" y="736" width="99" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="79" id="4AT-6Q-1Zo"/>
+                                                                <constraint firstAttribute="width" constant="99" id="4AT-6Q-1Zo"/>
                                                                 <constraint firstAttribute="height" constant="30" id="hfh-4a-pVS"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
                                                             <state key="normal" title="Give Rating"/>
                                                             <connections>
                                                                 <segue destination="vP7-ya-OlW" kind="presentation" identifier="detailToPop" modalPresentationStyle="overCurrentContext" id="lAH-vF-yKw"/>
@@ -179,37 +197,38 @@
                                                             </prototypes>
                                                         </tableView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2n-u7-NGt">
-                                                            <rect key="frame" x="238" y="735" width="100" height="30"/>
+                                                            <rect key="frame" x="208" y="735" width="130" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="9AL-A5-zVV"/>
+                                                                <constraint firstAttribute="width" constant="130" id="9AL-A5-zVV"/>
                                                                 <constraint firstAttribute="height" constant="30" id="ECe-ni-177"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
                                                             <state key="normal" title="Write a review"/>
                                                             <connections>
                                                                 <action selector="writeReviewBtn:" destination="bVw-Sp-CpS" eventType="touchUpInside" id="SdL-Q1-uS1"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8C-jT-tme">
-                                                            <rect key="frame" x="16" y="537" width="95.5" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                            <rect key="frame" x="16" y="538" width="115" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seller Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djC-oT-gUi">
-                                                            <rect key="frame" x="16" y="473" width="102" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="16" y="473" width="101" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kes-7i-obg">
-                                                            <rect key="frame" x="8" y="774" width="88" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                            <rect key="frame" x="8" y="775" width="100.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vy9-u9-fP3">
-                                                            <rect key="frame" x="328" y="475" width="30" height="29"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                            <rect key="frame" x="328" y="473" width="31" height="31"/>
+                                                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="27"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -450,28 +469,28 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameOfPerson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wr9-Tv-b7J">
-                                                                <rect key="frame" x="63" y="11" width="114" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="63" y="11" width="111" height="24.5"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NameOfArticle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wp5-Xw-X9i">
-                                                                <rect key="frame" x="15" y="198" width="113" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="15" y="199" width="113" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhD-Cv-MbH">
-                                                                <rect key="frame" x="263" y="198" width="39" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="264" y="199" width="38" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyZ-PY-Gdy">
-                                                                <rect key="frame" x="0.0" y="40" width="320" height="150"/>
+                                                                <rect key="frame" x="0.0" y="43.5" width="320" height="147.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m90-js-1J2">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="147.5"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -489,8 +508,8 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pr-fD-1VX">
-                                                                <rect key="frame" x="250" y="198" width="11" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="251.5" y="199" width="10.5" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
