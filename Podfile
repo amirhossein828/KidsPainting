@@ -21,6 +21,7 @@ pod 'GooglePlacePicker'
 pod 'GoogleMaps'
 
 pod 'SwiftyJSON'
+pod 'SDWebImage', '~> 4.0'
 
 pod 'FloatRatingView', '~> 2.0.0'
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class MainViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
 
@@ -66,7 +67,8 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         cell.fullNameField.text     = self.items[indexPath.row].author
         cell.nameOfArticleCell.text = self.items[indexPath.row].nameOfArticle
         cell.priceCell.text         = String(Int(self.items[indexPath.row].price))
-        cell.imageViewCell.downloadImage(from: items[indexPath.row].pathToImage)
+        let imagePthUrl = URL(string: items[indexPath.row].pathToImage)
+        cell.imageViewCell.sd_setImage(with: imagePthUrl)
         cell.profilePhoto.downloadImage(from: items[indexPath.row].profilePhoto ?? "")
         return cell
     }
