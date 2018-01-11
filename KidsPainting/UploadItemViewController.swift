@@ -58,98 +58,16 @@ class UploadItemViewController: UIViewController {
     
     @IBAction func shareBtn(_ sender: UIButton)
     {
-        let item = Item()
         guard
             let nameOfArticle = nameofArticleField.text ,
-            let price = priceField.text
-            
+            let price = priceField.text,
+            let descrip = self.itemDescriptionField.text
             else { return }
-        let currentDate = Date()
-        
-        // Start spinner
-        activityIndicator.startAnimating()
-        
-        
-        // Stop handling of touch-related events.
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        
-        
-        // Upload the current image to backend database
-        
-        // 1- Get the current user uid
-        let uid = Auth.auth().currentUser!.uid
-        
-        // 2- Create a reference to backend database
-        let ref = Database.database().reference()
-        let storage = Storage.storage().reference(forURL: "gs://kidspainting-33316.appspot.com")
-        
-        // 3- Create a database child (posts) with Auto increment ID: database/posts/key for each post
-        let key = ref.child("posts").childByAutoId().key
-        
-        // 4- Locate image object in backend DB: storage/posts/uid/key.jpg
-        let imageRef = storage.child("posts").child(uid).child("\(key).jpg")
-        
-        // 5- Convert image format to data format with compresstion rate 0.1
-        let data = UIImageJPEGRepresentation(self.uploadImageView.image!, 0.8)
-        
-        // 6- Upload image to backend storage
-        let uploadTask = imageRef.putData(data!, metadata: nil) { (metadata, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-                
-                // 7- If there is an error  stop spinner and rsume the handling of touch events
-                self.activityIndicator.stopAnimating()
-                UIApplication.shared.endIgnoringInteractionEvents()
-                return
-            }
-            
-            // 8- Get the uploaded picture URL
-            imageRef.downloadURL(completion: { (url, error) in
-                
-                // 9- If url to uploaded image exist, create item object
-                if let url = url {
-                    item.userID = uid
-                    item.pathToImage = url.absoluteString
-                    item.likes = 0
-                    item.author = Auth.auth().currentUser!.displayName!
-                    item.postID = key
-                    item.nameOfArticle = nameOfArticle
-
-                    let photoUrl = Auth.auth().currentUser?.photoURL?.absoluteString ?? ""
-                    // 10- Make dictionary of "posts" object attributes and corresponding key
-                    let feed =
-                        [
-                            "userID" : uid,
-                            "pathToImage" : url.absoluteString,
-                            "likes" : 0,
-                            "author" : Auth.auth().currentUser!.displayName!,
-                            "postID" : key,
-                            "nameOfArticle" : nameOfArticle,
-                            "price" : price,
-                            "currentDate" : Item.dateToString(currentDate)!,
-                            "itemRating" : 0 ,
-                            "numberOfPeopleWhoDidRating" : 0,
-                            "itemDescription" : self.itemDescriptionField.text ?? "",
-                            "autherPhoto" : photoUrl
-                        ] as [String : Any]
-                    
-                    let postFeed = ["\(key)" : feed]
-                    
-                    // 11- Reference to Firebase DB: write data (postFeed) to backend as "posts" object child with key and feed dictionary
-                    // This method will add our new post to backend DB
-                    ref.child("posts").updateChildValues(postFeed)
-                    // 12-  Stop activityIndicator or spinner
-                    self.activityIndicator.stopAnimating()
-                    
-                    // 13- Rsume the handling of touch events
-                    UIApplication.shared.endIgnoringInteractionEvents()
-                    
-                    // 14- Dismisses the view controller that was presented modally by the view controller.
-                    self.dismiss(animated: true, completion: nil)
-                }
-            })
+        let webSrevice = ItemsServiceApi()
+        // upload item
+        webSrevice.uploadItem(nameOfArticle: nameOfArticle, price: price, uid: Auth.auth().currentUser!.uid, image: self.uploadImageView.image!, itemDescription: descrip) {
+            self.dismiss(animated: true, completion: nil)
         }
-        uploadTask.resume()
     }
     //--------------------------------------------------------------------------------------
     
@@ -168,8 +86,6 @@ class UploadItemViewController: UIViewController {
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(activityIndicator)
     }
-    
-    
 
 }
 
